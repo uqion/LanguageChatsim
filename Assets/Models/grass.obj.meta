@@ -1,0 +1,235 @@
+fileFormatVersion: 2
+guid: d3ebe6203bce6e3449e5cfd6a30c7b9e
+ModelImporter:
+  serializedVersion: 27
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane002Mat
+    second: {fileID: 2100000, guid: ce387dd3ff0f5ff42ba4cd8384dd2eb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane003Mat
+    second: {fileID: 2100000, guid: 01097d503cb5858428e3d21b5eadc1b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane004Mat
+    second: {fileID: 2100000, guid: 6b61f9ad3fb28ee45a688ba8c07a6304, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane005Mat
+    second: {fileID: 2100000, guid: 29075a3096fbb12409b017524d4130c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane006Mat
+    second: {fileID: 2100000, guid: 5720f40beb27aff49bbfe5c746e631bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane007Mat
+    second: {fileID: 2100000, guid: 08bf8b1866f4a7b409bae6605c89fdb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane008Mat
+    second: {fileID: 2100000, guid: b3673c68c1e2960439e05f22f010a58c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane009Mat
+    second: {fileID: 2100000, guid: 946b4e9f3ed7fd649af6054670fd68c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane010Mat
+    second: {fileID: 2100000, guid: 66191e63a2168164ba199587dd42fa8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane011Mat
+    second: {fileID: 2100000, guid: 66f14ffed49cfd0409a10017ad28bbba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane012Mat
+    second: {fileID: 2100000, guid: ccb34c0db964c1c4b967b9cc5258d1c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane013Mat
+    second: {fileID: 2100000, guid: df81dae6f79904942bab7eccfc4c4161, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane014Mat
+    second: {fileID: 2100000, guid: 724f07fef48ca0f4191bf99d3b20f67b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane015Mat
+    second: {fileID: 2100000, guid: a3b0b584443aa6648a3d67a96a5f7578, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane016Mat
+    second: {fileID: 2100000, guid: 3138c7346aa059140943f85ff00a08a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane017Mat
+    second: {fileID: 2100000, guid: f447aa443073736479fb4aaf3761b255, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane018Mat
+    second: {fileID: 2100000, guid: 2dce9272c02b0964399715ffc497a721, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane019Mat
+    second: {fileID: 2100000, guid: a4d93c27651373e4dbe1a0062082dc87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane020Mat
+    second: {fileID: 2100000, guid: dd5bd8ba3fb4d78409252445e1dff5d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane021Mat
+    second: {fileID: 2100000, guid: f2cfc169fbd7b654ca8e16b767411f70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane022Mat
+    second: {fileID: 2100000, guid: 1d7574fab44950f41953933f6bbb4357, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane023Mat
+    second: {fileID: 2100000, guid: c68549c581de8eb4492768bbde2fd66f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane024Mat
+    second: {fileID: 2100000, guid: 86e85249bb2f3d443bb45b4ee7e17982, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane025Mat
+    second: {fileID: 2100000, guid: 3f02f4c2c919d874699378fa02ca5f68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane026Mat
+    second: {fileID: 2100000, guid: fd8c05fe0eced1741b90e7a4a98c5449, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane027Mat
+    second: {fileID: 2100000, guid: fac481242b8787743a92054a2a80997d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane028Mat
+    second: {fileID: 2100000, guid: edeb45c8c7123444ba0cc7632871bee2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane029Mat
+    second: {fileID: 2100000, guid: 21ea0a7b0a43136479d9510eb5576aaf, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.005
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.005
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

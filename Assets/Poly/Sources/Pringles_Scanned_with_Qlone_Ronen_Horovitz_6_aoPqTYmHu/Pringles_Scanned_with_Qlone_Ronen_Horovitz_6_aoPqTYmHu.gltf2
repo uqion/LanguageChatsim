@@ -1,0 +1,113 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 118942,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 118942,
+      "max": [
+        0.15428940951824188,
+        0.4682594835758209,
+        0.15437015891075134
+      ],
+      "min": [
+        -0.15428940951824188,
+        -0.498046875,
+        -0.15437015891075134
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5125,
+      "count": 553872,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "generator": "EyeCue Vision Technologies Ltd.",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteLength": 951536,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1427304,
+      "byteOffset": 951536
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2215488,
+      "byteOffset": 2378840
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 4594328,
+      "uri": "Pringles.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "image0.jpg"
+    }
+  ],
+  "materials": [
+    {
+      "name": "mNewQlone",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "NewQlone",
+      "primitives": [
+        {
+          "attributes": {
+            "TEXCOORD_0": 0,
+            "POSITION": 1
+          },
+          "indices": 2,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "NewQlone"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+   "accessors" : [
+      {
+         "bufferView" : 0,
+         "byteOffset" : 0,
+         "componentType" : 5123,
+         "count" : 45678,
+         "max" : [ 15902 ],
+         "min" : [ 0 ],
+         "name" : "buffer-0-group-0-mesh-0-indices",
+         "type" : "SCALAR"
+      },
+      {
+         "bufferView" : 1,
+         "byteOffset" : 0,
+         "componentType" : 5126,
+         "count" : 15903,
+         "max" : [ 15.90929985046387, 31.88349914550781, 6.893700122833252 ],
+         "min" : [ -25.60939979553223, -0, -6.893700122833252 ],
+         "name" : "buffer-0-group-0-mesh-0-position",
+         "type" : "VEC3"
+      },
+      {
+         "bufferView" : 1,
+         "byteOffset" : 190836,
+         "componentType" : 5126,
+         "count" : 15903,
+         "max" : [ 1, 1, 1 ],
+         "min" : [ -1, -1, -1 ],
+         "name" : "buffer-0-group-0-mesh-0-normal",
+         "type" : "VEC3"
+      },
+      {
+         "bufferView" : 2,
+         "byteOffset" : 0,
+         "componentType" : 5126,
+         "count" : 15903,
+         "max" : [ 0.9951000213623047, -0.02319999970495701 ],
+         "min" : [ 0.006500000134110451, -0.9954000115394592 ],
+         "name" : "buffer-0-group-0-mesh-0-texcoord",
+         "type" : "VEC2"
+      },
+      {
+         "bufferView" : 0,
+         "byteOffset" : 91356,
+         "componentType" : 5123,
+         "count" : 12450,
+         "max" : [ 2706 ],
+         "min" : [ 0 ],
+         "name" : "buffer-0-group-1-mesh-0-indices",
+         "type" : "SCALAR"
+      },
+      {
+         "bufferView" : 1,
+         "byteOffset" : 381672,
+         "componentType" : 5126,
+         "count" : 2707,
+         "max" : [ 15.64780044555664, 26.5, 4.998600006103516 ],
+         "min" : [ -25.56940078735352, 0, -7.068900108337402 ],
+         "name" : "buffer-0-group-1-mesh-0-position",
+         "type" : "VEC3"
+      },
+      {
+         "bufferView" : 1,
+         "byteOffset" : 414156,
+         "componentType" : 5126,
+         "count" : 2707,
+         "max" : [ 1, 1, 0.9905580282211304 ],
+         "min" : [ -1, -1, -0.9999985694885254 ],
+         "name" : "buffer-0-group-1-mesh-0-normal",
+         "type" : "VEC3"
+      },
+      {
+         "bufferView" : 2,
+         "byteOffset" : 127224,
+         "componentType" : 5126,
+         "count" : 2707,
+         "max" : [ 0.9829999804496765, -0.003899999894201756 ],
+         "min" : [ 0.01169999968260527, -0.4916999936103821 ],
+         "name" : "buffer-0-group-1-mesh-0-texcoord",
+         "type" : "VEC2"
+      }
+   ],
+   "asset" : {
+      "generator" : "Obj2GltfConverter",
+      "version" : "2.0"
+   },
+   "bufferViews" : [
+      {
+         "buffer" : 0,
+         "byteLength" : 116256,
+         "byteOffset" : 0,
+         "name" : "buffer-0-bufferview-ushort",
+         "target" : 34963
+      },
+      {
+         "buffer" : 0,
+         "byteLength" : 446640,
+         "byteOffset" : 116256,
+         "byteStride" : 12,
+         "name" : "buffer-0-bufferview-vec3",
+         "target" : 34962
+      },
+      {
+         "buffer" : 0,
+         "byteLength" : 148880,
+         "byteOffset" : 562896,
+         "byteStride" : 8,
+         "name" : "buffer-0-bufferview-vec2",
+         "target" : 34962
+      }
+   ],
+   "buffers" : [
+      {
+         "byteLength" : 711776,
+         "name" : "buffer-0",
+         "uri" : "nespresso_vertuo_plus.bin"
+      }
+   ],
+   "images" : [
+      {
+         "mimeType" : "image/png",
+         "name" : "nespresso-base-image",
+         "uri" : "nespresso_vertuo_plus/nespresso_base.png"
+      },
+      {
+         "mimeType" : "image/png",
+         "name" : "nespresso-metallic_roughness-image",
+         "uri" : "nespresso_vertuo_plus/nespresso_metallic_roughness.png"
+      },
+      {
+         "mimeType" : "image/png",
+         "name" : "nespresso-normal-image",
+         "uri" : "nespresso_vertuo_plus/nespresso_normal.png"
+      },
+      {
+         "mimeType" : "image/png",
+         "name" : "nespresso_02-metallic_roughness-image",
+         "uri" : "nespresso_vertuo_plus/nespresso_02_metallic_roughness.png"
+      }
+   ],
+   "materials" : [
+      {
+         "alphaMode" : "BLEND",
+         "doubleSided" : true,
+         "name" : "nespresso",
+         "normalTexture" : {
+            "index" : 2,
+            "texCoord" : 0
+         },
+         "pbrMetallicRoughness" : {
+            "baseColorFactor" : [ 1, 1, 1, 1 ],
+            "baseColorTexture" : {
+               "index" : 0,
+               "texCoord" : 0
+            },
+            "metallicRoughnessTexture" : {
+               "index" : 1,
+               "texCoord" : 0
+            }
+         }
+      },
+      {
+         "alphaMode" : "BLEND",
+         "doubleSided" : true,
+         "name" : "nespresso_02",
+         "pbrMetallicRoughness" : {
+            "baseColorFactor" : [ 0, 0, 0, 0.25 ],
+            "metallicRoughnessTexture" : {
+               "index" : 3,
+               "texCoord" : 0
+            }
+         }
+      }
+   ],
+   "meshes" : [
+      {
+         "name" : "buffer-0-mesh-0",
+         "primitives" : [
+            {
+               "attributes" : {
+                  "NORMAL" : 2,
+                  "POSITION" : 1,
+                  "TEXCOORD_0" : 3
+               },
+               "indices" : 0,
+               "material" : 0,
+               "mode" : 4
+            },
+            {
+               "attributes" : {
+                  "NORMAL" : 6,
+                  "POSITION" : 5,
+                  "TEXCOORD_0" : 7
+               },
+               "indices" : 4,
+               "material" : 1,
+               "mode" : 4
+            }
+         ]
+      }
+   ],
+   "nodes" : [
+      {
+         "mesh" : 0,
+         "name" : "node-0"
+      }
+   ],
+   "samplers" : [
+      {
+         "name" : "nespresso-base-sampler",
+         "wrapS" : 10497,
+         "wrapT" : 10497
+      },
+      {
+         "name" : "nespresso-metallic_roughness-sampler",
+         "wrapS" : 10497,
+         "wrapT" : 10497
+      },
+      {
+         "name" : "nespresso-normal-sampler",
+         "wrapS" : 10497,
+         "wrapT" : 10497
+      },
+      {
+         "name" : "nespresso_02-metallic_roughness-sampler",
+         "wrapS" : 10497,
+         "wrapT" : 10497
+      }
+   ],
+   "scenes" : [
+      {
+         "name" : "scene-0",
+         "nodes" : [ 0 ]
+      }
+   ],
+   "textures" : [
+      {
+         "name" : "nespresso-base-texture",
+         "sampler" : 0,
+         "source" : 0
+      },
+      {
+         "name" : "nespresso-metallic_roughness-texture",
+         "sampler" : 1,
+         "source" : 1
+      },
+      {
+         "name" : "nespresso-normal-texture",
+         "sampler" : 2,
+         "source" : 2
+      },
+      {
+         "name" : "nespresso_02-metallic_roughness-texture",
+         "sampler" : 3,
+         "source" : 3
+      }
+   ]
+}

@@ -1,0 +1,169 @@
+This project uses the following items from Poly (http://poly.google.com):
+
+Title: 2L Bottle
+Author: Paul Spooner
+URL: https://poly.google.com/view/eFd9YHJijKW
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: A stack of post-it
+Author: Zack Huang
+URL: https://poly.google.com/view/3r6uTb4Tn0j
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Cabinets
+Author: Ethan Fischer
+URL: https://poly.google.com/view/esSZxVYLKnF
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Cash Register
+Author: Aidan
+URL: https://poly.google.com/view/dkRhK-4Igtr
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Cigarette
+Author: Ian MacGillivray
+URL: https://poly.google.com/view/2uX441K8TY0
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Counter
+Author: Ethan Fischer
+URL: https://poly.google.com/view/fUH3siaksbc
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Cup of coffee
+Author: Poly by Google
+URL: https://poly.google.com/view/1HpVP5w2x1D
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Fiji
+Author: Narwhix
+URL: https://poly.google.com/view/a0nBRG70Tdo
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Fridge
+Author: Blocks Demo
+URL: https://poly.google.com/view/dTes5OLMprT
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Jar of jam
+Author: Poly by Google
+URL: https://poly.google.com/view/cDR6hzfYrcp
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: KitKat Bar
+Author: Jarlan Perez
+URL: https://poly.google.com/view/f6ucsBeKXpX
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Lighter
+Author: Poly by Google
+URL: https://poly.google.com/view/1Zzk1FkZc5I
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Minerals
+Author: Aidan
+URL: https://poly.google.com/view/5YPiYAUxGfJ
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Pack of cigarettes
+Author: Poly by Google
+URL: https://poly.google.com/view/8uPU5CfJ9aB
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: pen
+Author: Master Weeb
+URL: https://poly.google.com/view/9mEKr_a1fWG
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Pringles BBQ scan by Qlone
+Author: Ronen Horovitz
+URL: https://poly.google.com/view/5J1ARrI-Q5I
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Shipping Container by Albert E
+Author: Harold Sikkema
+URL: https://poly.google.com/view/cPo2s2RtY8I
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Sidetable and drawer
+Author: Hope Moore
+URL: https://poly.google.com/view/55vDM2jR-5H
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Small Stack of Paper
+Author: Jarlan Perez
+URL: https://poly.google.com/view/aiBozYlPe--
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Soda
+Author: Poly by Google
+URL: https://poly.google.com/view/2w4Av7jJ2_B
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Soda can
+Author: mason
+URL: https://poly.google.com/view/0SIErfJvsXy
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Soda can
+Author: Poly by Google
+URL: https://poly.google.com/view/9_QKmQ42QB9
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Test Machine
+Author: Anonymous
+URL: https://poly.google.com/view/7FxXgsjxu3h
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: TIME HOTEL 4.25
+Author: S. Paul Michael
+URL: https://poly.google.com/view/eBhKEOt5I0e
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Trash can
+Author: Poly by Google
+URL: https://poly.google.com/view/0yT-YR5yO4L
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Twix Scanned with Qlone
+Author: Ronen Horovitz
+URL: https://poly.google.com/view/56B_DqgCONF
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Water Bottle
+Author: Jerad Bitner
+URL: https://poly.google.com/view/0yhPAyLwwRN
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: wooden bookshelf
+Author: Justin Randall
+URL: https://poly.google.com/view/3tFHdOcDnNg
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode

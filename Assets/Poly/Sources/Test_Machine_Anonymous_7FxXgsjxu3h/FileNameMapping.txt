@@ -1,0 +1,5 @@
+nespresso_vertuo_plus.bin -> 0154D06C03CFB209B7E17E452F84D97B.bin
+nespresso_vertuo_plus/nespresso_base.png -> 65D3637F5395C0E8CC0150CF823BC727.png
+nespresso_vertuo_plus/nespresso_metallic_roughness.png -> 606B8757277D93A8EF96C2818D950EFC.png
+nespresso_vertuo_plus/nespresso_normal.png -> 2975EC51A6D93BDF2CD2DC8036399588.png
+nespresso_vertuo_plus/nespresso_02_metallic_roughness.png -> 2BF08C0FC49E106F168E57BF1AD5B13C.png

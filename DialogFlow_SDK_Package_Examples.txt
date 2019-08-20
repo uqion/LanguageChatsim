@@ -1,0 +1,50 @@
+**KNOWN INPUT OF GREETING INTENT**
+Result: {"id":"60cce6ae-28fa-4a83-ab00-eed6ded19c29"
+,"timestamp":"2019-05-23T19:19:03Z"
+,"result":{"action":"input.welcome"
+,"parameters":{}
+,"contexts":[]
+,"metadata":{"intentName":"Default Welcome Intent"
+,"intentId":"73d013a1-2533-4c66-b6cf-08201240c07e"}
+,"resolvedQuery":"hello"
+,"fulfillment":{"speech":"Good day! What can I do for you today?"}
+,"source":"agent"}
+,"status":{"code":200
+,"errorType":"success"}
+,"IsError":false}
+
+**OTHER KNOWN INPUT OF CUSTOM INTENT**
+Result: {"id":"01096c0d-2de5-4426-a6b8-cc165c3e46a9"
+,"timestamp":"2019-05-23T22:00:21Z"
+,"result":{"action":""
+,"parameters":{}
+,"contexts":[{"name":"want_product-followup"
+,"parameters":{}
+,"lifespan":2}]
+,"metadata":{"intentName":"Want_Product"
+,"intentId":"c51424f6-52f6-4832-b478-a4f89be6216c"}
+,"resolvedQuery":"Can I get some?"
+,"fulfillment":{"speech":"Sure! Ill get you that item that you want! Duh!"}
+,"source":"agent"}
+,"status":{"code":200
+,"errorType":"success"}
+,"IsError":false}
+
+
+
+**UNKNOWN INPUT**
+Result: {"id":"d8820ce4-229e-4e37-b77d-82f673bc0e76"
+,"timestamp":"2019-05-23T19:39:08Z"
+,"result":{"action":"input.unknown"
+,"parameters":{}
+,"contexts":[]
+,"metadata":{"intentName":"Default Fallback Intent"
+,"intentId":"ed534694-f8b7-4954-9db8-9284107544f9"}
+,"resolvedQuery":"I would like a freezie!"
+,"fulfillment":{"speech":"I didn't get that. Can you say it again?"}
+,"source":"agent"}
+,"status":{"code":200
+,"errorType":"success"}
+,"IsError":false}
+
+
