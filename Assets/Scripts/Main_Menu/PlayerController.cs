@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     private Vector3 offset = new Vector3(1.79f, -3.926f, 10.371f);
-    
+
     public GameObject CameraRig;
     public GameObject Player;
     // Start is called before the first frame update
@@ -41,6 +41,13 @@ public class PlayerController : MonoBehaviour
         float hAxis = Input.GetAxis("Horizontal");
         //Input on z (Vertical)
         float vAxis = Input.GetAxis("Vertical");
+
+//Double hAxis = Math.Sin(transform.eulerAngles.x);
+        //Double vAxis = Math.Sin(transform.eulerAngles.z);
+
+        Debug.Log(transform.eulerAngles.x);
+        Debug.Log(transform.eulerAngles.z);
+        Debug.Log(transform.eulerAngles.y);
 
         Vector3 movement = Quaternion.Euler(0.0f, transform.eulerAngles.y - 90.0f, 0.0f) * new Vector3(hAxis * speed * Time.deltaTime, 0.0f, vAxis * speed * Time.deltaTime);
         Vector3 newPos = Player.transform.position + movement;
