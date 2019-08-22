@@ -59,7 +59,7 @@ public class DictationScriptGerman : MonoBehaviour
             var result = await recognizer.RecognizeOnceAsync().ConfigureAwait(false);
 
             // Checks result.
-            string newMessage = string.Empty;
+            string newMessage = "";
             if (result.Reason == ResultReason.RecognizedSpeech)
             {
                 lock (threadLocker)
@@ -109,7 +109,8 @@ public class DictationScriptGerman : MonoBehaviour
                 {
                     //Debug.Log(message);
                     m_Recognitions.text = message;
-                    SentButton.GetComponent<DialogFlow>().SendText(m_Recognitions.text);
+                    Debug.Log(message);
+                    SentButton.GetComponent<DialogFlow>().SendText(message);
                     
                     changed = false;
                     initializeSession(); //might move to TTS when the Speech stops, start Recognition.
