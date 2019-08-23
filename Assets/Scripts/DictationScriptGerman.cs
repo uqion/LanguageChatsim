@@ -109,7 +109,6 @@ public class DictationScriptGerman : MonoBehaviour
                 {
                     //Debug.Log(message);
                     m_Recognitions.text = message;
-                    Debug.Log(message);
                     SentButton.GetComponent<DialogFlow>().SendText(message);
                     
                     changed = false;

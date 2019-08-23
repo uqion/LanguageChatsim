@@ -37,27 +37,19 @@ public class PlayerController : MonoBehaviour
     //Moving the Player Object
     void moveCamera()
     {
-        //Input on x (Horizontal)
-        float hAxis = Input.GetAxis("Horizontal");
-        //Input on z (Vertical)
-        float vAxis = Input.GetAxis("Vertical");
 
-//Double hAxis = Math.Sin(transform.eulerAngles.x);
-        //Double vAxis = Math.Sin(transform.eulerAngles.z);
-
-        Debug.Log(transform.eulerAngles.x);
-        Debug.Log(transform.eulerAngles.z);
-        Debug.Log(transform.eulerAngles.y);
-
-        Vector3 movement = Quaternion.Euler(0.0f, transform.eulerAngles.y - 90.0f, 0.0f) * new Vector3(hAxis * speed * Time.deltaTime, 0.0f, vAxis * speed * Time.deltaTime);
+        //Convert the rotation on y-axis into rectangular coordinates in x-axis and z-axis
+        float xAxis = Mathf.Cos((transform.eulerAngles.y - 200.0f) * Mathf.PI / 180);
+        float zAxis = Mathf.Sin((transform.eulerAngles.y - 200.0f) * Mathf.PI / 180);
+        Debug.Log(xAxis);
+        Debug.Log(zAxis);
+        //Put into vector format and multiply by speed and time.deltaTime to convert in a per frame basis
+        Vector3 movement = new Vector3(zAxis * -1 * speed * Time.deltaTime, 0.0f, xAxis * -1 * speed * Time.deltaTime);
         Vector3 newPos = Player.transform.position + movement;
 
         //rb.MovePosition(Player.transform.position + transform.forward * Time.deltaTime);
         rb.MovePosition(newPos);
 
-        //rb.velocity = new Vector3(Input.GetAxis("Horizontal") * 3f,
-        //                                 0.0f,
-        //                                 Input.GetAxis("Vertical") * 3f);
     }
 
     private void LateUpdate()
