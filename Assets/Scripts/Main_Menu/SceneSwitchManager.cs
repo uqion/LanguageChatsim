@@ -41,6 +41,9 @@ public class SceneSwitchManager : MonoBehaviour
             Debug.Log("entered English Ring");
             MainMenu.SetActive(false);
             EnglishScene.SetActive(true);
+
+            DialogFlow.isEnglish = true;
+            DialogFlow.ACCESS_TOKEN = "8b268a4934ed4e96a4c6bb32e39b92d9";
         }
     }
 
