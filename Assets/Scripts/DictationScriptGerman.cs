@@ -107,12 +107,21 @@ public class DictationScriptGerman : MonoBehaviour
             {
                 if (changed) //Only Activated When the Message has changed.
                 {
-                    //Debug.Log(message);
-                    m_Recognitions.text = message;
-                    SentButton.GetComponent<DialogFlow>().SendText(message);
-                    
-                    changed = false;
-                    initializeSession(); //might move to TTS when the Speech stops, start Recognition.
+                    Debug.Log(message);
+                    if (message == "")
+                    {
+                        m_Recognitions.text = "";
+                        changed = false;
+                        initializeSession(); //might move to TTS when the Speech stops, start Recognition.
+                    } else
+                    {
+                        m_Recognitions.text = message;
+
+                        SentButton.GetComponent<DialogFlow>().SendText(message);
+
+                        changed = false;
+                        initializeSession(); //might move to TTS when the Speech stops, start Recognition.
+                    }
                 }
             }
         }
