@@ -34,9 +34,11 @@ public class SceneSwitchManager : MonoBehaviour
             GermanScene.SetActive(true);
 
             DialogFlow.isEnglish = false;
-            DialogFlow.ACCESS_TOKEN = "26d751367f9247a3adf0e6040e78b81f";
+            DialogFlow.ACCESS_TOKEN = "a9dc57bef27d4c07bda7c26676417a9e";
+            //a9dc57bef27d4c07bda7c26676417a9e
             // set menu to be false, activate German Content
-        } else if (other.gameObject.tag == "Player" && gameObject.tag == "EnglishRing")
+        }
+        else if (other.gameObject.tag == "Player" && gameObject.tag == "EnglishRing")
         {
             Debug.Log("entered English Ring");
             MainMenu.SetActive(false);
@@ -44,6 +46,7 @@ public class SceneSwitchManager : MonoBehaviour
 
             DialogFlow.isEnglish = true;
             DialogFlow.ACCESS_TOKEN = "8b268a4934ed4e96a4c6bb32e39b92d9";
+            //8b268a4934ed4e96a4c6bb32e39b92d9
         }
     }
 
