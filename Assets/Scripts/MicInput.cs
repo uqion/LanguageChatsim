@@ -65,7 +65,6 @@ public class MicInput : MonoBehaviour
         {
             time +=Time.deltaTime;
             if (time > 2) {
-                //Debug.Log("Stopping");
                 dictationScript.stopDitection();
             }
         }

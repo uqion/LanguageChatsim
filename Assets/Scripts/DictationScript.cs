@@ -22,12 +22,51 @@ public class DictationScript : MonoBehaviour
 
     void Start()
     {
-        initializeSession();
+        m_DictationRecognizer = new DictationRecognizer();
+        // m_DictationRecognizer.AutoSilenceTimeoutSeconds = 50;
+
+        Debug.Log("Dictation Recognizer is being initialized");
+
+        m_DictationRecognizer.DictationResult += (text, confidence) =>
+        {
+            Debug.LogFormat("Dictation result: {0}", text);
+            // m_Recognitions.text = "";
+            //SentButton.GetComponent<DialogFlow>().inputFieldText.text = text;
+            // m_Hypotheses.text = "Selection:";
+            m_Recognitions.text = text;
+            SentButton.GetComponent<DialogFlow>().SendText(text);
+            m_condidence.text = confidence.ToString();
+            //;
+        };
+
+        m_DictationRecognizer.DictationHypothesis += (text) =>
+        {
+            Debug.LogFormat("Dictation hypothesis: {0}", text);
+            // m_Hypotheses.text += text + "\n";
+        };
+
+        /*m_DictationRecognizer.DictationComplete += (completionCause) =>
+        {
+            if (completionCause != DictationCompletionCause.Complete)
+                Debug.LogErrorFormat("Dictation completed unsuccessfully: {0}.", completionCause);
+            m_DictationRecognizer.Start();
+        };*/
+
+        m_DictationRecognizer.DictationError += (error, hresult) =>
+        {
+            Debug.LogErrorFormat("Dictation error: {0}; HResult = {1}.", error, hresult);
+        };
+        m_DictationRecognizer.DictationComplete += SessionEnd;
+        m_DictationRecognizer.Start();
     }
 
     public void startDitection() {
         if (m_DictationRecognizer.Status != SpeechSystemStatus.Running) {
             m_DictationRecognizer.Start();
+        }
+        else
+        {
+            Debug.Log("SpeechSystemStatus is Running");
         }
     }
 
@@ -45,45 +84,4 @@ public class DictationScript : MonoBehaviour
         //m_Recognitions.text += "\n";
     }
 
-    public void initializeSession()
-    {
-        m_DictationRecognizer = new DictationRecognizer();
-        // m_DictationRecognizer.AutoSilenceTimeoutSeconds = 50;
-
-
-        m_DictationRecognizer.DictationResult += (text, confidence) =>
-        {
-            Debug.LogFormat("Dictation result: {0}", text);
-            // m_Recognitions.text = "";
-            //SentButton.GetComponent<DialogFlow>().inputFieldText.text = text;
-            // m_Hypotheses.text = "Selection:";
-            m_Recognitions.text = text;
-            SentButton.GetComponent<DialogFlow>().SendText(text);
-            m_condidence.text = confidence.ToString();
-            //;
-        };
-
-        m_DictationRecognizer.DictationHypothesis += (text) =>
-        {
-            Debug.LogFormat("Dictation hypothesis: {0}", text);
-           // m_Hypotheses.text += text + "\n";
-        };
-
-        m_DictationRecognizer.DictationComplete += (completionCause) =>
-        {
-            if (completionCause != DictationCompletionCause.Complete)
-                Debug.LogErrorFormat("Dictation completed unsuccessfully: {0}.", completionCause);
-            m_DictationRecognizer.Start();
-        };
-
-        m_DictationRecognizer.DictationError += (error, hresult) =>
-        {
-            Debug.LogErrorFormat("Dictation error: {0}; HResult = {1}.", error, hresult);
-        };
-        m_DictationRecognizer.DictationComplete += SessionEnd;
-        m_DictationRecognizer.Start();
-
-
-
-    }
 }

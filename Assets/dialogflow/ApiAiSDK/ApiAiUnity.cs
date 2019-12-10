@@ -222,7 +222,9 @@ namespace ApiAiSDK.Unity
 
 		public AIResponse TextRequest(string request)
 		{
-			return apiAi.TextRequest(request);
+            Debug.Log(request);
+            Debug.Log(apiAi.TextRequest(request));
+            return apiAi.TextRequest(request);
 		}
 
 		private void ResetContexts()

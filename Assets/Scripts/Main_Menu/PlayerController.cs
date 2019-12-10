@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
         if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.Trigger)
             || ViveInput.GetPress(HandRole.LeftHand, ControllerButton.Trigger))
         {
-            Debug.Log("Moving");
             moveCamera();
         }
     }
@@ -39,10 +38,8 @@ public class PlayerController : MonoBehaviour
     {
 
         //Convert the rotation on y-axis into rectangular coordinates in x-axis and z-axis
-        float xAxis = Mathf.Cos((transform.eulerAngles.y - 200.0f) * Mathf.PI / 180);
-        float zAxis = Mathf.Sin((transform.eulerAngles.y - 200.0f) * Mathf.PI / 180);
-        Debug.Log(xAxis);
-        Debug.Log(zAxis);
+        float xAxis = Mathf.Cos((transform.eulerAngles.y - 195.0f) * Mathf.PI / 180);
+        float zAxis = Mathf.Sin((transform.eulerAngles.y - 195.0f) * Mathf.PI / 180);
         //Put into vector format and multiply by speed and time.deltaTime to convert in a per frame basis
         Vector3 movement = new Vector3(zAxis * -1 * speed * Time.deltaTime, 0.0f, xAxis * -1 * speed * Time.deltaTime);
         Vector3 newPos = Player.transform.position + movement;

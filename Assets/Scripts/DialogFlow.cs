@@ -113,16 +113,12 @@ public class DialogFlow : MonoBehaviour {
         SendText(text);
     }
 
-    void HandleOnError(object sender, AIErrorEventArgs e)
-    {
-        Debug.LogException(e.Exception);
-    }
 
     //ResponseTextParser is a module that will string manipulate the global variable responseText.
     //The objective of this module is to split responseText into only the useful data from
     //the packet that we receive from DialogFlow. The useful information we are looking for are
     //intents, entities, fulfillments.
-    public void ResponseTextParser()
+    void ResponseTextParser()
     {
 
         //listIndex is a Dynamic Array that will keep track of the indexes where subdata is seperated within responseText
@@ -175,14 +171,24 @@ public class DialogFlow : MonoBehaviour {
 
     }
 
-    //SpeechPlayback function below will 
+    void HandleOnError(object sender, AIErrorEventArgs e)
+    {
+        Debug.LogException(e.Exception);
+    }
+
+    // Update is called once per frame
+    void Update () {
+		
+	}
+
+
     public void SpeechPlayback()
     {
-        //speech.isReady checks if the instance of SpeechManager is ready
         if (speech.isReady)
         {
-            //Store response string from Azure into the variable msg and call SpeakWithRESTAPI function in the SpeechManager class
             string msg = responseText.text;
+            //speech.voiceName = VoiceName.enUSJessaRUS;
+            //speech.VoicePitch = 0;
                 speech.SpeakWithRESTAPI(msg);
         }
         else

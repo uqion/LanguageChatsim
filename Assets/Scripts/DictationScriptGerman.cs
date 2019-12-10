@@ -8,7 +8,7 @@ using Microsoft.CognitiveServices.Speech;
 
 public class DictationScriptGerman : MonoBehaviour
 {
-    [SerializeField]
+   /* [SerializeField]
     private Button SentButton;
     //private Text m_Hypotheses;
 
@@ -18,7 +18,7 @@ public class DictationScriptGerman : MonoBehaviour
 
     private object threadLocker = new object();
     private bool waitingForReco;
-    private string message = "";
+    private string message = "";3
     private bool changed = false;
     private bool micPermissionGranted = false;
     private SpeechRecognizer r;
@@ -26,19 +26,13 @@ public class DictationScriptGerman : MonoBehaviour
 
     void Start()
     {
-        initializeSession();
-        //if (!DialogFlow.isEnglish)
-        //{
-        //    Debug.Log("Destroying stuff");
-        //    Destroy(GetComponent<MicInput>());
-        //    Destroy(GetComponent<DictationScript>());
-        //}
+        initSession();
     }
 
-    public async void initializeSession()
+    public async void initSession()
     {
         Debug.Log("Speech Session Initiallized");
-        var config = SpeechConfig.FromSubscription("a4016b18f6c64e59807fb5e82fa4862c", "canadacentral"); //Subscription Key and Rigion.
+        var config = SpeechConfig.FromSubscription("01bda76b993149bba6946a9fdb1703fd", "canadacentral"); //Subscription Key and Rigion.
         config.SpeechRecognitionLanguage = "de-de"; //Language.
         // Make sure to dispose the recognizer after use!
         using (var recognizer = new SpeechRecognizer(config))
@@ -90,7 +84,7 @@ public class DictationScriptGerman : MonoBehaviour
 
 
     }
-
+    
     void Update()
     {
 #if PLATFORM_ANDROID
@@ -112,7 +106,7 @@ public class DictationScriptGerman : MonoBehaviour
                     {
                         m_Recognitions.text = "";
                         changed = false;
-                        initializeSession(); //might move to TTS when the Speech stops, start Recognition.
+                        initSession(); //might move to TTS when the Speech stops, start Recognition.
                     } else
                     {
                         m_Recognitions.text = message;
@@ -120,7 +114,7 @@ public class DictationScriptGerman : MonoBehaviour
                         SentButton.GetComponent<DialogFlow>().SendText(message);
 
                         changed = false;
-                        initializeSession(); //might move to TTS when the Speech stops, start Recognition.
+                        initSession(); //might move to TTS when the Speech stops, start Recognition.
                     }
                 }
             }
@@ -130,7 +124,7 @@ public class DictationScriptGerman : MonoBehaviour
     public void enablerec()
     {
         //    if (r != null) {
-        //        initializeSession();
+        //        initSession();
         //    }
     }
 
@@ -139,5 +133,5 @@ public class DictationScriptGerman : MonoBehaviour
         //    if (r != null) {
         //        r.Dispose(true);
         //    }
-    }
+    }*/
 }

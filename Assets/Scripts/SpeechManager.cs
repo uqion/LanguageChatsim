@@ -20,10 +20,10 @@ public class SpeechManager : MonoBehaviour {
 
     [Tooltip("Cognitive Services Speech API Key")]
     [SecretValue("SpeechService_APIKey")]
-    public string SpeechServiceAPIKey = "a4016b18f6c64e59807fb5e82fa4862c";
+    public string SpeechServiceAPIKey = "01bda76b993149bba6946a9fdb1703fd";
     [Tooltip("Cognitive Services Speech Service Region.")]
     [SecretValue("SpeechService_Region")]
-    public string SpeechServiceRegion = string.Empty;
+    public string SpeechServiceRegion = "canadacentral";
 
     [Tooltip("The audio source where speech will be played.")]
     public AudioSource audioSource = null;
@@ -79,7 +79,7 @@ public class SpeechManager : MonoBehaviour {
         // FOR MORE INFO ON AUTHENTICATION AND HOW TO GET YOUR API KEY, PLEASE VISIT
         // https://docs.microsoft.com/en-us/azure/cognitive-services/speech/how-to/how-to-authentication
         Authentication auth = new Authentication();
-        Task<string> authenticating = auth.Authenticate($"https://{SpeechServiceRegion}.api.cognitive.microsoft.com/sts/v1.0/issueToken",
+        Task<string> authenticating = auth.Authenticate($"https://{SpeechServiceRegion}.api.cognitive.microsoft.com/sts/v1.0/issuetoken",
                                                  SpeechServiceAPIKey); // INSERT-YOUR-SPEECH-API-KEY-HERE
         // Don't use the key above, it's mine and I reserve the right to invalidate it if/when I want, 
         // use the link above and go get your own. The free tier gives you 5,000 free API transactions / month.
@@ -101,7 +101,7 @@ public class SpeechManager : MonoBehaviour {
         // Yield control back to the main thread as long as the task is still running
         while (!authenticating.IsCompleted)
         {
-            Debug.Log("hi");
+            Debug.Log("Authenticating.IsCompleted returns True");
             yield return null;
         }
 
