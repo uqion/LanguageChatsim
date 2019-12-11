@@ -1,0 +1,19 @@
+digraph "CognitiveServicesTTS.Synthesize.GetVoiceLocale"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="CognitiveServicesTTS.Synthesize.\lGetVoiceLocale",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SpeechManager.SpeakWithRESTAPI",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_speech_manager.html#a28ed59cffc74b1ce44a8183d5005e845",tooltip="Converts a text string into synthesized speech using Microsoft Cognitive Services,..."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="UIManager.SpeechPlayback",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_u_i_manager.html#a9497a450300bb36c55b518272dbde471",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="DialogFlow.SpeechPlayback",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_dialog_flow.html#a39911c564941edd7d8b775c279097838",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="DialogFlow.SendText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_dialog_flow.html#aaa4aed666bb64845a05c4507e5b431d7",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="SpeechManager.SpeakWithSDKPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_speech_manager.html#af0d648cf1cd3e40dfb5dd1492d5812cf",tooltip=" "];
+  Node6 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

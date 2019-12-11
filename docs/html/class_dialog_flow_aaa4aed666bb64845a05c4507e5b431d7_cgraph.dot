@@ -1,0 +1,18 @@
+digraph "DialogFlow.SendText"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="DialogFlow.SendText",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DialogFlow.SpeechPlayback",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_dialog_flow.html#a39911c564941edd7d8b775c279097838",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SpeechManager.SpeakWithRESTAPI",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_speech_manager.html#a28ed59cffc74b1ce44a8183d5005e845",tooltip="Converts a text string into synthesized speech using Microsoft Cognitive Services,..."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CognitiveServicesTTS.Synthesize.\lGetVoiceLocale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cognitive_services_t_t_s_1_1_synthesize.html#a0c9e0199cc9a2f818a75e2d380b3dc8d",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="CognitiveServicesTTS.Synthesize.\lConvertVoiceNametoString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cognitive_services_t_t_s_1_1_synthesize.html#a7ec1043791dbad9deb7c2b3d7f427a8c",tooltip="Converts a specific VoioceName enum option into its string counterpart as expected by the API when bu..."];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="CognitiveServicesTTS.Synthesize.\lSpeak",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cognitive_services_t_t_s_1_1_synthesize.html#af1957839423b634042d245edae0090bc",tooltip="Sends the specified text to be spoken to the TTS service and saves the response audio to a file."];
+}

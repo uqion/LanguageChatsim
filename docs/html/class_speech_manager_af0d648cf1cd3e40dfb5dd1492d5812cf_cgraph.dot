@@ -1,0 +1,13 @@
+digraph "SpeechManager.SpeakWithSDKPlugin"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SpeechManager.SpeakWithSDKPlugin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CognitiveServicesTTS.Synthesize.\lConvertVoiceNametoString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cognitive_services_t_t_s_1_1_synthesize.html#a7ec1043791dbad9deb7c2b3d7f427a8c",tooltip="Converts a specific VoioceName enum option into its string counterpart as expected by the API when bu..."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CognitiveServicesTTS.Synthesize.\lGetVoiceLocale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cognitive_services_t_t_s_1_1_synthesize.html#a0c9e0199cc9a2f818a75e2d380b3dc8d",tooltip=" "];
+  Node3 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}
