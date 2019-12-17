@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
 using Microsoft.CognitiveServices.Speech;
 
-
 /// <summary>
 /// DictationScriptGeneral contains methods to run the communication with Microsoft Azure Speech to Text
 /// </summary>

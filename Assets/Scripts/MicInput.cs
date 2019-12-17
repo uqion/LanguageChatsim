@@ -67,7 +67,10 @@ public class MicInput : MonoBehaviour
     }
 
     /// <summary>
-    /// Unity Update function, If the levelMax is greater than a set value of threshold then it will call dictationScript.startDitection, Else it will call dictationScript.stopDitection in 2 seconds
+    /// Unity Update function, If the levelMax is greater than a set value of threshold then it will call (Old Script that was removed for the new DictationScriptGeneral) dictationScript.startDitection, Else it will call dictationScript.stopDitection in 2 seconds
+    /// NOTE: **This method is rendered useless since we removed the DictationScript for the new DictationScriptGeneral. The old DictationScript used a built in Speech to Text recognizer
+    /// that only worked for english. Now both english and german is built into the DictationScriptGeneral using Microsoft Azure for Speech to Text. Add into the commented areas if you
+    /// to use the microphone filtering aspect of the MicInput class**.
     /// </summary>
     void Update()
     {
@@ -76,14 +79,14 @@ public class MicInput : MonoBehaviour
         MicLoudness = LevelMax();
         if (MicLoudness > thre) {
             Debug.LogFormat("Starting{0}", MicLoudness);
-            dictationScript.startDitection();
+            // You can place a script here to "Start Detection" of the microphone if you want to utilize the microphone filtering that has been built into the MicInput class
             time = 0;
         }
         else
         {
             time +=Time.deltaTime;
             if (time > 2) {
-                dictationScript.stopDitection();
+                // You can place a script here to "Stop Detection" of the microphone if you want to utilize the microphone filtering that has been built into the MicInput class
             }
         }
     }
