@@ -33,7 +33,7 @@ public class DictationScriptGeneral : MonoBehaviour
     public async void initSession()
     {
         Debug.Log("Speech Session Initiallized");
-        var config = SpeechConfig.FromSubscription("01bda76b993149bba6946a9fdb1703fd", "canadacentral"); //Subscription Key and Rigion.
+        var config = SpeechConfig.FromSubscription("9bec7db1726844678698d2fe0dae2729", "westus"); //Subscription Key and Rigion.
         config.SpeechRecognitionLanguage = Language; //Language.
         // Make sure to dispose the recognizer after use!
         using (var recognizer = new SpeechRecognizer(config))

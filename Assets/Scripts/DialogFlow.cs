@@ -24,7 +24,7 @@ public class DialogFlow : MonoBehaviour {
 
     // to switch between German and English, default English
     // English token:
-    public static string ACCESS_TOKEN = "8b268a4934ed4e96a4c6bb32e39b92d9";
+    public static string ACCESS_TOKEN = "501118984d85435cbc72f32560dee65c";
     // German token:
     //private static string ACCESS_TOKEN = "26d751367f9247a3adf0e6040e78b81f";
     public static bool isEnglish = true;
