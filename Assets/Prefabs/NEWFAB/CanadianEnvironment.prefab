@@ -186,11 +186,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4413307951399100023}
     m_Modifications:
-    - target: {fileID: 407199502821953877, guid: 41d20b6d5289c414a9782e1706a08266,
-        type: 3}
-      propertyPath: m_Name
-      value: SpeechRecog
-      objectReference: {fileID: 0}
     - target: {fileID: 407199502821953883, guid: 41d20b6d5289c414a9782e1706a08266,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -246,6 +241,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 407199502821953877, guid: 41d20b6d5289c414a9782e1706a08266,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeechRecog
+      objectReference: {fileID: 0}
     - target: {fileID: 407199502821953876, guid: 41d20b6d5289c414a9782e1706a08266,
         type: 3}
       propertyPath: SentButton
@@ -261,7 +261,13 @@ PrefabInstance:
       propertyPath: m_condidence
       value: 
       objectReference: {fileID: 6790684377624606621}
-    m_RemovedComponents: []
+    - target: {fileID: 407199502821953882, guid: 41d20b6d5289c414a9782e1706a08266,
+        type: 3}
+      propertyPath: dictationScript
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 407199502821953876, guid: 41d20b6d5289c414a9782e1706a08266, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 41d20b6d5289c414a9782e1706a08266, type: 3}
 --- !u!4 &36429561076898030 stripped
 Transform:
@@ -1380,11 +1386,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4413307951399100023}
     m_Modifications:
-    - target: {fileID: 193607166862494745, guid: 4fb69f0ecae003f4498906d691843ea6,
-        type: 3}
-      propertyPath: m_Name
-      value: Shelf Stuff
-      objectReference: {fileID: 0}
     - target: {fileID: 193607166862494726, guid: 4fb69f0ecae003f4498906d691843ea6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1439,6 +1440,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 193607166862494745, guid: 4fb69f0ecae003f4498906d691843ea6,
+        type: 3}
+      propertyPath: m_Name
+      value: Shelf Stuff
       objectReference: {fileID: 0}
     - target: {fileID: 1144288979395860728, guid: 4fb69f0ecae003f4498906d691843ea6,
         type: 3}
@@ -1671,6 +1677,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4413307951399100023}
     m_Modifications:
+    - target: {fileID: 2178077765126771329, guid: 8cbf2b271fd769a48b1f2bb419a94256,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178077765126771329, guid: 8cbf2b271fd769a48b1f2bb419a94256,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178077765126771332, guid: 8cbf2b271fd769a48b1f2bb419a94256,
+        type: 3}
+      propertyPath: m_Name
+      value: remy@Idle
+      objectReference: {fileID: 0}
     - target: {fileID: 2909694756870693015, guid: 8cbf2b271fd769a48b1f2bb419a94256,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1740,21 +1761,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 41.95575
-      objectReference: {fileID: 0}
-    - target: {fileID: 2178077765126771329, guid: 8cbf2b271fd769a48b1f2bb419a94256,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2178077765126771329, guid: 8cbf2b271fd769a48b1f2bb419a94256,
-        type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2178077765126771332, guid: 8cbf2b271fd769a48b1f2bb419a94256,
-        type: 3}
-      propertyPath: m_Name
-      value: remy@Idle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cbf2b271fd769a48b1f2bb419a94256, type: 3}
