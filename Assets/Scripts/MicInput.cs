@@ -11,7 +11,6 @@ public class MicInput : MonoBehaviour
 
     public float MicLoudness;
     public float thre;
-    public DictationScript dictationScript;
     public int _sampleWindow = 128;
     public AudioClip _clipRecord;               // = AudioClip.Create("MySinusoid", 44100 * 2, 1, 44100, true);
     private string _device;
