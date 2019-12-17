@@ -6,15 +6,16 @@ using UnityEngine.Windows.Speech;
 using Microsoft.CognitiveServices.Speech;
 
 
+/// <summary>
+/// DictationScriptGeneral contains methods to run the communication with Microsoft Azure Speech to Text
+/// </summary>
 public class DictationScriptGeneral : MonoBehaviour
 {
     [SerializeField]
     private Button SentButton;
-    //private Text m_Hypotheses;
 
     [SerializeField]
     private InputField m_Recognitions;
-
 
     private object threadLocker = new object();
     private bool waitingForReco;
@@ -25,11 +26,19 @@ public class DictationScriptGeneral : MonoBehaviour
     public int Loudness;
     public string Language;
 
+    /// <summary>
+    /// Unity Constructor that calls initSession()
+    /// </summary>
     void Start()
     {
         initSession();
     }
-
+    
+    /// <summary>
+    /// initSession is in charge of communication with Microsoft Azure Speech to Text. This method contains the subscription key, region, and language.
+    /// Make sure you are using the correct key and region if you are running into issues with chatbot not working. Uses lock to maintain ensure that multiple
+    /// threads do not access mutually exclusive variables at the same time. 
+    /// </summary>
     public async void initSession()
     {
         Debug.Log("Speech Session Initiallized");
@@ -85,16 +94,12 @@ public class DictationScriptGeneral : MonoBehaviour
 
 
     }
-
+    
+    /// <summary>
+    /// Unity Update function that will call initSession again if there is any audio recognition and a message that is not NULL
+    /// </summary>
     void Update()
     {
-#if PLATFORM_ANDROID
-        if (!micPermissionGranted && Permission.HasUserAuthorizedPermission(Permission.Microphone))
-        {
-            micPermissionGranted = true;
-            message = "Click button to recognize speech";
-        }
-#endif
 
         lock (threadLocker)
         {

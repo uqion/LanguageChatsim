@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// The MicInput class contains a few methods for controlling the recording of the microphone, converting in microphone data to audio data,and filtering of the microphone using the threshold variable
+/// </summary>
 public class MicInput : MonoBehaviour
 {
 
@@ -9,13 +13,13 @@ public class MicInput : MonoBehaviour
     public float thre;
     public DictationScript dictationScript;
     public int _sampleWindow = 128;
-    public AudioClip _clipRecord;// = AudioClip.Create("MySinusoid", 44100 * 2, 1, 44100, true);
+    public AudioClip _clipRecord;               // = AudioClip.Create("MySinusoid", 44100 * 2, 1, 44100, true);
     private string _device;
     private float time = 0;
     private bool _isInitialized;
 
     /// <summary>
-    /// Unity initialization function that will set MicLoudness to zero
+    /// Unity Constructor that will set MicLoudness to zero
     /// </summary>
     void start() {
         MicLoudness = 0f;
