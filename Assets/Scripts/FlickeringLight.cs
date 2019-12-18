@@ -17,16 +17,25 @@ public class FlickeringLight : MonoBehaviour {
     private Color originalColor;
     private Light light;
 
-    // Store the original color
+    /// <summary>
+    /// Stores the original color
+    /// </summary>
     void Start () {
         light = GetComponent<Light>();
         originalColor = light.color;
     }
 
+    /// <summary>
+    /// Updates the color of the light and the brightness
+    /// </summary>
     void Update () {
         light.color = originalColor * (EvalWave());
     }
 
+    /// <summary>
+    /// Contains different types of waveforms
+    /// </summary>
+    /// <returns></returns>
     float EvalWave () {
         float x = (Time.time + phase) * frequency;
         float y ;
