@@ -21,22 +21,25 @@ public class DialogFlow : MonoBehaviour {
     private ApiAiUnity apiAiUnity;
     public Button sendButton;
     public SpeechManager speech;
+    public static bool isEnglish = true;
 
-    // to switch between German and English, default English
     // English token:
     public static string ACCESS_TOKEN = "501118984d85435cbc72f32560dee65c";
     // German token:
     //private static string ACCESS_TOKEN = "26d751367f9247a3adf0e6040e78b81f";
-    public static bool isEnglish = true;
 
-
-
+    /// <summary>
+    /// Initializes a new instance of the JsonSerializerSettings class
+    /// </summary>
     private readonly JsonSerializerSettings jsonSettings = new JsonSerializerSettings
     {
         NullValueHandling = NullValueHandling.Ignore,
     };
 
-    // Use this for initialization
+    /// <summary>
+    /// Unity Constructor that does the following: Checks Access to Microphone, and Initializes a new instance of ApiAiUnity
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Start()
     {
         // check access to the Microphone
@@ -51,7 +54,6 @@ public class DialogFlow : MonoBehaviour {
             return true;
         };
 
-        // Commenting out for now since the scenario for when you ask for the wrong waterbottle doesnt seem to work. Might be an error due to us having the incorrect ACCESS_TOKEN
         AIConfiguration config;
         if (isEnglish)
         {
@@ -61,7 +63,7 @@ public class DialogFlow : MonoBehaviour {
             config = new AIConfiguration(ACCESS_TOKEN, SupportedLanguage.German);
         }
         
-
+        // Initialize a new instance of ApiAiUnity
         apiAiUnity = new ApiAiUnity();
         apiAiUnity.Initialize(config);
 
@@ -69,9 +71,14 @@ public class DialogFlow : MonoBehaviour {
         apiAiUnity.OnResult += HandleOnResult;
     }
 
-    void HandleOnResult(object sender, AIResponseEventArgs e)
+    /// <summary>
+    /// HandleOnResult checks if the response from Dialogflow is NULL or !NULL
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="arg1"></param>
+    void HandleOnResult(object sender, AIResponseEventArgs arg1)
     {
-        var aiResponse = e.Response;
+        var aiResponse = arg1.Response;
         if (aiResponse != null)
         {
             // get data from aiResponse
@@ -82,6 +89,11 @@ public class DialogFlow : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// SendText is passed a string that is the response from DialogFlow Chatbot. This string decapsulated to remove all the formatting from the JSON message.
+    /// The string is then sent to be converted to audio using the Microsoft Azure Text to Speech service.
+    /// </summary>
+    /// <param name="s"></param>
     public void SendText(string s) {
         AIResponse response = apiAiUnity.TextRequest(s);
 
@@ -91,12 +103,8 @@ public class DialogFlow : MonoBehaviour {
             var outText = JsonConvert.SerializeObject(response, jsonSettings);
             Debug.Log("Result: " + outText);
             outText = response.Result.Fulfillment.Speech;
-
-           
-
             responseText.text = outText;
             SpeechPlayback();
-            //ResponseTextParser();
         }
         else
         {
@@ -104,7 +112,9 @@ public class DialogFlow : MonoBehaviour {
         }
     }
 
-
+    /// <summary>
+    /// Not sure what this method does tbh... I dont think it does anything though.
+    /// </summary>
     public void SendText()
     {
 
@@ -113,11 +123,12 @@ public class DialogFlow : MonoBehaviour {
         SendText(text);
     }
 
-
-    //ResponseTextParser is a module that will string manipulate the global variable responseText.
-    //The objective of this module is to split responseText into only the useful data from
-    //the packet that we receive from DialogFlow. The useful information we are looking for are
-    //intents, entities, fulfillments.
+    /// <summary>
+    /// ResponseTextParser is a module that will string manipulate the global variable responseText.
+    /// The objective of this module is to split responseText into only the useful data from
+    /// the packet that we receive from DialogFlow. The useful information we are looking for are
+    /// intents, entities, fulfillments.
+    /// </summary>
     void ResponseTextParser()
     {
 
@@ -171,17 +182,27 @@ public class DialogFlow : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// HandleOnError outputs a Debug.Log in the console
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     void HandleOnError(object sender, AIErrorEventArgs e)
     {
         Debug.LogException(e.Exception);
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Unity Update method that isn't used in the DialogFlow class
+    /// </summary>
     void Update () {
 		
 	}
 
 
+    /// <summary>
+    /// SpeechPlayback calls SpeakWithRESTAPI if the Speech Manager detects speech
+    /// </summary>
     public void SpeechPlayback()
     {
         if (speech.isReady)
