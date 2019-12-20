@@ -15,7 +15,7 @@ TBD
 
 ### Versioning
 
-- Unity 2019.11.2f1
+- Unity 2019.2.11f1
 
 ### Team
 Current contributors to the project:

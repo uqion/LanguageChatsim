@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Recognitions: {fileID: 492354563}
   Loudness: 1
   Language: de-de
+  dispatcher: {fileID: 0}
 --- !u!114 &492354563 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1411457758163195700, guid: 7055acfb78174dd4390f8a8d5b6bfad9,
@@ -179,6 +180,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1059981455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059981457}
+  - component: {fileID: 1059981456}
+  m_Layer: 0
+  m_Name: Dispatcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1059981456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059981455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae4410ec9850d340b1098c22ab336e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1059981457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059981455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -709.76526, y: 49.465687, z: 199.83452}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1214382742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1482225792693138270, guid: eb545e5a6c5323441b4471e37ace513f,
@@ -303,6 +347,7 @@ MonoBehaviour:
   m_Recognitions: {fileID: 807226384}
   Loudness: 1
   Language: en-US
+  dispatcher: {fileID: 1059981456}
 --- !u!1001 &242239963701099473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -984,6 +1029,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SpeechServiceAPIKey
       value: 01bda76b993149bba6946a9fdb1703fd
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011376739429873038, guid: 44e96cb1706c6984b9f824c0f615de69,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7841799767718815981, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}

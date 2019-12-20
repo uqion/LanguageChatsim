@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
 using Microsoft.CognitiveServices.Speech;
+using System.Threading.Tasks;
 
 /// <summary>
 /// DictationScriptGeneral contains methods to run the communication with Microsoft Azure Speech to Text
@@ -24,20 +25,22 @@ public class DictationScriptGeneral : MonoBehaviour
     private SpeechRecognizer r;
     public int Loudness;
     public string Language;
+    public Dispatcher dispatcher;
 
     /// <summary>
     /// Unity Constructor that calls initSession()
     /// </summary>
     void Start()
     {
-        initSession();
+        RecognitionRoutine();
     }
-    
+
     /// <summary>
     /// initSession is in charge of communication with Microsoft Azure Speech to Text. This method contains the subscription key, region, and language.
     /// Make sure you are using the correct key and region if you are running into issues with chatbot not working. Uses lock to maintain ensure that multiple
     /// threads do not access mutually exclusive variables at the same time. 
     /// </summary>
+    /*
     public async void initSession()
     {
         Debug.Log("Speech Session Initiallized");
@@ -89,40 +92,49 @@ public class DictationScriptGeneral : MonoBehaviour
                 waitingForReco = false;
             }
         }
+    }
+    */
 
+    private async void RecognitionRoutine()
+    {
+        var config = SpeechConfig.FromSubscription("0cc4c3c202794959b90ad85f311d3a4d", "westus"); //Subscription Key and Rigion.
+        config.SpeechRecognitionLanguage = Language; //Language.
+        using (var recognizer = new SpeechRecognizer(config))
+        {
+            r = recognizer;
+            recognizer.Recognized += Recognizer_Recognized;
+            recognizer.Canceled += Recognizer_Canceled;
+            var result = await recognizer.RecognizeOnceAsync().ConfigureAwait(true);
+            recognizer.Dispose();
+        }
+    }
 
+    private void Recognizer_Canceled(object sender, SpeechRecognitionCanceledEventArgs e)
+    {
+        dispatcher.AddTask(() =>
+        {
+            Debug.Log("Canceled recognition: " + e.Result);
+            RecognitionRoutine();
+        });
 
     }
-    
-    /// <summary>
-    /// Unity Update function that will call initSession again if there is any audio recognition and a message that is not NULL
-    /// </summary>
-    void Update()
+
+    private void Recognizer_Recognized(object sender, SpeechRecognitionEventArgs e)
     {
-
-        lock (threadLocker)
+        dispatcher.AddTask(() =>
         {
-            if (m_Recognitions != null && message!=null)
+            switch (e.Result.Reason)
             {
-                if (changed) //Only Activated When the Message has changed.
-                {
-                    Debug.Log(message);
-                    if (message == "")
-                    {
-                        m_Recognitions.text = "";
-                        changed = false;
-                        initSession(); //might move to TTS when the Speech stops, start Recognition.
-                    } else
-                    {
-                        m_Recognitions.text = message;
-
-                        SentButton.GetComponent<DialogFlow>().SendText(message);
-
-                        changed = false;
-                        initSession(); //might move to TTS when the Speech stops, start Recognition.
-                    }
-                }
+                case ResultReason.RecognizedSpeech:
+                    Debug.Log(e.Result);
+                    SentButton.GetComponent<DialogFlow>().SendText(e.Result.Text);
+                    break;
+                default:
+                    Debug.Log("Recognizing failed: " + e.Result);
+                    break;
             }
-        }
+            m_Recognitions.text = e.Result.Text;
+            RecognitionRoutine();
+        });
     }
 }
