@@ -6,12 +6,25 @@ This repository hosts the Language Chatsim project which is a collaborative effo
 
 TBD
 
+## External Assets
+
+### Included
+
+| Asset | | Purpose |
+| ------ | | ------ |
+| Vive Input Utility (gotten from Unity Asset Store) | | Used for input from headset (in this project usage is basic, limited to camera rig) |
+| SALSA Lip Sync (gotten from Unity Asset Store) | | Used for generated facial animations in the clerks |
+| Dialogflow (API.AI) | | API.AI is a unity package for interface with google dialogflow, though it will be deprecated march 31st 2020. To migrate to dialogflow v2, follow this [tutorial](https://www.youtube.com/watch?v=5NpuJ-YMJt8&list=PLDpH9QD5z6ch708eGopPYZkNyaClSdsLl) |
+| Acorn Bringer Assets gotten from Unity Asset Store | | Used for nature elements in a couple of the project scenes | 
+| [Watson](https://github.com/watson-developer-cloud/unity-sdk) (and IBMSdkCore) | | In trial to see if we will use it for text-to-speech |
+
 ### Built With
 
 - Unity 
 - API.AI Unity SDK
+- Azure Speech-to-Text service
+- AcornBringer nature low poly assets
 - Food & Grocery Items - Low Poly
-
 
 ### Versioning
 

@@ -12,6 +12,17 @@ PluginImporter:
   validateReferences: 1
   platformData:
   - first:
+      '': Any
+    second:
+      enabled: 0
+      settings:
+        Exclude Editor: 1
+        Exclude Linux64: 1
+        Exclude OSXUniversal: 1
+        Exclude Win: 1
+        Exclude Win64: 1
+        Exclude WindowsStoreApps: 0
+  - first:
       '': Linux
     second:
       enabled: 0
@@ -83,6 +94,12 @@ PluginImporter:
       settings:
         CPU: AnyCPU
   - first:
+      Standalone: OSXUniversal
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  - first:
       Standalone: Win
     second:
       enabled: 0
@@ -105,10 +122,10 @@ PluginImporter:
       enabled: 1
       settings:
         CPU: AnyCPU
-        DontProcess: False
-        PlaceholderPath: Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll
+        DontProcess: false
+        PlaceholderPath: Assets/IBMSdkCore/ThirdParty/JsonDotNet/Standalone/Newtonsoft.Json.dll
         SDK: AnySDK
-        ScriptingBackend: Il2Cpp
+        ScriptingBackend: DotNet
   - first:
       iPhone: iOS
     second:
