@@ -24,6 +24,11 @@ public class SceneSwitchManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// This functionality was used when we had a german agent, The project description has now changed
+    /// and according to my (Dante) understanding, we will no longer be doing german in this iteration
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         // if enter and tag is German Ring, go to German Scene, else go to English Scene
@@ -32,9 +37,9 @@ public class SceneSwitchManager : MonoBehaviour
             Debug.Log("entered German Ring");
             MainMenu.SetActive(false);
             GermanScene.SetActive(true);
-
+            /*
             DialogFlow.isEnglish = false;
-            DialogFlow.ACCESS_TOKEN = "a9dc57bef27d4c07bda7c26676417a9e";
+            DialogFlow.ACCESS_TOKEN = "a9dc57bef27d4c07bda7c26676417a9e";*/
             //a9dc57bef27d4c07bda7c26676417a9e
             // set menu to be false, activate German Content
         }
@@ -43,9 +48,9 @@ public class SceneSwitchManager : MonoBehaviour
             Debug.Log("entered English Ring");
             MainMenu.SetActive(false);
             EnglishScene.SetActive(true);
-
+            /*
             DialogFlow.isEnglish = true;
-            DialogFlow.ACCESS_TOKEN = "8b268a4934ed4e96a4c6bb32e39b92d9";
+            DialogFlow.ACCESS_TOKEN = "8b268a4934ed4e96a4c6bb32e39b92d9";*/
             //8b268a4934ed4e96a4c6bb32e39b92d9
         }
     }
