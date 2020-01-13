@@ -38,6 +38,8 @@ namespace IBM.Watsson.Examples
         private string _serviceUrl;
         [Tooltip("Text field to display the results of streaming.")]
         public Text ResultsField;
+        [Tooltip("Agent Script")]
+        public Button SentButton;
         [Header("IAM Authentication")]
         [Tooltip("The IAM apikey.")]
         [SerializeField]
@@ -102,7 +104,7 @@ namespace IBM.Watsson.Examples
                     _service.EnableTimestamps = true;
                     _service.SilenceThreshold = 0.01f;
                     _service.MaxAlternatives = 1;
-                    _service.EnableInterimResults = true;
+                    _service.EnableInterimResults = false;
                     _service.OnError = OnError;
                     _service.InactivityTimeout = -1;
                     _service.ProfanityFilter = false;

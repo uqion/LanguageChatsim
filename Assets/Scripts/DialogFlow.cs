@@ -95,7 +95,11 @@ public class DialogFlow : MonoBehaviour {
     /// </summary>
     /// <param name="s"></param>
     public void SendText(string s) {
-        AIResponse response = apiAiUnity.TextRequest(s);
+        AIResponse response = null;
+        if(s != null)
+        {
+            response = apiAiUnity.TextRequest(s);
+        }
 
         if (response != null)
         {

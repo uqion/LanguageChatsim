@@ -97,7 +97,7 @@ public class DictationScriptGeneral : MonoBehaviour
 
     private async void RecognitionRoutine()
     {
-        var config = SpeechConfig.FromSubscription("0cc4c3c202794959b90ad85f311d3a4d", "westus"); //Subscription Key and Rigion.
+        var config = SpeechConfig.FromSubscription("0cc4c3c202794959b90ad85f311d3a4d", "westus"); //Subscription Key and Region.
         config.SpeechRecognitionLanguage = Language; //Language.
         using (var recognizer = new SpeechRecognizer(config))
         {
@@ -127,13 +127,13 @@ public class DictationScriptGeneral : MonoBehaviour
             {
                 case ResultReason.RecognizedSpeech:
                     Debug.Log(e.Result);
-                    SentButton.GetComponent<DialogFlow>().SendText(e.Result.Text);
+                    m_Recognitions.text = e.Result.Text;
+                    SentButton.GetComponent<DialogFlowApiScript>().SendText(e.Result.Text);
                     break;
                 default:
                     Debug.Log("Recognizing failed: " + e.Result);
                     break;
             }
-            m_Recognitions.text = e.Result.Text;
             RecognitionRoutine();
         });
     }
