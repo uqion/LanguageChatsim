@@ -33,11 +33,13 @@ TBD
 ### Team
 Current contributors to the project:
 
-- Matthew Davison - Project Coordinator
-- Gary Zhang - Developer
-- John Song - Developer
-- Alice Tang - Designer
-- Faye Yu - Designer
+- Sandy Co - Design Lead
+-Julia Chu - Tech Lead
+- Dante Cerron - Software Engineer 
+- W Chung - Animations Lead
+- Luke Nguyen - Developer
+-Jazica Chan - Designer
+- Felicia Chan - Designer
 
 ### Acknowledgements
 - Shane Nilsson - UBC EML Coordinator
