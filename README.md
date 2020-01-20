@@ -34,7 +34,7 @@ TBD
 Current contributors to the project:
 
 - Sandy Co - Design Lead
--Julia Chu - Tech Lead
+ -Julia Chu - Tech Lead
 - Dante Cerron - Software Engineer 
 - W Chung - Animations Lead
 - Luke Nguyen - Developer
