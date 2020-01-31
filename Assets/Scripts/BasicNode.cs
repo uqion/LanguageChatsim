@@ -6,16 +6,18 @@ using Hexiled.SoHi;
 public class BasicNode : Node
 {
     [SerializeField]
-    public string Response;
+    string intent; 
     [SerializeField]
-    TimelineController TimelineController;
+    string response;
     [SerializeField]
-    public int taid;
-    
+    int taid;
 
-    public void Play()
+    public void Play(TimelineController timelineController)
     {
-        TimelineController.PLayFromTimelines(taid);
+        timelineController.PLayFromTimelines(taid);
     }
+
+
+
 
 }

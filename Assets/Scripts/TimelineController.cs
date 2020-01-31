@@ -12,7 +12,7 @@ public class TimelineController : ScriptableObject
     public List<TimelineAsset> timelines;
 
     public void Play()
-    {
+    {//tts
         playableDirector.Play();
         }
     public void PLayFromTimelines(int index)

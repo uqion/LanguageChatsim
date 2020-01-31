@@ -14,16 +14,12 @@ namespace Hexiled.SoHi
 		[SerializeField]
 		Node root;
 		
-		public Node Root
+		public Node getRoot()
 		{
-			get
-			{
+			
 				return root;
-			}
-			protected set
-			{
-				root = value;
-			}
+			
+			
 		}
 		
 	}
