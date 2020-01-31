@@ -20,7 +20,7 @@ MonoBehaviour:
     m_Framerate: 60
   m_DurationMode: 0
   m_MarkerTrack: {fileID: 6134171790704121128}
---- !u!114 &5775883792957554645
+--- !u!114 &5515931581826178861
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32,7 +32,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: -3533308420952563818, guid: c82d167807bf6ed409f13287e1ab0a1d, type: 3}
+  m_Clip: {fileID: -3533308420952563818, guid: af9e96269612d98408ce4e0908a89c0a, type: 3}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -89,7 +89,7 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: 5775883792957554645}
+    m_Asset: {fileID: 5515931581826178861}
     m_Duration: 2.0416666666666665
     m_TimeScale: 1
     m_ParentTrack: {fileID: 6795023060027029416}

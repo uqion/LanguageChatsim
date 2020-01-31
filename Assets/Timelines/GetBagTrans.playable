@@ -44,7 +44,7 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: 8080085814261436651}
+    m_Asset: {fileID: 3250175181381782602}
     m_Duration: 1
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2898626715659848016}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
---- !u!114 &8080085814261436651
+--- !u!114 &3250175181381782602
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7433158702393980182, guid: ba6d5e45222350448a288c683d3613df, type: 3}
+  m_Clip: {fileID: 7433158702393980182, guid: 3ae63ac64d7897f41a1da11e3aba8434, type: 3}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
