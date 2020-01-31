@@ -62,7 +62,7 @@ public class SpeechManager : MonoBehaviour {
 
         if (audioSource == null)
         {
-            audioSource = GetComponent<AudioSource>();
+            audioSource = GetComponentInChildren<AudioSource>();
         }
     }
 
@@ -160,10 +160,12 @@ public class SpeechManager : MonoBehaviour {
                 var clip = ToClip("Speech", unityData, sampleCount, frequency);
 
                 // Set the source on the audio clip
+                Debug.Log("CONVERTED TO AUDIO CLIP: "+ Time.realtimeSinceStartup);
                 audioSource.clip = clip;
 
                 Debug.Log($"Trigger playback of audio clip on AudioSource.");
                 // Play audio
+                Debug.Log("PLAYING AUDIO CLIP: " + Time.realtimeSinceStartup);
                 audioSource.Play();
             }
             catch (Exception ex)
