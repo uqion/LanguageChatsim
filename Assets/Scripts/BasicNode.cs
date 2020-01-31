@@ -14,10 +14,6 @@ public class BasicNode : Node
 
     public void Play(TimelineController timelineController)
     {
-        timelineController.PLayFromTimelines(taid);
+        timelineController.Play(taid, response);
     }
-
-
-
-
 }

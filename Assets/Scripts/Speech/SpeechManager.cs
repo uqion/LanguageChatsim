@@ -451,7 +451,7 @@ public class SpeechManager : MonoBehaviour {
     }
 
     // Speech synthesis to pull audio output stream.
-    public async Task SpeakWithSDKPlugin(string message)
+    public async Task<AudioClip> SpeakWithSDKPlugin(string message)
     {
         Synthesize cortana = new Synthesize();
 
@@ -488,7 +488,7 @@ public class SpeechManager : MonoBehaviour {
 
                         Debug.Log($"Trigger playback of audio clip on AudioSource.");
                         // Play audio
-                        audioSource.Play();
+                        return clip;
                     }
                     else if (result.Reason == ResultReason.Canceled)
                     {
@@ -505,6 +505,7 @@ public class SpeechManager : MonoBehaviour {
                 }
             }
         }
+        return null;
     }
 
 }

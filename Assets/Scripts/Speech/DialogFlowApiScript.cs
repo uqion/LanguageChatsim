@@ -18,7 +18,7 @@ public class DialogFlowApiScript : MonoBehaviour
     //Once a response is received, the response text will be displayed in this text field
     public UnityEngine.UI.Text responseText;
 
-    public SpeechManager speech;
+    public Tree_Container tree;
 
     // Use this for initialization
     void Start()
@@ -98,7 +98,7 @@ public class DialogFlowApiScript : MonoBehaviour
             ResponseBody content = (ResponseBody)JsonUtility.FromJson<ResponseBody>(result);
             responseText.text = content.queryResult.fulfillmentText;
             Debug.Log("CALLING TTS: " + Time.realtimeSinceStartup);
-            speech.SpeakWithRESTAPI(content.queryResult.fulfillmentText);
+            tree.playFeedback(content.queryResult);
         }
     }
 
