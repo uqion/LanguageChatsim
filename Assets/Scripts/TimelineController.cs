@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline; 
-[CreateAssetMenu]
-public class TimelineController : ScriptableObject
+//[CreateAssetMenu]
+public class TimelineController : MonoBehaviour
 {
-    [SerializeField]
     public PlayableDirector playableDirector;
-    [SerializeField]
     public List<TimelineAsset> timelines;
 
     public void Play()
     {//tts
-        playableDirector.Play();
+        /*
+        playableDirector.playableAsset = timelines[]
+        playableDirector.Play();*/
         }
     public void PLayFromTimelines(int index)
     {
@@ -26,7 +26,7 @@ public class TimelineController : ScriptableObject
         else
         {
             selectedAsset = timelines[index];
-            playableDirector.Play(selectedAsset);
+            //playableDirector.Play(selectedAsset);
         }
 
     }
