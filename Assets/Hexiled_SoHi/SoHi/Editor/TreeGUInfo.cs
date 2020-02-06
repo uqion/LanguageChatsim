@@ -38,9 +38,10 @@ public class TreeGUInfo {
 		//If we want the whole list of nodes, we still need to traverse the tree recursively
 	public void getAllNodes(Node node){
 		allNodes = new List<Node> ();
-		getAllNodesRecursive (node);  //Start the recursive call
+		getAllNodesRecursive (node);  //recursive call** 
 	}
 
+	
 	public void getAllNodesRecursive(Node node){
 		allNodes.Add (node);
 		for (int i = 0; i < node.children.Count; i++) {

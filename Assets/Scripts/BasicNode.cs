@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Hexiled.SoHi;
 [CreateAssetMenu]
+//This is the base node from which all annotated nodes inherit from
 public class BasicNode : Node
 {
     [SerializeField]

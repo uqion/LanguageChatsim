@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline; 
-//[CreateAssetMenu]
+//Communicates with SO_Hi tree nodes to match intent and orchestrate animations
+//Interfaces with SO_Hi Tree_Container script
 public class TimelineController : MonoBehaviour
 {
     public PlayableDirector playableDirector;
@@ -11,10 +12,10 @@ public class TimelineController : MonoBehaviour
     public SpeechManager speech;
     public AudioSource audioSource;
 
-    public void Play(int id)
-    {
-    }
 
+    //aggregated play function with audio and animations
+    //PARAM is taid passed from SO node, it is the index location of the timeline asset, string response to TTS
+    //TODO SALSA integration 
     public async void Play(int id, string response)
     {
         AudioClip clip = await speech.SpeakWithSDKPlugin(response);
@@ -22,7 +23,9 @@ public class TimelineController : MonoBehaviour
         audioSource.Play();
         PlayFromTimelines(id);
     }
-
+    
+    //Animations play method
+    //PARAM is taid passed from SO node, it is the index location of the timeline asset 
     public void PlayFromTimelines(int index)
     {
         TimelineAsset selectedAsset;

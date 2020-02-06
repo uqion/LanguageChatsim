@@ -13,15 +13,30 @@ namespace Hexiled.SoHi
 	{
 		[SerializeField]
 		Node root;
-		
+		private List<Node> allNodes;
+
 		public Node getRoot()
 		{
-			
-				return root;
-			
-			
+				return root;	
 		}
-		
+		public List<Node> getAll(Node node)
+		{
+			allNodes = new List<Node>();
+
+			getAllNodesRecursive(node);  //recursive call** 
+			return allNodes;
+		}
+		//Helper method to getAll to recursively search tree
+		public void getAllNodesRecursive(Node node)
+		{
+			allNodes.Add(node);
+			for (int i = 0; i < node.children.Count; i++)
+			{
+				Node child = node.children[i];
+				getAllNodesRecursive(child);
+			}
+		}
+
 	}
 }
 

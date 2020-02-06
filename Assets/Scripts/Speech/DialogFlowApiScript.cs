@@ -17,7 +17,7 @@ public class DialogFlowApiScript : MonoBehaviour
     [Tooltip("Once a response is received, the response text will be displayed in this text field")]
     //Once a response is received, the response text will be displayed in this text field
     public UnityEngine.UI.Text responseText;
-
+    //Interrupts call to direct business logic to SO_Hi tree
     public Tree_Container tree;
 
     // Use this for initialization
