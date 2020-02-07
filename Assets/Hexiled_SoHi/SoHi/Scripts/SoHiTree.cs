@@ -20,7 +20,7 @@ namespace Hexiled.SoHi
 				return root;	
 		}
 	
-		//recursively traverses tree to get a list of nodes 
+		//recursively traverses tree to get a list of all of tree's nodes 
 		public List<Node> GetAllNodesRecursive(Node node)
 		{
 			
