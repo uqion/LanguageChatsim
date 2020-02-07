@@ -6,8 +6,9 @@ using UnityEngine.Timeline;
 //Communicates with SO_Hi tree nodes to match intent and orchestrate animations
 //Interfaces with SO_Hi Tree_Container script
 public class TimelineController : MonoBehaviour
-{
+{   [SerializeField]
     public PlayableDirector playableDirector;
+    [SerializeField]
     public List<TimelineAsset> timelines;
     public SpeechManager speech;
     public AudioSource audioSource;

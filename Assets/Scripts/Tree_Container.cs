@@ -12,11 +12,12 @@ public class Tree_Container : MonoBehaviour
     TimelineController timelineController;
     private List<Node> allNodes = new List<Node>();
     private BasicNode node;
+  
 
     // Start is called before the first frame update
     void Start()
     {
-        node = (BasicNode)soHiTree.getRoot();
+        node = (BasicNode)soHiTree.GetRoot();
         node.Play(timelineController);
     }
 
@@ -25,12 +26,19 @@ public class Tree_Container : MonoBehaviour
     {
         
     }
-
-    public Node matchIntent(QueryResult query)
+    public void PlayFeedback()
     {
-        BasicNode active = (BasicNode)new Node(); 
-        allNodes = soHiTree.getAll(node);
-        return active; 
-        
+       // allNodes = soHiTree.GetAll(node);
+        //TODO: ASYNC FUNCTION TO PLAY child nodes 
+   
+    }
+   
+    public void ReturnQuery(QueryResult query)
+    {
+        string intent = query.intent.displayName; 
+        BasicNode active = (BasicNode)ScriptableObject.CreateInstance<Node>();
+        Node root = soHiTree.GetRoot();
+        active = (BasicNode)soHiTree.MatchIntent(intent,root);
+        active.Play(timelineController); 
     }
 }

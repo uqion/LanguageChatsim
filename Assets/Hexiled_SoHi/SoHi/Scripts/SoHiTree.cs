@@ -15,26 +15,37 @@ namespace Hexiled.SoHi
 		Node root;
 		private List<Node> allNodes;
 
-		public Node getRoot()
+		public Node GetRoot()
 		{
 				return root;	
 		}
-		public List<Node> getAll(Node node)
+	
+		//recursively traverses tree to get a list of nodes 
+		public List<Node> GetAllNodesRecursive(Node node)
 		{
-			allNodes = new List<Node>();
-
-			getAllNodesRecursive(node);  //recursive call** 
-			return allNodes;
-		}
-		//Helper method to getAll to recursively search tree
-		public void getAllNodesRecursive(Node node)
-		{
+			
 			allNodes.Add(node);
 			for (int i = 0; i < node.children.Count; i++)
 			{
 				Node child = node.children[i];
-				getAllNodesRecursive(child);
+				GetAllNodesRecursive(child);
 			}
+			return allNodes;
+		}
+		//recursively traverses tree to match intent
+		public BasicNode MatchIntent(string intent, Node node)
+		{
+			BasicNode child = ScriptableObject.CreateInstance<BasicNode>();
+			for (int i = 0; i < node.children.Count; i++)
+			{
+				child = (BasicNode)node.children[i];
+				if (string.Compare(child.getIntent(), intent) == 0)
+				{
+					return child; 
+				}
+				MatchIntent(intent,child);
+			}
+			return child; 
 		}
 
 	}

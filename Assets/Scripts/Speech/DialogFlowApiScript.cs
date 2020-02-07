@@ -98,7 +98,7 @@ public class DialogFlowApiScript : MonoBehaviour
             ResponseBody content = (ResponseBody)JsonUtility.FromJson<ResponseBody>(result);
             responseText.text = content.queryResult.fulfillmentText;
             Debug.Log("CALLING TTS: " + Time.realtimeSinceStartup);
-            tree.playFeedback(content.queryResult);
+            tree.ReturnQuery(content.queryResult);
         }
     }
 

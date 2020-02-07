@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soHiTree: {fileID: 11400000, guid: 698c9076243ec8c49a53fe43ab0ee8e9, type: 2}
-  timelineController: {fileID: 0}
+  timelineController: {fileID: 11400000, guid: b549a97925e193345a2a198f83cd6fd9, type: 2}
 --- !u!1 &8995525976050974139
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,4 +17,8 @@ public class BasicNode : Node
     {
         timelineController.Play(taid, response);
     }
+    public string getIntent()
+    {
+        return intent; 
+    }
 }
