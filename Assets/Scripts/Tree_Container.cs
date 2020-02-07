@@ -29,7 +29,8 @@ public class Tree_Container : MonoBehaviour
     public void PlayFeedback()
     {
        // allNodes = soHiTree.GetAll(node);
-        //TODO: ASYNC FUNCTION TO PLAY child nodes 
+        //TODO: ASYNC FUNCTION TO PLAY child nodes for nodes without DIALOGFLOW TRIGGER
+        //Node to keep track of state, and see if next node needs triggering i.e. is it a DIALOGFLOW trigger or must the container trigger it? 
    
     }
    
