@@ -59,6 +59,8 @@ public class WatsonStreaming : MonoBehaviour
     private int _recordingBufferSize = 1;
     private int _recordingHZ = 22050;
 
+    public Text textBox;
+
     private SpeechToTextService _service;
 
     void Start()
@@ -215,6 +217,7 @@ public class WatsonStreaming : MonoBehaviour
                     Log.Debug("ExampleStreaming.OnRecognize()", text);
                     //TODO: use alts and confidence to extend behaviour into feedback/criticality
                     ResultsField.text = alt.transcript ;
+                    textBox.text = alt.transcript;
                     SentButton.GetComponent<DialogFlowApiScript>().SendText(alt.transcript);
                 }
 
