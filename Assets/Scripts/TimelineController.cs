@@ -17,6 +17,7 @@ public class TimelineController : MonoBehaviour
     //aggregated play function with audio and animations
     //PARAM is taid passed from SO node, it is the index location of the timeline asset, string response to TTS
     //TODO SALSA integration 
+    //NON AUDIO CLIPS
     public async void Play(int id, string response)
     {
         AudioClip clip = await speech.SpeakWithSDKPlugin(response);
@@ -24,7 +25,11 @@ public class TimelineController : MonoBehaviour
         audioSource.Play();
         PlayFromTimelines(id);
     }
-    
+    public void Play(int id)
+    {
+        PlayFromTimelines(id);
+    }
+
     //Animations play method
     //PARAM is taid passed from SO node, it is the index location of the timeline asset 
     public void PlayFromTimelines(int index)

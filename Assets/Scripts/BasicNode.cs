@@ -12,10 +12,17 @@ public class BasicNode : Node
     string response;
     [SerializeField]
     int taid;
-
+    //no audio
     public void Play(TimelineController timelineController)
     {
-        timelineController.Play(taid, response);
+        if (string.IsNullOrEmpty(response))
+        {
+            timelineController.Play(taid);
+        }
+        else
+        {
+            timelineController.Play(taid, response);
+        }
     }
     public string getIntent()
     {

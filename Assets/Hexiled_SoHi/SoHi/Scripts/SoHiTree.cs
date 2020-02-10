@@ -16,8 +16,9 @@ namespace Hexiled.SoHi
 		private List<Node> allNodes;
 
 		public Node GetRoot()
-		{
+		{		
 				return root;	
+
 		}
 	
 		//recursively traverses tree to get a list of all of tree's nodes 

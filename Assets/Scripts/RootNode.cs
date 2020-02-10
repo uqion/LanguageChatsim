@@ -8,5 +8,5 @@ using UnityEngine;
 //Greeting triggered by user proximity 
 public class RootNode : BasicNode
 {
-    
+    //
 }
