@@ -470,6 +470,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 242239963701099473}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1257393512 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3406127186652794120, guid: 44e96cb1706c6984b9f824c0f615de69,
+    type: 3}
+  m_PrefabInstance: {fileID: 8810381324548777307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776fe6f9d073fd74281e65e017a5ff5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1505477619
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,11 +557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2379777147870275224}
     m_Modifications:
-    - target: {fileID: 2916054243645331414, guid: 41d20b6d5289c414a9782e1706a08266,
-        type: 3}
-      propertyPath: m_Name
-      value: SpeechRecog
-      objectReference: {fileID: 0}
     - target: {fileID: 2916054243645331416, guid: 41d20b6d5289c414a9782e1706a08266,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -604,6 +611,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2916054243645331414, guid: 41d20b6d5289c414a9782e1706a08266,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeechRecog
       objectReference: {fileID: 0}
     - target: {fileID: 2951700108821420503, guid: 41d20b6d5289c414a9782e1706a08266,
         type: 3}
@@ -1482,8 +1494,13 @@ PrefabInstance:
     - target: {fileID: 6791261332453507862, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: ACCESS_TOKEN
-      value: ya29.c.Ko8BvAfeQ2HLMDv40YXLUVQ2Uk4UZdzB0IG04Nfw9GwOxalimVnEz_uGyk2mFltd7l_DjMy-_ChKBLGOeNhAdx-2pH4uT-u1FWso9zKEsDAa3qyAQ4vk-Q2Xz4QeKDm_9XbkAtfPq5wt_-dN9gQ1iiztOyR7m-YNoX5Oq-JBKMZJVeZm-HJ538AssbcdCN7j0CE
+      value: ya29.c.ya29.c.Ko8BvQfHITVSpxQNByIjRbb3ZoxIJhMQH65nmVTRMrc7uWtS1vN76oUd0KfblglnHPkmJCQJMlbc3g-C00xYFT7-eBl9_kvLxHqlAFdEf3BcAx6JRD14-FChIk1g6MwBUa1bHtKRUtEqqhpmImpSFgIBh0Cev_FAPPpzYnPJA5OjoK_emEjlszjKlAeycmgrKMg_uGyk2mFltd7l_DjMy-_ChKBLGOeNhAdx-2pH4uT-u1FWso9zKEsDAa3qyAQ4vk-Q2Xz4QeKDm_9XbkAtfPq5wt_-dN9gQ1iiztOyR7m-YNoX5Oq-JBKMZJVeZm-HJ538AssbcdCN7j0CE
       objectReference: {fileID: 0}
+    - target: {fileID: 6791261332453507862, guid: 44e96cb1706c6984b9f824c0f615de69,
+        type: 3}
+      propertyPath: tree
+      value: 
+      objectReference: {fileID: 1257393512}
     - target: {fileID: 437738032662792605, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: m_IsActive

@@ -48,8 +48,9 @@ namespace Hexiled.SoHi
 			}
 			return child; 
 		}
+        
+    }
 
-	}
 }
 
 	

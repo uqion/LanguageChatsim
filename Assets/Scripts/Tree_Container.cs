@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Hexiled.SoHi;
 using JsonData;
+using System.Linq;
 //Contains an instantiated SO_Hi tree; interface for Timeline Controller 
 public class Tree_Container : MonoBehaviour
 {
@@ -17,8 +18,8 @@ public class Tree_Container : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        node = (BasicNode)soHiTree.GetRoot();
-        node.Play(timelineController);
+       //node = (BasicNode)soHiTree.GetRoot();
+        //node.Play(timelineController);
     }
 
     // Update is called once per frame
@@ -26,19 +27,28 @@ public class Tree_Container : MonoBehaviour
     {
         
     }
-    public void PlayFeedback()
+    public void PlayChild(BasicNode node)
     {
-       // allNodes = soHiTree.GetAll(node);
-        //TODO: ASYNC FUNCTION TO PLAY child nodes for nodes without DIALOGFLOW TRIGGER
-        //Node to keep track of state, and see if next node needs triggering i.e. is it a DIALOGFLOW trigger or must the container trigger it? 
-    
+
+        for (int i = 0; i < node.children.Count; i++)
+        {
+            BasicNode child = (BasicNode)node.children[i];
+            child.Play(timelineController);
+            }
     }
+   
     public void ReturnQuery(QueryResult query)
     {
         string intent = query.intent.displayName; 
         BasicNode active = (BasicNode)ScriptableObject.CreateInstance<Node>();
-        Node root = soHiTree.GetRoot();
+        BasicNode root = (BasicNode)soHiTree.GetRoot();
         active = (BasicNode)soHiTree.MatchIntent(intent,root);
-        active.Play(timelineController); 
+        Debug.Log("REACHED HERE");
+        Debug.Log(root.getIntent());
+        active.Play(timelineController);
+        if (!(active.children).Any())
+        {
+            PlayChild(active);
+        }
     }
 }

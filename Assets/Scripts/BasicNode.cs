@@ -7,11 +7,14 @@ using Hexiled.SoHi;
 public class BasicNode : Node
 {
     [SerializeField]
-    string intent; 
+    string intent;
+    [SerializeField]
+    string context;
     [SerializeField]
     string response;
     [SerializeField]
     int taid;
+   
     //no audio
     public void Play(TimelineController timelineController)
     {
@@ -24,8 +27,10 @@ public class BasicNode : Node
             timelineController.Play(taid, response);
         }
     }
+    
     public string getIntent()
     {
         return intent; 
     }
+
 }
