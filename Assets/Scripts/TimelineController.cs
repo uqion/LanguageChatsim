@@ -35,7 +35,7 @@ public class TimelineController : MonoBehaviour
     public void PlayFromTimelines(int index)
     {
         TimelineAsset selectedAsset;
-        if (timelines.list.Count <= index)
+        if (timelines.Count <= index)
         {
             selectedAsset = timelines[timelines.Count - 1];
         }

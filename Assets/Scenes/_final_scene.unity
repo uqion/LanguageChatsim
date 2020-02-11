@@ -557,6 +557,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2379777147870275224}
     m_Modifications:
+    - target: {fileID: 2916054243645331414, guid: 41d20b6d5289c414a9782e1706a08266,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeechRecog
+      objectReference: {fileID: 0}
     - target: {fileID: 2916054243645331416, guid: 41d20b6d5289c414a9782e1706a08266,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -611,11 +616,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2916054243645331414, guid: 41d20b6d5289c414a9782e1706a08266,
-        type: 3}
-      propertyPath: m_Name
-      value: SpeechRecog
       objectReference: {fileID: 0}
     - target: {fileID: 2951700108821420503, guid: 41d20b6d5289c414a9782e1706a08266,
         type: 3}
