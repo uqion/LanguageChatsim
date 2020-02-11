@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Hexiled.SoHi;
+using System.Threading.Tasks;
+
 [CreateAssetMenu]
 //This is the base node from which all annotated nodes inherit from
 public class BasicNode : Node
@@ -16,21 +18,26 @@ public class BasicNode : Node
     int taid;
    
     //no audio
-    public void Play(TimelineController timelineController)
+    public Task Play(TimelineController timelineController)
     {
-        if (string.IsNullOrEmpty(response))
+        return new Task(() =>
+        { if (string.IsNullOrEmpty(response))
         {
             timelineController.Play(taid);
         }
         else
         {
             timelineController.Play(taid, response);
-        }
+        }});
     }
     
     public string getIntent()
     {
         return intent; 
+    }
+    public int getTaid()
+    {
+        return taid; 
     }
 
 }

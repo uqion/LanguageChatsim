@@ -89,6 +89,7 @@ public class DialogFlowApiScript : MonoBehaviour
         }
         else
         {
+            Debug.Log("Reached here 2");
             // Show results as text
             Debug.Log("Response: " + postRequest.downloadHandler.text);
 
@@ -99,6 +100,7 @@ public class DialogFlowApiScript : MonoBehaviour
             responseText.text = content.queryResult.fulfillmentText;
             Debug.Log("CALLING TTS: " + Time.realtimeSinceStartup);
             tree.ReturnQuery(content.queryResult);
+            
         }
     }
 

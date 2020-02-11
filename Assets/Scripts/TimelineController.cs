@@ -9,7 +9,9 @@ public class TimelineController : MonoBehaviour
 {   [SerializeField]
     public PlayableDirector playableDirector;
     [SerializeField]
-    public List<TimelineAsset> timelines;//
+    public List<TimelineAsset> timelines;
+    [SerializeField]
+    public List<TimelineAsset> WB_timelines; 
     public SpeechManager speech;
     public AudioSource audioSource;
 
@@ -35,15 +37,17 @@ public class TimelineController : MonoBehaviour
     public void PlayFromTimelines(int index)
     {
         TimelineAsset selectedAsset;
-        if (timelines.Count <= index)
-        {
-            selectedAsset = timelines[timelines.Count - 1];
-        }
-        else
-        {
+        //if (timelines.Count <= index)
+        //{
+            
+           // selectedAsset = timelines[timelines.Count - 1];
+        //}
+        //else
+        //{
             selectedAsset = timelines[index];
             playableDirector.Play(selectedAsset);
-        }
+            Debug.Log("YO");
+       // }
     }
 
 }
