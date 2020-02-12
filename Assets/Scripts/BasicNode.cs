@@ -18,17 +18,17 @@ public class BasicNode : Node
     int taid;
    
     //no audio
-    public Task Play(TimelineController timelineController)
+    public void Play(TimelineController timelineController)
     {
-        return new Task(() =>
-        { if (string.IsNullOrEmpty(response))
+        
+         if (string.IsNullOrEmpty(response))
         {
             timelineController.Play(taid);
         }
         else
         {
             timelineController.Play(taid, response);
-        }});
+        }
     }
     
     public string getIntent()
@@ -38,6 +38,10 @@ public class BasicNode : Node
     public int getTaid()
     {
         return taid; 
+    }
+    public string getResponse()
+    {
+        return response; 
     }
 
 }

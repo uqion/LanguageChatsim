@@ -421,6 +421,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &751896042 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 789851470581467124, guid: 3624a8005d7d35847ba3d57ee89b2972,
+    type: 3}
+  m_PrefabInstance: {fileID: 2379777147870275223}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1059981455
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +556,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8515302a74058dc418fdb1ac5b5fd7f0, type: 2}
   - {fileID: 11400000, guid: d19bff7ee869aa94d896a101e4525062, type: 2}
   - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
-  WB_timelines: []
   speech: {fileID: 329042079}
   audioSource: {fileID: 2379777147870275226}
 --- !u!1001 &1642908253
@@ -1166,6 +1171,38 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2379777149203186075, guid: 3624a8005d7d35847ba3d57ee89b2972,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379777149203186075, guid: 3624a8005d7d35847ba3d57ee89b2972,
+        type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d7f6040076b62444840f9e073ca5e1c,
+        type: 2}
+    - target: {fileID: 2379777149203186075, guid: 3624a8005d7d35847ba3d57ee89b2972,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[37].key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379777149203186075, guid: 3624a8005d7d35847ba3d57ee89b2972,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[38].key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379777149203186075, guid: 3624a8005d7d35847ba3d57ee89b2972,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[39].key
+      value: 
+      objectReference: {fileID: 931036847909219589, guid: 1d7f6040076b62444840f9e073ca5e1c,
+        type: 2}
+    - target: {fileID: 2379777149203186075, guid: 3624a8005d7d35847ba3d57ee89b2972,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[39].value
+      value: 
+      objectReference: {fileID: 751896042}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3624a8005d7d35847ba3d57ee89b2972, type: 3}
 --- !u!4 &2379777147870275224 stripped

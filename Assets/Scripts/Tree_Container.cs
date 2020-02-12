@@ -13,12 +13,13 @@ public class Tree_Container : MonoBehaviour
     TimelineController timelineController;
     private List<Node> allNodes = new List<Node>();
     private BasicNode node;
-  
+    private Queue<int> queuedTimelines;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        ReturnQuery("testnode");
+        ReturnQuery("UserCorrectionWB");
     }
 
     // Update is called once per frame
@@ -26,18 +27,32 @@ public class Tree_Container : MonoBehaviour
     {
         
     }
-    public async void PlayChild(BasicNode node)
+    public void PlayChild(BasicNode node)
     {
-
-        for (int i = 0; i < node.children.Count; i++)
+        int size = node.children.Count()+1;
+        BasicNode[] queuedTimelines = new BasicNode[size];
+        Debug.Log("NUMBER OF CHILDREN:" + size);
+        for (int i = 0; i < node.children.Count(); i++)
         {
-           
+            
             BasicNode child = (BasicNode)node.children[i];
-            await child.Play(timelineController);
-            Debug.Log("NUMBER OF CHILDREN:" + node.children.Count());
+            queuedTimelines[i] = child;
+           
+
+            
         }
+        queuedTimelines[0] = node;
+        Debug.Log("NUMBER OF timelines:"+queuedTimelines.Count());
+        for (int i = 0; i < queuedTimelines.Count(); i++)
+        {
+ 
+            Debug.Log("TAID is:"+queuedTimelines[i]);
+        }
+      
+        timelineController.PlayFromTimelines(queuedTimelines);
+        Debug.Log("REACHED HERE 6");
     }
-    public async void ReturnQuery(string query)
+    public void ReturnQuery(string query)
     {
         Debug.Log("REACHED HERE 1");
         //string intent = query.intent.displayName;
@@ -46,12 +61,16 @@ public class Tree_Container : MonoBehaviour
         active = soHiTree.MatchIntent(query, root);
         //Debug.Log(active.getIntent());
         Debug.Log("REACHED HERE 2");
-      await active.Play(timelineController);
        // Debug.Log("REACHED HERE 3");
         if ((active.children).Any()){
        Debug.Log("REACHED HERE 4");
         PlayChild(active);
            Debug.Log("REACHED HERE 5");
+        }
+        else
+        {
+            active.Play(timelineController);
+            Debug.Log("REACHED HERE 6");
         }
     }
 
