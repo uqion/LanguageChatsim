@@ -556,6 +556,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8515302a74058dc418fdb1ac5b5fd7f0, type: 2}
   - {fileID: 11400000, guid: d19bff7ee869aa94d896a101e4525062, type: 2}
   - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  - {fileID: 11400000, guid: 39de6f9d40e14ba49be8a5c1d5980810, type: 2}
+  WBtimelines:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   speech: {fileID: 329042079}
   audioSource: {fileID: 2379777147870275226}
 --- !u!1001 &1642908253

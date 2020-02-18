@@ -70,9 +70,8 @@ public class TimelineController : MonoBehaviour
 
     //sets off multiple timelines in sequence to play asynchronously
     //create 
-    public void PlayFromTimelines(params BasicNode[] queue)//array of nodes 
-    {//index = node.taid
-        //node.string
+    public void PlayFromTimelines(params BasicNode[] queue)
+    {
         if (isPlaying)
         {
             Debug.Log("tried to play timelines while there are others playing");
@@ -80,7 +79,7 @@ public class TimelineController : MonoBehaviour
         }
         foreach (BasicNode n in queue)
         {
-            queuedTimelines.Enqueue(n);//
+            queuedTimelines.Enqueue(n);
         }
         StartCoroutine(playQueue());
     }
