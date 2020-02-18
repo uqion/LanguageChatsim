@@ -34,12 +34,12 @@ namespace Hexiled.SoHi
 			return allNodes;
 		}
 		//recursively traverses tree to match intent
-		public BasicNode MatchIntent(string intent, Node node)
+		public Node MatchIntent(string intent, Node node)
 		{
-			BasicNode child = ScriptableObject.CreateInstance<BasicNode>();
+			Node child = ScriptableObject.CreateInstance<Node>();
 			for (int i = 0; i < node.children.Count; i++)
 			{
-				child = (BasicNode)node.children[i];
+				child = node.children[i];
 				if (string.Compare(child.getIntent(), intent) == 0)
 				{
 					return child; 

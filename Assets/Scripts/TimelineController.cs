@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline; 
+using Hexiled.SoHi;
 //Communicates with SO_Hi tree nodes to match intent and orchestrate animations
 //Interfaces with SO_Hi Tree_Container script
 public class TimelineController : MonoBehaviour
@@ -11,17 +12,16 @@ public class TimelineController : MonoBehaviour
     public PlayableDirector playableDirector;
     [SerializeField]
     public List<TimelineAsset> timelines;
-    [SerializeField]
-    public List<TimelineAsset> WBtimelines; 
+ 
     public SpeechManager speech;
     public AudioSource audioSource;
 
-    private Queue<BasicNode> queuedTimelines;
+    private Queue<Node> queuedTimelines;
     private bool isPlaying = false;
 
     private void Awake()
     {
-        queuedTimelines = new Queue<BasicNode>();
+        queuedTimelines = new Queue<Node>();
     }
 
 
@@ -70,14 +70,14 @@ public class TimelineController : MonoBehaviour
 
     //sets off multiple timelines in sequence to play asynchronously
     //create 
-    public void PlayFromTimelines(params BasicNode[] queue)
+    public void PlayFromTimelines(List<Node> queue)
     {
         if (isPlaying)
         {
             Debug.Log("tried to play timelines while there are others playing");
             return;
         }
-        foreach (BasicNode n in queue)
+        foreach (Node n in queue)
         {
             queuedTimelines.Enqueue(n);
         }
@@ -89,7 +89,7 @@ public class TimelineController : MonoBehaviour
         isPlaying = true;
         while (queuedTimelines.Count > 0)
         {
-            BasicNode cur = queuedTimelines.Dequeue();
+           Node cur = queuedTimelines.Dequeue();
             Play(cur.getResponse());
             TimelineAsset currentTimeline = PlayFromTimelines(cur.getTaid());
             yield return new WaitForSeconds((float)currentTimeline.duration);
