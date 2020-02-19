@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.Timeline; 
+using UnityEngine.Timeline;
 using Hexiled.SoHi;
 //Communicates with SO_Hi tree nodes to match intent and orchestrate animations
 //Interfaces with SO_Hi Tree_Container script
@@ -12,11 +13,12 @@ public class TimelineController : MonoBehaviour
     public PlayableDirector playableDirector;
     [SerializeField]
     public List<TimelineAsset> timelines;
- 
+
     public SpeechManager speech;
     public AudioSource audioSource;
 
     private Queue<Node> queuedTimelines;
+    private Queue<int> queuedTimelinesRoot;
     private bool isPlaying = false;
 
     private void Awake()
@@ -83,15 +85,40 @@ public class TimelineController : MonoBehaviour
         }
         StartCoroutine(playQueue());
     }
+    public void PlayFromTimelines(params int[] queue)
+    {
+        if (isPlaying)
+        {
+            Debug.Log("tried to play timelines while there are others playing");
+            return;
+        }
+        foreach (int n in queue)
+        {
+            queuedTimelinesRoot.Enqueue(n);
+        }
+        StartCoroutine(playQueueRoot());
+    }
 
     private IEnumerator playQueue()
     {
         isPlaying = true;
         while (queuedTimelines.Count > 0)
         {
-           Node cur = queuedTimelines.Dequeue();
+            Node cur = queuedTimelines.Dequeue();
             Play(cur.getResponse());
             TimelineAsset currentTimeline = PlayFromTimelines(cur.getTaid());
+            yield return new WaitForSeconds((float)currentTimeline.duration);
+        }
+        isPlaying = false;
+    }
+    private IEnumerator playQueueRoot()
+    {
+        isPlaying = true;
+        while (queuedTimelines.Count > 0)
+        {
+            int cur = queuedTimelinesRoot.Dequeue();
+            Play(cur);
+            TimelineAsset currentTimeline = PlayFromTimelines(cur);
             yield return new WaitForSeconds((float)currentTimeline.duration);
         }
         isPlaying = false;
