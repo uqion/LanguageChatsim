@@ -25,10 +25,12 @@ public class Tree_Container : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        
-        //
-        ReturnQuery("UserProvidesBeverageRight");
+    {//TODO: rootnode flag
+
+        ReturnQuery("DefaultWelcome");
+       // ReturnQuery("UserProvidesWrongInfoWB");
+        ReturnQuery("UserCorrectionWB");
+        //ReturnQuery("UserProvidesBeverageRight - no");
         // rootNode = ScriptableObject.CreateInstance<RootNode>();
     }
 
@@ -124,10 +126,29 @@ public class Tree_Container : MonoBehaviour
         if (collider.gameObject.name == "Player")
         {
             Debug.Log(collider.gameObject.name);
-            StartCoroutine(rootNode.GetGreeting(timelineController));
+            StartCoroutine(GetGreeting());
         }
     }
-
+    public IEnumerator GetGreeting()
+    {
+        int greeting = Random.Range(0, 3);
+        Debug.Log("calling greeting " + greeting);
+        if (greeting == 0)
+        {
+            timelineController.PlayFromTimelines(0, 1, 5);
+            yield return null;
+        }
+        else if (greeting == 1)
+        {
+            timelineController.PlayFromTimelines(2, 3, 5);
+            yield return null;
+        }
+        else if (greeting == 2)
+        {
+            timelineController.PlayFromTimelines(4, 5);
+            yield return null;
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("exit");

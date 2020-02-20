@@ -7,10 +7,12 @@ public class SO_Database : ScriptableObject
     /// <summary>
     /// grocery items and their price that are available to be purchased .
     /// </summary>
-    private Dictionary<string, double> itemPriceDatabase = new Dictionary<string, double>()
+    [SerializeField]
+    Dictionary<string, double> itemPriceDatabase = new Dictionary<string, double>()
     {
-        {"UserProvidesBeverageRight", 2.99}
-    };
+        {"UserProvidesBeverageRight", 2.99},
+        {"UserCorrectionWB",2.99 }
+     };
 
     public double GetPrice(string item)
     {

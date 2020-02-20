@@ -32,7 +32,7 @@ namespace Hexiled.SoHi
 				GetAllNodesRecursive(child);
 			}
 			return allNodes;
-		}
+	}
 		//recursively traverses tree to match intent
 		public Node MatchIntent(string intent, Node node)
 		{

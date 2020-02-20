@@ -10,24 +10,8 @@ using Hexiled.SoHi;
 public class RootNode : Node
 {
 
-    public IEnumerator GetGreeting(TimelineController timeline)
+    public override void Play(Tree_Container tree)
     {
-        int greeting = Random.Range(0, 3);
-        Debug.Log("calling greeting " + greeting);
-        if (greeting == 0)
-        {
-            timeline.PlayFromTimelines(0, 1, 5);
-            yield return null;
-        }
-        else if (greeting == 1)
-        {
-            timeline.PlayFromTimelines(2, 3, 5);
-            yield return null;
-        }
-        else if (greeting == 2)
-        {
-            timeline.PlayFromTimelines(4, 5);
-            yield return null;
-        }
+        tree.GetGreeting(); 
     }
 }

@@ -24,6 +24,7 @@ public class TimelineController : MonoBehaviour
     private void Awake()
     {
         queuedTimelines = new Queue<Node>();
+        queuedTimelinesRoot = new Queue<int>();
     }
 
 
@@ -114,7 +115,7 @@ public class TimelineController : MonoBehaviour
     private IEnumerator playQueueRoot()
     {
         isPlaying = true;
-        while (queuedTimelines.Count > 0)
+        while (queuedTimelinesRoot.Count > 0)
         {
             int cur = queuedTimelinesRoot.Dequeue();
             Play(cur);

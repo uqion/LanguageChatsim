@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Hexiled.SoHi;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Node", menuName = "Transaction Node")]
 //call to SO DB & shopping cart 
 public class TransactionNode : Node
 {
