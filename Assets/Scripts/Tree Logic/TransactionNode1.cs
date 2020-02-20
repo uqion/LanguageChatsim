@@ -1,18 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Hexiled.SoHi;
 
-public class NewBehaviourScript : MonoBehaviour
+[CreateAssetMenu]
+//Transaction Node; calculate shopping cart total for $price
+public class TransactionNode1 : Node
 {
-    // Start is called before the first frame update
-    void Start()
+    public new void Play(Tree_Container tree)
     {
-        
+        response = "The total is" + tree.GetBillTotal();
+        tree.Play(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
 }

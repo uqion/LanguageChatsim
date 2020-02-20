@@ -21,6 +21,7 @@ public class Tree_Container : MonoBehaviour
     private RootNode rootNode;
     private bool isColliding;
     private static Tree_Container _instance;
+    private string intent; 
 
     // Start is called before the first frame update
     void Start()
@@ -45,10 +46,13 @@ public class Tree_Container : MonoBehaviour
         Instance = this;
         }
     }
-    public static Tree_Container Instance { get; private set; }
+    public static Tree_Container Instance { 
+        get; private set; 
+    
+    }
 
 
-    public void PlayChild(Node node)
+    public void PlayChild(Node node)//TODO: implement visitor pattern for nodes with children 
     {
         List<Node> queuedTimelines = node.children;
         if (!queuedTimelines[0].Equals(node))
@@ -64,6 +68,7 @@ public class Tree_Container : MonoBehaviour
 
         Node active;
         Node root = soHiTree.GetRoot();
+        intent = query; 
         active = soHiTree.MatchIntent(query, root);
         if ((active.children).Any())
         {
@@ -79,7 +84,7 @@ public class Tree_Container : MonoBehaviour
     public void ReturnQuery(QueryResult query)
     {
         Debug.Log("REACHED HERE");
-        string intent = query.intent.displayName;
+        intent = query.intent.displayName;
         Debug.Log("THE MATCHED INTENT IS:" + intent);
         Node active = ScriptableObject.CreateInstance<Node>();
         Node root = soHiTree.GetRoot();
@@ -87,11 +92,11 @@ public class Tree_Container : MonoBehaviour
 
         if ((active.children).Any())
         {
-            PlayChild(active);
+            PlayChild(active);//children means not a decorated node? 
         }
         else
         {
-            active.Play(this);
+            active.Play(this); //visitor pattern; double dispatch
         }
     }
     public void Play(Node node)
@@ -153,4 +158,8 @@ public class Tree_Container : MonoBehaviour
         return shoppingCart.GetTotal();
     }
 
+    public string getIntent()
+    {
+        return intent; 
+    }
 }

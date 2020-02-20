@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ShoppingCart : MonoBehaviour
+[CreateAssetMenu]
+public class ShoppingCart : ScriptableObject
 {
     private double runningTotal;
 

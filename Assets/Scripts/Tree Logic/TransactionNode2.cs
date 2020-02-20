@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Hexiled.SoHi; 
 
-public class TransactionNode2 : MonoBehaviour
+[CreateAssetMenu]
+//Transaction Node; call to check if no.items >1, if yes, jump directly to P10_A4, empty cart3
+public class TransactionNode2 : Node
 {
-    // Start is called before the first frame update
-    void Start()
+    public new void Play(Tree_Container tree)
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
 }

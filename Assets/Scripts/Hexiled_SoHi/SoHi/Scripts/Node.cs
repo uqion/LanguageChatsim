@@ -15,12 +15,12 @@ public class Node:ScriptableObject
 	public List<Node> children = new List<Node> ();
 
 	[SerializeField]
-	string intent;
+	protected string intent;
 	[SerializeField]
-	string response;
+     protected string response;
 	[SerializeField]
-	int taid;
-   
+     protected int taid;
+
     
 
         public void AddChild<T>(T node) where T : Node{
@@ -30,7 +30,7 @@ public class Node:ScriptableObject
 			children.Insert (index, node);
 		}
         
-        public void Play(Tree_Container tree)
+        public void Play(Tree_Container tree) //visitor pattern; double dispatch
 
         {
             Debug.Log("Reached NODE PLAY");
