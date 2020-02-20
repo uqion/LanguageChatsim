@@ -262,7 +262,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tree
       value: 
-      objectReference: {fileID: 1505477621}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6425964427720457360, guid: 954e20b8941c03c45871d727569d6c6a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 954e20b8941c03c45871d727569d6c6a, type: 3}
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776fe6f9d073fd74281e65e017a5ff5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soHiTree: {fileID: 11400000, guid: 893206ff5b02f31468d3e09055137a38, type: 2}
+  soHiTree: {fileID: 11400000, guid: 8bb17b1ac90e3f344a2ff99e7d1e6230, type: 2}
   timelineController: {fileID: 1505477622}
   database: {fileID: 0}
   shoppingCart: {fileID: 0}
@@ -574,6 +574,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47337e9c1de33e64ba41f5c75143054d, type: 2}
   - {fileID: 11400000, guid: 026a3457f7b8e554289eb4672a2d9a56, type: 2}
   - {fileID: 11400000, guid: 45c2e32f4c10c8d49a9df5066466c21c, type: 2}
+  - {fileID: 11400000, guid: 72655a40f794fdf48af197052c262a7c, type: 2}
   - {fileID: 11400000, guid: 8515302a74058dc418fdb1ac5b5fd7f0, type: 2}
   - {fileID: 11400000, guid: 31a0130815f88104eaa9fd9d158083ef, type: 2}
   - {fileID: 11400000, guid: 389ec7c5068ca50458836825f6f22204, type: 2}

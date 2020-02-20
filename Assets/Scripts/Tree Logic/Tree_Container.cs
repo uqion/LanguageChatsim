@@ -51,7 +51,10 @@ public class Tree_Container : MonoBehaviour
     public void PlayChild(Node node)
     {
         List<Node> queuedTimelines = node.children;
-        queuedTimelines.Insert(0, node);
+        if (!queuedTimelines[0].Equals(node))
+        {
+            queuedTimelines.Insert(0, node);
+        }
         timelineController.PlayFromTimelines(queuedTimelines);
 
     }
