@@ -29,8 +29,8 @@ public class Node:ScriptableObject
 		public void InsertChildAt<T>( T node,int index) where T:Node{
 			children.Insert (index, node);
 		}
-        
-        public void Play(Tree_Container tree) //visitor pattern; double dispatch
+
+        virtual public void Play(Tree_Container tree) //visitor pattern; double dispatch
 
         {
             Debug.Log("Reached NODE PLAY");

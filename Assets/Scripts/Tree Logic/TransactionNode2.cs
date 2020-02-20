@@ -9,7 +9,15 @@ public class TransactionNode2 : Node
 {
     public new void Play(Tree_Container tree)
     {
-
+        if (tree.CartHasItem())
+        {
+            taid = 22;
+        }
+        else
+        {
+            taid = 20; 
+        }
+        tree.Play(this); 
     }
 
 

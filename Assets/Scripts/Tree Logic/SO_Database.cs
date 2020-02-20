@@ -9,7 +9,7 @@ public class SO_Database : ScriptableObject
     /// </summary>
     private Dictionary<string, double> itemPriceDatabase = new Dictionary<string, double>()
     {
-        {"UserCorrectionWB", 2.99}
+        {"UserProvidesBeverageRight", 2.99}
     };
 
     public double GetPrice(string item)

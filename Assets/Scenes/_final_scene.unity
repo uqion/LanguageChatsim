@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776fe6f9d073fd74281e65e017a5ff5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soHiTree: {fileID: 0}
+  soHiTree: {fileID: 11400000, guid: 9aed47d46a8659543818d77176e6dc2d, type: 2}
   timelineController: {fileID: 1505477622}
   database: {fileID: 11400000, guid: 8b5ac475d7067794e9433668022eda8d, type: 2}
   shoppingCart: {fileID: 11400000, guid: 242932ab3369a7044b6f51394ad4ae17, type: 2}
