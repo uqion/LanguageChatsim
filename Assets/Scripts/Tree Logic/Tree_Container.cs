@@ -26,10 +26,10 @@ public class Tree_Container : Container
     void Start()
     {//TODO: rootnode flag
 
-        //ReturnQuery("DefaultWelcome");
-       // ReturnQuery("UserProvidesWrongInfoWB");
-        ReturnQuery("UserProvidesBeverageRight");
-        //ReturnQuery("UserProvidesBeverageRight - no");
+        ReturnQuery("DefaultWelcome");
+        ReturnQuery("UserCorrectionWB");
+       ReturnQuery("UserProvidesBeverageRight");
+        ReturnQuery("UserProvidesBeverageRight - no");
         // rootNode = ScriptableObject.CreateInstance<RootNode>();
     }
 
@@ -44,6 +44,7 @@ public class Tree_Container : Container
 
     public void PlayChild(Node node)//TODO: implement visitor pattern for nodes with children 
     {
+        node.Play(this); 
         List<Node> queuedTimelines = node.children;
         if (!queuedTimelines[0].Equals(node))
         {

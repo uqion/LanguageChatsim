@@ -13,7 +13,7 @@ public class TransactionNode : Node
         string item = tree.getIntent();
         tree.MakePurchase(item);
         Debug.Log("SHOPPING CART CALL");
-        tree.Play(this); 
+        //tree.Play(this); 
     }
 
  
