@@ -4,11 +4,11 @@ using UnityEngine;
 using Hexiled.SoHi;
 using JsonData;
 using System.Linq;
+
 //Contains an instantiated SO_Hi tree; interface for Timeline Controller 
-public class Tree_Container : MonoBehaviour
+public class Tree_Container : Container
 {
-    [SerializeField]
-    SoHiTree soHiTree;
+    
     [SerializeField]
     TimelineController timelineController;
     [SerializeField]
@@ -20,16 +20,15 @@ public class Tree_Container : MonoBehaviour
     private Queue<int> queuedTimelines;
     private RootNode rootNode;
     private bool isColliding;
-    private static Tree_Container _instance;
     private string intent; 
 
     // Start is called before the first frame update
     void Start()
     {//TODO: rootnode flag
 
-        ReturnQuery("DefaultWelcome");
+        //ReturnQuery("DefaultWelcome");
        // ReturnQuery("UserProvidesWrongInfoWB");
-        ReturnQuery("UserCorrectionWB");
+        ReturnQuery("UserProvidesBeverageRight");
         //ReturnQuery("UserProvidesBeverageRight - no");
         // rootNode = ScriptableObject.CreateInstance<RootNode>();
     }
@@ -39,19 +38,8 @@ public class Tree_Container : MonoBehaviour
     {
 
     }
-    private void Awake(){
-        if (Instance != null && Instance != this){
-            Destroy(this.gameObject);
-        }
-        else
-        {
-        Instance = this;
-        }
-    }
-    public static Tree_Container Instance { 
-        get; private set; 
-    
-    }
+   
+   
 
 
     public void PlayChild(Node node)//TODO: implement visitor pattern for nodes with children 
@@ -69,9 +57,9 @@ public class Tree_Container : MonoBehaviour
 
 
         Node active;
-        Node root = soHiTree.GetRoot();
+        Node root = tree.GetRoot();
         intent = query; 
-        active = soHiTree.MatchIntent(query, root);
+        active = tree.MatchIntent(query, root);
         if ((active.children).Any())
         {
             PlayChild(active);
@@ -89,8 +77,8 @@ public class Tree_Container : MonoBehaviour
         intent = query.intent.displayName;
         Debug.Log("THE MATCHED INTENT IS:" + intent);
         Node active = ScriptableObject.CreateInstance<Node>();
-        Node root = soHiTree.GetRoot();
-        active = soHiTree.MatchIntent(intent, root);
+        Node root = tree.GetRoot();
+        active = tree.MatchIntent(intent, root);
 
         if ((active.children).Any())
         {

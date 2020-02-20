@@ -16,15 +16,15 @@ namespace Hexiled.SoHi
 		private List<Node> allNodes;
 
 		public Node GetRoot()
-		{		
-				return root;	
+		{
+			return root;
 
 		}
-	
+
 		//recursively traverses tree to get a list of all of tree's nodes 
 		public List<Node> GetAllNodesRecursive(Node node)
 		{
-			
+
 			allNodes.Add(node);
 			for (int i = 0; i < node.children.Count; i++)
 			{
@@ -32,7 +32,7 @@ namespace Hexiled.SoHi
 				GetAllNodesRecursive(child);
 			}
 			return allNodes;
-	}
+		}
 		//recursively traverses tree to match intent
 		public Node MatchIntent(string intent, Node node)
 		{
@@ -42,16 +42,15 @@ namespace Hexiled.SoHi
 				child = node.children[i];
 				if (string.Compare(child.getIntent(), intent) == 0)
 				{
-					return child; 
+					return child;
 				}
-				MatchIntent(intent,child);
+				MatchIntent(intent, child);
 			}
-			return child; 
+			return child;
 		}
-        
-    }
+
+	}
 
 }
 
-	
 
