@@ -27,6 +27,7 @@ public class Node:ScriptableObject
 		public void InsertChildAt<T>( T node,int index) where T:Node{
 			children.Insert (index, node);
 		}
+        //Play method, overloaded Play method in timeline controller for no audio responses i.e. pure animations
         public void Play(TimelineController timelineController)
         {
 

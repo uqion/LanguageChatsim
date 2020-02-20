@@ -497,8 +497,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1505477620}
-  - component: {fileID: 1505477621}
   - component: {fileID: 1505477622}
+  - component: {fileID: 1505477621}
   m_Layer: 5
   m_Name: SO_Container
   m_TagString: Untagged
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776fe6f9d073fd74281e65e017a5ff5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soHiTree: {fileID: 11400000, guid: 698c9076243ec8c49a53fe43ab0ee8e9, type: 2}
+  soHiTree: {fileID: 11400000, guid: 2a1fd341fc8a4c24386dd02165a50e27, type: 2}
   timelineController: {fileID: 1505477622}
 --- !u!114 &1505477622
 MonoBehaviour:
@@ -572,12 +572,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47337e9c1de33e64ba41f5c75143054d, type: 2}
   - {fileID: 11400000, guid: 026a3457f7b8e554289eb4672a2d9a56, type: 2}
   - {fileID: 11400000, guid: 45c2e32f4c10c8d49a9df5066466c21c, type: 2}
-  - {fileID: 11400000, guid: 8515302a74058dc418fdb1ac5b5fd7f0, type: 2}
-  - {fileID: 11400000, guid: 31a0130815f88104eaa9fd9d158083ef, type: 2}
-  - {fileID: 11400000, guid: 389ec7c5068ca50458836825f6f22204, type: 2}
-  - {fileID: 11400000, guid: 0b773129428da71498c4d843048c5edb, type: 2}
-  - {fileID: 11400000, guid: 1d7f6040076b62444840f9e073ca5e1c, type: 2}
-  WBtimelines:
   - {fileID: 11400000, guid: 8515302a74058dc418fdb1ac5b5fd7f0, type: 2}
   - {fileID: 11400000, guid: 31a0130815f88104eaa9fd9d158083ef, type: 2}
   - {fileID: 11400000, guid: 389ec7c5068ca50458836825f6f22204, type: 2}

@@ -84,6 +84,7 @@ public class DialogFlowApiScript : MonoBehaviour
 
         if (postRequest.isNetworkError || postRequest.isHttpError)
         {
+            Debug.Log("Reached here DF ERROR");
             Debug.Log(postRequest.responseCode);
             Debug.Log(postRequest.error);
         }
@@ -99,8 +100,10 @@ public class DialogFlowApiScript : MonoBehaviour
             ResponseBody content = (ResponseBody)JsonUtility.FromJson<ResponseBody>(result);
             responseText.text = content.queryResult.fulfillmentText;
             Debug.Log("CALLING TTS: " + Time.realtimeSinceStartup);
-            tree.ReturnQuery(content.queryResult);
             
+            tree.ReturnQuery(content.queryResult);
+            Debug.Log("CALLED TREE");
+
         }
     }
 

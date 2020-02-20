@@ -4,6 +4,7 @@ using UnityEngine;
 using Hexiled.SoHi;
 using JsonData;
 using System.Linq;
+
 //Contains an instantiated SO_Hi tree; interface for Timeline Controller 
 public class Tree_Container : MonoBehaviour
 {
@@ -11,17 +12,24 @@ public class Tree_Container : MonoBehaviour
     SoHiTree soHiTree;
     [SerializeField]
     TimelineController timelineController;
+    [SerializeField]
+    SO_Database itemDB;
+    [SerializeField]
+    ShoppingCart cart; 
     private List<Node> allNodes = new List<Node>();
     private Node node;
     private Queue<int> queuedTimelines;
     private RootNode rootNode;
     private bool isColliding;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        ReturnQuery("UserCorrectionWB");
+        
+        //
+        // ReturnQuery("UserCorrectionWB");
         // rootNode = ScriptableObject.CreateInstance<RootNode>();
     }
 
@@ -46,26 +54,27 @@ public class Tree_Container : MonoBehaviour
         active = soHiTree.MatchIntent(query, root);
         if ((active.children).Any())
         {
-
             PlayChild(active);
-
         }
         else
         {
             active.Play(timelineController);
-
         }
     }
 
 
     public void ReturnQuery(QueryResult query)
     {
-
+        Debug.Log("REACHED HERE");
         string intent = query.intent.displayName;
+        Debug.Log("THE MATCHED INTENT IS:" + intent);
         Node active = ScriptableObject.CreateInstance<Node>();
         Node root = soHiTree.GetRoot();
         active = soHiTree.MatchIntent(intent, root);
-        active.Play(timelineController);
+
+        active.Play(timelineController);//polymorphic call 
+
+
         if (!(active.children).Any())
         {
             PlayChild(active);
@@ -74,13 +83,10 @@ public class Tree_Container : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        //node.Play(timelineController);
         if (collider.gameObject.name == "Player")
         {
             Debug.Log(collider.gameObject.name);
-            //Debug.Log("New root");
             StartCoroutine(rootNode.GetGreeting(timelineController));
-            //Debug.Log("greeting is called");
         }
     }
 
