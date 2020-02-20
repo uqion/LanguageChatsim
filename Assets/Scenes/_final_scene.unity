@@ -537,8 +537,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776fe6f9d073fd74281e65e017a5ff5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soHiTree: {fileID: 11400000, guid: 2a1fd341fc8a4c24386dd02165a50e27, type: 2}
+  soHiTree: {fileID: 11400000, guid: 893206ff5b02f31468d3e09055137a38, type: 2}
   timelineController: {fileID: 1505477622}
+  database: {fileID: 0}
+  shoppingCart: {fileID: 0}
 --- !u!114 &1505477622
 MonoBehaviour:
   m_ObjectHideFlags: 0

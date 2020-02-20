@@ -4,7 +4,6 @@ using UnityEngine;
 using Hexiled.SoHi;
 using JsonData;
 using System.Linq;
-
 //Contains an instantiated SO_Hi tree; interface for Timeline Controller 
 public class Tree_Container : MonoBehaviour
 {
@@ -13,23 +12,22 @@ public class Tree_Container : MonoBehaviour
     [SerializeField]
     TimelineController timelineController;
     [SerializeField]
-    SO_Database itemDB;
+    SO_Database database;
     [SerializeField]
-    ShoppingCart cart; 
+    ShoppingCart shoppingCart; 
     private List<Node> allNodes = new List<Node>();
     private Node node;
     private Queue<int> queuedTimelines;
     private RootNode rootNode;
     private bool isColliding;
-    
-
+    private static Tree_Container _instance;
 
     // Start is called before the first frame update
     void Start()
     {
         
         //
-        // ReturnQuery("UserCorrectionWB");
+        ReturnQuery("UserCorrectionWB");
         // rootNode = ScriptableObject.CreateInstance<RootNode>();
     }
 
@@ -38,6 +36,18 @@ public class Tree_Container : MonoBehaviour
     {
 
     }
+    private void Awake(){
+        if (Instance != null && Instance != this){
+            Destroy(this.gameObject);
+        }
+        else
+        {
+        Instance = this;
+        }
+    }
+    public static Tree_Container Instance { get; private set; }
+
+
     public void PlayChild(Node node)
     {
         List<Node> queuedTimelines = node.children;
@@ -49,7 +59,7 @@ public class Tree_Container : MonoBehaviour
     {
 
 
-        Node active = ScriptableObject.CreateInstance<Node>();
+        Node active;
         Node root = soHiTree.GetRoot();
         active = soHiTree.MatchIntent(query, root);
         if ((active.children).Any())
@@ -58,7 +68,7 @@ public class Tree_Container : MonoBehaviour
         }
         else
         {
-            active.Play(timelineController);
+            active.Play(this);
         }
     }
 
@@ -72,13 +82,33 @@ public class Tree_Container : MonoBehaviour
         Node root = soHiTree.GetRoot();
         active = soHiTree.MatchIntent(intent, root);
 
-        active.Play(timelineController);//polymorphic call 
-
-
-        if (!(active.children).Any())
+        if ((active.children).Any())
         {
             PlayChild(active);
         }
+        else
+        {
+            active.Play(this);
+        }
+    }
+    public void Play(Node node)
+
+    {
+        Debug.Log("Reached CONTAINER PLAY");
+        string response = node.getResponse();
+        int taid = node.getTaid();
+        Debug.Log("RESPONSE IS"+response);
+        if (string.IsNullOrEmpty(response))
+        {
+            Debug.Log("Reached ANIMATIONS PLAY");
+            timelineController.Play(taid);
+        }
+        else
+        {
+            Debug.Log("Reached response PLAY");
+            timelineController.Play(taid, response);
+        }
+
     }
 
     void OnTriggerEnter(Collider collider)
@@ -95,5 +125,29 @@ public class Tree_Container : MonoBehaviour
         Debug.Log("exit");
     }
 
+
+    // adds item price into the bill.
+    public void MakePurchase(string item)
+    {
+        shoppingCart.AddItem(database.GetPrice(item));
+        Debug.Log("added" + database.GetPrice(item) + "to your cart.");
+    }
+
+    // Returns true if the shopping cart has atleast 1 item.
+    public bool CartHasItem()
+    {
+        bool cartHasItem = false;
+        if (shoppingCart.GetTotal() > 0)
+        {
+            cartHasItem = true;
+        }
+        return cartHasItem;
+    }
+
+    //Returns the total value of the bill
+    public double GetBillTotal()
+    {
+        return shoppingCart.GetTotal();
+    }
 
 }

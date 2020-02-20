@@ -20,25 +20,21 @@ public class Node:ScriptableObject
 	string response;
 	[SerializeField]
 	int taid;
+   
+    
 
-		public void AddChild<T>(T node) where T : Node{
+        public void AddChild<T>(T node) where T : Node{
 		children.Add (node);
 	}
 		public void InsertChildAt<T>( T node,int index) where T:Node{
 			children.Insert (index, node);
 		}
-        //Play method, overloaded Play method in timeline controller for no audio responses i.e. pure animations
-        public void Play(TimelineController timelineController)
-        {
+        
+        public void Play(Tree_Container tree)
 
-            if (string.IsNullOrEmpty(response))
-            {
-                timelineController.Play(taid);
-            }
-            else
-            {
-                timelineController.Play(taid, response);
-            }
+        {
+            Debug.Log("Reached NODE PLAY");
+            tree.Play(this);
         }
 
         public string getIntent()
