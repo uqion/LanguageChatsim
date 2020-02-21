@@ -1,14 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Hexiled.SoHi;
+
 using JsonData;
 using System.Linq;
 
+
 //Contains an instantiated SO_Hi tree; interface for Timeline Controller 
-public class Tree_Container : Container
+public class Tree_Container : MonoBehaviour
 {
-    
+    [SerializeField]
+    SerializableDictionary<string, List<Node>> tree;
+
+    [SerializeField]
+    public List<List<Node>> ListTree;
+
+    [SerializeField]
+    public List<Node> nodeTree;
+    [SerializeField]
+    NodeDictionary nodeDictionary; 
+
+
+   
     [SerializeField]
     TimelineController timelineController;
     [SerializeField]
@@ -25,12 +38,12 @@ public class Tree_Container : Container
     // Start is called before the first frame update
     void Start()
     {//TODO: rootnode flag
-
-        ReturnQuery("DefaultWelcome");
-        ReturnQuery("UserCorrectionWB");
+       // tree = new Dictionary<string, List<Node>>();
+      // ReturnQuery("DefaultWelcome");
+       //ReturnQuery("UserCorrectionWB");
        ReturnQuery("UserProvidesBeverageRight");
-        ReturnQuery("UserProvidesBeverageRight - no");
-        // rootNode = ScriptableObject.CreateInstance<RootNode>();
+       //  ReturnQuery("UserProvidesBeverageRight - no");
+       // rootNode = ScriptableObject.CreateInstance<RootNode>();
     }
 
     // Update is called once per frame
@@ -58,37 +71,33 @@ public class Tree_Container : Container
 
 
         Node active;
-        Node root = tree.GetRoot();
         intent = query; 
-        active = tree.MatchIntent(query, root);
-        if ((active.children).Any())
-        {
-            PlayChild(active);
-        }
-        else
-        {
-            active.Play(this);
-        }
+       active = MatchIntent(query);
+        active.Play(this);
+    
     }
+    public Node MatchIntent(string intent)
 
+
+    {
+        return nodeTree.Find(i => i.getIntent() == intent);
+       
+    }
 
     public void ReturnQuery(QueryResult query)
     {
         Debug.Log("REACHED HERE");
         intent = query.intent.displayName;
-        Debug.Log("THE MATCHED INTENT IS:" + intent);
+        Debug.Log("The df INTENT IS:" + intent);
         Node active = ScriptableObject.CreateInstance<Node>();
-        Node root = tree.GetRoot();
-        active = tree.MatchIntent(intent, root);
+       
+        active = MatchIntent(intent);
+        Debug.Log("The MATCHED INTENT IS:" +active.getIntent());
+        active.Play(this);
 
-        if ((active.children).Any())
-        {
-            PlayChild(active);//children means not a decorated node? 
-        }
-        else
-        {
-            active.Play(this); //visitor pattern; double dispatch
-        }
+
+
+
     }
     public void Play(Node node)
 

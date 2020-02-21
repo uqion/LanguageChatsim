@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
-using Hexiled.SoHi;
+
 //Communicates with SO_Hi tree nodes to match intent and orchestrate animations
 //Interfaces with SO_Hi Tree_Container script
 public class TimelineController : MonoBehaviour
