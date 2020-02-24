@@ -28,13 +28,6 @@ public class Tree_Container : MonoBehaviour
     void Start()
     {//TODO: ROOTNODE FLAG 
      //TODO: ANIMATIONS DEFAULT POSITION
-
-     // tree = new Dictionary<string, List<Node>>();
-    // ReturnQuery("DefaultWelcome");
-    //ReturnQuery("UserProvidesBeverageRight");
-    // ReturnQuery("UserProvidesBeverageRight");
-     // ReturnQuery("UserProvidesBeverageRight - no");
-     // rootNode = ScriptableObject.CreateInstance<RootNode>();
     }
 
     // Update is called once per frame
@@ -81,14 +74,17 @@ public class Tree_Container : MonoBehaviour
             nodelist[0].Play(this, nodelist);
         }
     }
+    //Method for playing nodes with children, called by Node and decorated Nodes 
      public void PlayChildren(List<Node> nodelist)
     {
         timelineController.PlayFromTimelines(nodelist);
     }
+    //key/value search in NodeDictionary
     public NodeList MatchIntent(string intent)
     {
         return nodeDictionary[intent];
     }
+    //Play method considering two scenarios: 1. animations only nodes, 2. animations + response nodes that require a call to TTS
     public void Play(Node node)
     {
         Debug.Log("Reached CONTAINER PLAY");
@@ -106,7 +102,7 @@ public class Tree_Container : MonoBehaviour
             timelineController.Play(taid, response);
         }
     }
-
+    //Root node logic, agent triggered by box collider attached to player 
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.name == "Player")
@@ -115,6 +111,12 @@ public class Tree_Container : MonoBehaviour
             StartCoroutine(GetGreeting());
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("exit");
+    } 
+    //Root node logic, random prompt generator 
     public IEnumerator GetGreeting()
     {
         int greeting = Random.Range(0, 3);
@@ -134,10 +136,6 @@ public class Tree_Container : MonoBehaviour
             timelineController.PlayFromTimelines(4, 5);
             yield return null;
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        Debug.Log("exit");
     }
 
 

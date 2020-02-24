@@ -11,9 +11,6 @@ using System.Collections.Generic;
     public class Node : ScriptableObject
     {
 
-
-    
-
         [SerializeField]
         protected string intent;
         [SerializeField]
@@ -34,11 +31,7 @@ using System.Collections.Generic;
             Debug.Log("Reached NODE PLAY");
         //decorated node logic + CHILDREN
             tree.PlayChildren(nodelist);//visitor pattern; double dispatch
-
-
     }
-
-
     public string getIntent()
         {
             return intent;

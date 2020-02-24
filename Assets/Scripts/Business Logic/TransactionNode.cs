@@ -13,8 +13,6 @@ public class TransactionNode : Node
         string item = tree.getIntent();
         tree.MakePurchase(item);
         Debug.Log("SHOPPING CART CALL");
-
-
         tree.PlayChildren(nodelist);
     }
     public override void Play(Tree_Container tree)
@@ -23,9 +21,7 @@ public class TransactionNode : Node
         string item = tree.getIntent();
         tree.MakePurchase(item);
         Debug.Log("SHOPPING CART CALL");
-       
-        
-            tree.Play(this);
+        tree.Play(this);
        
     }
 

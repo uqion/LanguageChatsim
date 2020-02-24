@@ -12,7 +12,6 @@ public class TransactionNode1 : Node
         Debug.Log("Reached TRANSACTION1 NODE PLAY");
         response = "The total is " + tree.GetBillTotal() + "dollars";
         Debug.Log("TOTAL IS:" + tree.GetBillTotal());
-
         tree.PlayChildren(nodelist);
         tree.shoppingCart.ResetCart();
     }
