@@ -9,26 +9,18 @@ using System.Linq;
 //Contains an instantiated SO_Hi tree; interface for Timeline Controller 
 public class Tree_Container : MonoBehaviour
 {
-    
-
    
     [SerializeField]
-    public List<Node> nodeTree;
-    [SerializeField]
     private NodeDictionary nodeDictionary;
-
-
-
     [SerializeField]
     TimelineController timelineController;
     [SerializeField]
     SO_Database database;
     [SerializeField]
-    ShoppingCart shoppingCart; 
-   
-    private Queue<int> queuedTimelines;
+    ShoppingCart shoppingCart;
     [SerializeField]
     RootNode rootNode;
+    private Queue<int> queuedTimelines;
     private bool isColliding;
     private string intent; 
 
@@ -48,34 +40,8 @@ public class Tree_Container : MonoBehaviour
     {
 
     }
-   
-   
-
-
-    //public void PlayChild(NodeList node)//TODO: implement visitor pattern for nodes with children 
-    //{
-      
-      // List<Node> queuedTimelines;
-        //if (!queuedTimelines[0].Equals(node))
-        //{
-           // queuedTimelines.Insert(0, node);
-        //}
-        //timelineController.PlayFromTimelines(queuedTimelines);
-
-//   }
-   // public List<Node> PopulateQueue(Node node)
-  //  {
-       // List<Node> children = new List<Node>();
-       // for(int i=0; i<node.children.Count(); i++)
-        //{
-          //  children[i] = nodeTree[node.children[i]];
-      // }
-       // return children; 
-  //  }
     public void ReturnQuery(string query)
     {
-
-
         NodeList active;
         intent = query; 
         active = MatchIntent(query);
@@ -89,15 +55,7 @@ public class Tree_Container : MonoBehaviour
             timelineController.PlayFromTimelines(nodelist);
         }
     }
-    public NodeList MatchIntent(string intent)
-
-
-    {
-        return nodeDictionary[intent];
-       
-    }
-
-    public void ReturnQuery(QueryResult query)
+       public void ReturnQuery(QueryResult query)
     {
         Debug.Log("REACHED HERE");
         intent = query.intent.displayName;
@@ -113,9 +71,11 @@ public class Tree_Container : MonoBehaviour
         {
             timelineController.PlayFromTimelines(nodelist);
         }
+    }
+    public NodeList MatchIntent(string intent)
 
-
-
+    {
+        return nodeDictionary[intent];
 
     }
     public void Play(Node node)
