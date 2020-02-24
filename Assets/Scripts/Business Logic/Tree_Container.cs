@@ -6,18 +6,18 @@ using JsonData;
 using System.Linq;
 
 
-//Contains an instantiated SO_Hi tree; interface for Timeline Controller 
+//Contains an instantiated NodeDictionary; interface for Timeline Controller 
 public class Tree_Container : MonoBehaviour
 {
    
     [SerializeField]
-    private NodeDictionary nodeDictionary;
+    public NodeDictionary nodeDictionary;
     [SerializeField]
-    TimelineController timelineController;
+    public TimelineController timelineController;
     [SerializeField]
     SO_Database database;
     [SerializeField]
-    ShoppingCart shoppingCart;
+    public ShoppingCart shoppingCart;
     [SerializeField]
     RootNode rootNode;
     private Queue<int> queuedTimelines;
@@ -26,12 +26,14 @@ public class Tree_Container : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {//TODO: rootnode flag
+    {//TODO: ROOTNODE FLAG 
+     //TODO: ANIMATIONS DEFAULT POSITION
+
      // tree = new Dictionary<string, List<Node>>();
     // ReturnQuery("DefaultWelcome");
+    //ReturnQuery("UserProvidesBeverageRight");
     // ReturnQuery("UserProvidesBeverageRight");
-     //ReturnQuery("UserProvidesBeverageRight");
-     //  ReturnQuery("UserProvidesBeverageRight - no");
+     // ReturnQuery("UserProvidesBeverageRight - no");
      // rootNode = ScriptableObject.CreateInstance<RootNode>();
     }
 
@@ -40,6 +42,7 @@ public class Tree_Container : MonoBehaviour
     {
 
     }
+    //Overloaded ReturnQuery for testing without DialogFlow trigger
     public void ReturnQuery(string query)
     {
         NodeList active;
@@ -52,34 +55,41 @@ public class Tree_Container : MonoBehaviour
         }
         else
         {
-            timelineController.PlayFromTimelines(nodelist);
+            nodelist[0].Play(this,nodelist);
+            //timelineController.PlayFromTimelines(nodelist);
         }
     }
+    //Triggered by DialogFlow, param query is the result returned by DialogFlow
+    //The query result is then matched to NodeDictionary by intent to retrieve List<Nodes>
+    
        public void ReturnQuery(QueryResult query)
     {
         Debug.Log("REACHED HERE");
         intent = query.intent.displayName;
-        Debug.Log("The DF INTENT IS:" + intent);
+        Debug.Log("THE DF INTENT IS:" + intent);
         NodeList active = MatchIntent(intent);
         List<Node> nodelist = active.getList();
-        Debug.Log("The matched intent is:" + nodelist[0].getIntent());
+        Debug.Log("THE MATCHED INTENT IS:" + nodelist[0].getIntent());
+        //If there is only one node in the list, no need for async, direct call to play animations/responses for one node
         if (nodelist.Count == 1)
         {
-            nodelist[0].Play(this);
+            nodelist[0].Play(this); //Visitor pattern; double dispatch, this container is passed to Node so that it can gather the resources it requires 
         }
+        //Else async call to play multiple animations
         else
         {
-            timelineController.PlayFromTimelines(nodelist);
+            nodelist[0].Play(this, nodelist);
         }
     }
+     public void PlayChildren(List<Node> nodelist)
+    {
+        timelineController.PlayFromTimelines(nodelist);
+    }
     public NodeList MatchIntent(string intent)
-
     {
         return nodeDictionary[intent];
-
     }
     public void Play(Node node)
-
     {
         Debug.Log("Reached CONTAINER PLAY");
         string response = node.getResponse();
@@ -95,7 +105,6 @@ public class Tree_Container : MonoBehaviour
             Debug.Log("Reached response PLAY");
             timelineController.Play(taid, response);
         }
-
     }
 
     void OnTriggerEnter(Collider collider)

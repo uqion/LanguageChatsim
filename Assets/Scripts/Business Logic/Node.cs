@@ -21,18 +21,24 @@ using System.Collections.Generic;
         [SerializeField]
         protected int taid;
 
-
+    virtual public void Play(Tree_Container tree) {
+        Debug.Log("Reached NODE PLAY");
+        //decorated node logic + SINGLE
+        
+        tree.Play(this);
+    }
 
      
 
-        virtual public void Play(Tree_Container tree) //visitor pattern; double dispatch
+        virtual public void Play(Tree_Container tree, List<Node> nodelist) //visitor pattern; double dispatch
 
         {
             Debug.Log("Reached NODE PLAY");
-       
-            tree.Play(this);
-        
+        //decorated node logic + CHILDREN
+            tree.PlayChildren(nodelist);
+           
     }
+    
 
         public string getIntent()
         {

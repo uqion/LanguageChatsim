@@ -7,7 +7,17 @@ using UnityEngine;
 //call to SO DB & shopping cart 
 public class TransactionNode : Node
 {
-   public override void Play(Tree_Container tree)
+    public override void Play(Tree_Container tree, List<Node> nodelist)
+    {
+        Debug.Log("Reached TRANSACTION NODE PLAY");
+        string item = tree.getIntent();
+        tree.MakePurchase(item);
+        Debug.Log("SHOPPING CART CALL");
+
+
+        tree.PlayChildren(nodelist);
+    }
+    public override void Play(Tree_Container tree)
     {
         Debug.Log("Reached TRANSACTION NODE PLAY");
         string item = tree.getIntent();
