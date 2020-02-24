@@ -24,23 +24,22 @@ using System.Collections.Generic;
     virtual public void Play(Tree_Container tree) {
         Debug.Log("Reached NODE PLAY");
         //decorated node logic + SINGLE
-        
-        tree.Play(this);
+        tree.Play(this);//visitor pattern; double dispatch
+
     }
+    //Overloading methods to accommodate nodes with children 
 
-     
-
-        virtual public void Play(Tree_Container tree, List<Node> nodelist) //visitor pattern; double dispatch
-
+    virtual public void Play(Tree_Container tree, List<Node> nodelist) 
         {
             Debug.Log("Reached NODE PLAY");
         //decorated node logic + CHILDREN
-            tree.PlayChildren(nodelist);
-           
-    }
-    
+            tree.PlayChildren(nodelist);//visitor pattern; double dispatch
 
-        public string getIntent()
+
+    }
+
+
+    public string getIntent()
         {
             return intent;
         }
