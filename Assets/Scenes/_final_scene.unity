@@ -477,8 +477,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1675880719}
-  m_Father: {fileID: 2379777147870275224}
-  m_RootOrder: 4
+  m_Father: {fileID: 1330146570}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -579,7 +579,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -89.674, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -14.9}
+  m_AnchoredPosition: {x: 80, y: -14.6}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &860142158
@@ -670,6 +670,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1482225792693138270, guid: eb545e5a6c5323441b4471e37ace513f,
     type: 3}
   m_PrefabInstance: {fileID: 242239963701099473}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1330146570 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8995525976181079897, guid: 44e96cb1706c6984b9f824c0f615de69,
+    type: 3}
+  m_PrefabInstance: {fileID: 8810381324548777307}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1505477619
 GameObject:
@@ -859,8 +865,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675880718}
   m_LocalRotation: {x: -0, y: -0.7050907, z: -0, w: 0.70911723}
-  m_LocalPosition: {x: 0, y: 0, z: 279.7}
-  m_LocalScale: {x: 0.7487099, y: 0.9268318, z: 0.98297}
+  m_LocalPosition: {x: 0, y: 0, z: 279.8}
+  m_LocalScale: {x: 0.45461047, y: 0.78771436, z: 0.98297}
   m_Children:
   - {fileID: 860142157}
   m_Father: {fileID: 719602814}
@@ -868,7 +874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1097.4, y: -358.72}
+  m_AnchoredPosition: {x: -1097.4, y: -330.5}
   m_SizeDelta: {x: -1364, y: -911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675880720
@@ -1794,6 +1800,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8995525976697856020, guid: 44e96cb1706c6984b9f824c0f615de69,
+        type: 3}
+      propertyPath: UserInputCanvas
+      value: 
+      objectReference: {fileID: 719602813}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44e96cb1706c6984b9f824c0f615de69, type: 3}
 --- !u!114 &8810381324548777308 stripped
