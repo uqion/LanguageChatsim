@@ -571,7 +571,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860142156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.6}
   m_LocalScale: {x: 0.31705084, y: 0.1781063, z: 1}
   m_Children: []
   m_Father: {fileID: 1675880719}
@@ -613,7 +613,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Can I have a cup of coffee
 --- !u!222 &860142159
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -746,6 +746,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2379777147870275224}
     m_Modifications:
+    - target: {fileID: 2916054243645331414, guid: 41d20b6d5289c414a9782e1706a08266,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeechRecog
+      objectReference: {fileID: 0}
     - target: {fileID: 2916054243645331416, guid: 41d20b6d5289c414a9782e1706a08266,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -800,11 +805,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2916054243645331414, guid: 41d20b6d5289c414a9782e1706a08266,
-        type: 3}
-      propertyPath: m_Name
-      value: SpeechRecog
       objectReference: {fileID: 0}
     - target: {fileID: 2951700108821420503, guid: 41d20b6d5289c414a9782e1706a08266,
         type: 3}
@@ -884,7 +884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
