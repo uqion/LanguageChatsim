@@ -586,8 +586,13 @@ MonoBehaviour:
     - DefaultWelcome
     - UserProvidesBeverageRight
     _values:
-    - {fileID: 11400000, guid: 87b84cfc05ce77a4d8aa811842f0537c, type: 2}
-    - {fileID: 11400000, guid: 71a4cf4e84bdf9a4385268a5197dbed0, type: 2}
+    - Nodes:
+      - {fileID: 11400000, guid: 87b84cfc05ce77a4d8aa811842f0537c, type: 2}
+    - Nodes:
+      - {fileID: 11400000, guid: 71a4cf4e84bdf9a4385268a5197dbed0, type: 2}
+      - {fileID: 11400000, guid: 089b92e4912fe8d46a39dd918e1154a3, type: 2}
+      - {fileID: 11400000, guid: 3aaddc591997b2b46bf150147af11c9e, type: 2}
+      - {fileID: 11400000, guid: f559a938773e1b74488e7865806a119d, type: 2}
   timelineController: {fileID: 1505477622}
   database: {fileID: 11400000, guid: 8b5ac475d7067794e9433668022eda8d, type: 2}
   shoppingCart: {fileID: 11400000, guid: 242932ab3369a7044b6f51394ad4ae17, type: 2}
@@ -626,8 +631,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 026a3457f7b8e554289eb4672a2d9a56, type: 2}
   - {fileID: 11400000, guid: 45c2e32f4c10c8d49a9df5066466c21c, type: 2}
   - {fileID: 11400000, guid: 72655a40f794fdf48af197052c262a7c, type: 2}
-  - {fileID: 0}
   - {fileID: 11400000, guid: 31a0130815f88104eaa9fd9d158083ef, type: 2}
+  - {fileID: 11400000, guid: 13ad197b08a655f41aa72bfbffa9ec17, type: 2}
   - {fileID: 11400000, guid: 389ec7c5068ca50458836825f6f22204, type: 2}
   - {fileID: 11400000, guid: 0b773129428da71498c4d843048c5edb, type: 2}
   - {fileID: 11400000, guid: 1d7f6040076b62444840f9e073ca5e1c, type: 2}
@@ -1268,7 +1273,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayableAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 0b773129428da71498c4d843048c5edb,
+      objectReference: {fileID: 11400000, guid: f6283e67829b2e64b991f8bf3d41a2ae,
         type: 2}
     - target: {fileID: 2379777149203186075, guid: 3624a8005d7d35847ba3d57ee89b2972,
         type: 3}

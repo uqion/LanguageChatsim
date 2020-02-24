@@ -7,4 +7,9 @@ using System;
 public class NodeList 
 {
     public List<Node> Nodes; 
+
+    public List<Node> getList()
+    {
+        return Nodes; 
+    }
 }

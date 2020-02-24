@@ -12,7 +12,7 @@ using System.Collections.Generic;
     {
 
 
-    public List<int> children = new List<int>();
+    
 
         [SerializeField]
         protected string intent;
@@ -29,14 +29,9 @@ using System.Collections.Generic;
 
         {
             Debug.Log("Reached NODE PLAY");
-        if (children.Count > 0)
-        {
-           // tree.PlayChild(this);
-        }
-        else
-        {
+       
             tree.Play(this);
-        }
+        
     }
 
         public string getIntent()

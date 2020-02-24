@@ -13,14 +13,10 @@ public class TransactionNode : Node
         string item = tree.getIntent();
         tree.MakePurchase(item);
         Debug.Log("SHOPPING CART CALL");
-        if (children.Count > 0)
-        {
-            //tree.PlayChild(this);
-        }
-        else
-        {
+       
+        
             tree.Play(this);
-        }
+       
     }
 
  

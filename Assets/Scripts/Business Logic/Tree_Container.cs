@@ -36,8 +36,8 @@ public class Tree_Container : MonoBehaviour
     void Start()
     {//TODO: rootnode flag
      // tree = new Dictionary<string, List<Node>>();
-     //ReturnQuery("DefaultWelcome");
-     ReturnQuery("UserProvidesBeverageRight");
+    // ReturnQuery("DefaultWelcome");
+    // ReturnQuery("UserProvidesBeverageRight");
      //ReturnQuery("UserProvidesBeverageRight");
      //  ReturnQuery("UserProvidesBeverageRight - no");
      // rootNode = ScriptableObject.CreateInstance<RootNode>();
@@ -52,17 +52,17 @@ public class Tree_Container : MonoBehaviour
    
 
 
-   // public void PlayChild(Node node)//TODO: implement visitor pattern for nodes with children 
+    //public void PlayChild(NodeList node)//TODO: implement visitor pattern for nodes with children 
     //{
-      //  node.Play(this); 
-       //List<int> queuedTimelines;
+      
+      // List<Node> queuedTimelines;
         //if (!queuedTimelines[0].Equals(node))
         //{
            // queuedTimelines.Insert(0, node);
         //}
         //timelineController.PlayFromTimelines(queuedTimelines);
 
-   // }
+//   }
    // public List<Node> PopulateQueue(Node node)
   //  {
        // List<Node> children = new List<Node>();
@@ -76,13 +76,20 @@ public class Tree_Container : MonoBehaviour
     {
 
 
-        Node active;
+        NodeList active;
         intent = query; 
-       active = MatchIntent(query);
-        active.Play(this);
-    
+        active = MatchIntent(query);
+        List<Node> nodelist = active.getList();
+        if (nodelist.Count == 1)
+        {
+            nodelist[0].Play(this);
+        }
+        else
+        {
+            timelineController.PlayFromTimelines(nodelist);
+        }
     }
-    public Node MatchIntent(string intent)
+    public NodeList MatchIntent(string intent)
 
 
     {
@@ -94,10 +101,18 @@ public class Tree_Container : MonoBehaviour
     {
         Debug.Log("REACHED HERE");
         intent = query.intent.displayName;
-        Debug.Log("The df INTENT IS:" + intent);
-        Node active = MatchIntent(intent);
-        Debug.Log("The MATCHED INTENT IS:" +active.getIntent());
-        active.Play(this);
+        Debug.Log("The DF INTENT IS:" + intent);
+        NodeList active = MatchIntent(intent);
+        List<Node> nodelist = active.getList();
+        Debug.Log("The matched intent is:" + nodelist[0].getIntent());
+        if (nodelist.Count == 1)
+        {
+            nodelist[0].Play(this);
+        }
+        else
+        {
+            timelineController.PlayFromTimelines(nodelist);
+        }
 
 
 
