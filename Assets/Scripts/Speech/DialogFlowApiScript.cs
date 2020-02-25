@@ -17,6 +17,8 @@ public class DialogFlowApiScript : MonoBehaviour
     [Tooltip("Once a response is received, the response text will be displayed in this text field")]
     //Once a response is received, the response text will be displayed in this text field
     public UnityEngine.UI.Text responseText;
+    //Interrupts call to direct business logic to SO_Hi tree
+    public Tree_Container tree;
 
     // Use this for initialization
     void Start()
@@ -82,11 +84,13 @@ public class DialogFlowApiScript : MonoBehaviour
 
         if (postRequest.isNetworkError || postRequest.isHttpError)
         {
+            Debug.Log("Reached here DF ERROR");
             Debug.Log(postRequest.responseCode);
             Debug.Log(postRequest.error);
         }
         else
         {
+            Debug.Log("Reached here 2");
             // Show results as text
             Debug.Log("Response: " + postRequest.downloadHandler.text);
 
@@ -95,6 +99,11 @@ public class DialogFlowApiScript : MonoBehaviour
             string result = System.Text.Encoding.UTF8.GetString(resultbyte);
             ResponseBody content = (ResponseBody)JsonUtility.FromJson<ResponseBody>(result);
             responseText.text = content.queryResult.fulfillmentText;
+            Debug.Log("CALLING TTS: " + Time.realtimeSinceStartup);
+            
+            tree.ReturnQuery(content.queryResult);
+            Debug.Log("CALLED TREE");
+
         }
     }
 

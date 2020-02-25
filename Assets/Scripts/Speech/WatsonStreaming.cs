@@ -215,7 +215,9 @@ public class WatsonStreaming : MonoBehaviour
                     Log.Debug("ExampleStreaming.OnRecognize()", text);
                     //TODO: use alts and confidence to extend behaviour into feedback/criticality
                     ResultsField.text = alt.transcript ;
+                    
                     SentButton.GetComponent<DialogFlowApiScript>().SendText(alt.transcript);
+                    Debug.Log("REACHED DIALOGFLOW SENDTEXT");
                 }
 
                 if (res.keywords_result != null && res.keywords_result.keyword != null)
