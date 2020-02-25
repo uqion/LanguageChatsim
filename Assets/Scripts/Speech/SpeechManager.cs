@@ -62,7 +62,7 @@ public class SpeechManager : MonoBehaviour {
 
         if (audioSource == null)
         {
-            audioSource = GetComponent<AudioSource>();
+            audioSource = GetComponentInChildren<AudioSource>();
         }
     }
 
@@ -160,10 +160,12 @@ public class SpeechManager : MonoBehaviour {
                 var clip = ToClip("Speech", unityData, sampleCount, frequency);
 
                 // Set the source on the audio clip
+                Debug.Log("CONVERTED TO AUDIO CLIP: "+ Time.realtimeSinceStartup);
                 audioSource.clip = clip;
 
                 Debug.Log($"Trigger playback of audio clip on AudioSource.");
                 // Play audio
+                Debug.Log("PLAYING AUDIO CLIP: " + Time.realtimeSinceStartup);
                 audioSource.Play();
             }
             catch (Exception ex)
@@ -449,8 +451,12 @@ public class SpeechManager : MonoBehaviour {
     }
 
     // Speech synthesis to pull audio output stream.
-    public async Task SpeakWithSDKPlugin(string message)
+    public async Task<AudioClip> SpeakWithSDKPlugin(string message)
     {
+        if(message == null || message.Length <= 0)
+        {
+            return null;
+        }
         Synthesize cortana = new Synthesize();
 
         // Creates an instance of a speech config with specified subscription key and service region.
@@ -486,7 +492,7 @@ public class SpeechManager : MonoBehaviour {
 
                         Debug.Log($"Trigger playback of audio clip on AudioSource.");
                         // Play audio
-                        audioSource.Play();
+                        return clip;
                     }
                     else if (result.Reason == ResultReason.Canceled)
                     {
@@ -503,6 +509,7 @@ public class SpeechManager : MonoBehaviour {
                 }
             }
         }
+        return null;
     }
 
 }
