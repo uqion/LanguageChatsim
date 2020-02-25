@@ -453,6 +453,10 @@ public class SpeechManager : MonoBehaviour {
     // Speech synthesis to pull audio output stream.
     public async Task<AudioClip> SpeakWithSDKPlugin(string message)
     {
+        if(message == null || message.Length <= 0)
+        {
+            return null;
+        }
         Synthesize cortana = new Synthesize();
 
         // Creates an instance of a speech config with specified subscription key and service region.

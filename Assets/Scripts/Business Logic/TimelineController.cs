@@ -34,16 +34,22 @@ public class TimelineController : MonoBehaviour
     public async void Play(int id, string response)
     {
         AudioClip clip = await speech.SpeakWithSDKPlugin(response);
-        audioSource.clip = clip;
-        audioSource.Play();
+        if(clip != null )
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
         PlayFromTimelines(id);
     }
 
     public async void Play(string response)
     {
         AudioClip clip = await speech.SpeakWithSDKPlugin(response);
-        audioSource.clip = clip;
-        audioSource.Play();
+        if(clip != null)
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
     }
 
     public void Play(int id)
