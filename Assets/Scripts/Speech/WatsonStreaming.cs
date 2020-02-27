@@ -17,6 +17,7 @@
 #pragma warning disable 0649
 
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -26,6 +27,7 @@ using IBM.Cloud.SDK.Authentication;
 using IBM.Cloud.SDK.Authentication.Iam;
 using IBM.Cloud.SDK.Utilities;
 using IBM.Cloud.SDK.DataTypes;
+
 
 public class WatsonStreaming : MonoBehaviour
 {
@@ -59,9 +61,15 @@ public class WatsonStreaming : MonoBehaviour
     private int _recordingBufferSize = 1;
     private int _recordingHZ = 22050;
 
-    public Text textBox;
+    public Text userInputBoxText;
 
     private SpeechToTextService _service;
+
+    private bool playMode;
+    public Text userText;
+    public GameObject userInputBox;
+
+    public List<Tuple<string, float>> confidenceResults = new List<Tuple<string, float>>();
 
     void Start()
     {
@@ -214,10 +222,9 @@ public class WatsonStreaming : MonoBehaviour
                 foreach (var alt in res.alternatives)
                 {
                     string text = string.Format("{0} ({1}, {2:0.00})\n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence);
-                    Log.Debug("ExampleStreaming.OnRecognize()", text);
                     //TODO: use alts and confidence to extend behaviour into feedback/criticality
-                    ResultsField.text = alt.transcript ;
-                    textBox.text = alt.transcript;
+                    ResultsField.text = alt.transcript;
+                    userText.text = alt.transcript;
                     SentButton.GetComponent<DialogFlowApiScript>().SendText(alt.transcript);
                 }
 
@@ -225,17 +232,22 @@ public class WatsonStreaming : MonoBehaviour
                 {
                     foreach (var keyword in res.keywords_result.keyword)
                     {
+                        confidenceResults.Add(new Tuple<string, float>(keyword.keyword, (float)keyword.confidence));
                         Log.Debug("ExampleStreaming.OnRecognize()", "keyword: {0}, confidence: {1}, start time: {2}, end time: {3}", keyword.normalized_text, keyword.confidence, keyword.start_time, keyword.end_time);
                     }
                 }
-
+                
                 if (res.word_alternatives != null)
                 {
                     foreach (var wordAlternative in res.word_alternatives)
                     {
                         Log.Debug("ExampleStreaming.OnRecognize()", "Word alternatives found. Start time: {0} | EndTime: {1}", wordAlternative.start_time, wordAlternative.end_time);
+
                         foreach (var alternative in wordAlternative.alternatives)
+                        {
                             Log.Debug("ExampleStreaming.OnRecognize()", "\t word: {0} | confidence: {1}", alternative.word, alternative.confidence);
+                        
+                        }
                     }
                 }
             }

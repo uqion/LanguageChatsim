@@ -16,15 +16,15 @@ public class PlayerController : MonoBehaviour
     public GameObject CameraRig;
     public GameObject Player;
     public GameObject UserInputCanvas;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = Player.GetComponent<Rigidbody>();
         rb.isKinematic = true;
         Physics.gravity = new Vector3(0, -200.0f, 0);
-        
-        // when the scene is started, set the textBox (that shows user input from mic) as false,
-        // "alternate" playmode is not activated yet. 
         UserInputCanvas.SetActive(false);
     }
 
@@ -40,6 +40,11 @@ public class PlayerController : MonoBehaviour
         if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.AKey))
         {
             UserInputCanvas.SetActive(true);
+        }
+
+        if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.BKey))
+        {
+            UserInputCanvas.SetActive(false);
         }
     }
 
