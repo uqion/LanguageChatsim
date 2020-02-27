@@ -572,15 +572,15 @@ RectTransform:
   m_GameObject: {fileID: 860142156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.6}
-  m_LocalScale: {x: 0.42015576, y: 0.47829884, z: 1}
+  m_LocalScale: {x: 0.23106886, y: 0.30443242, z: 1}
   m_Children: []
   m_Father: {fileID: 1675880719}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -89.674, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -36.6}
-  m_SizeDelta: {x: 500, y: 150}
+  m_AnchoredPosition: {x: 76.9, y: -40.5}
+  m_SizeDelta: {x: 670, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &860142158
 MonoBehaviour:
@@ -595,14 +595,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34420612, g: 0.41317254, b: 0.8018868, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -613,7 +613,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Hello can I have a cup of coffee please? '
 --- !u!222 &860142159
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -869,8 +869,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675880718}
   m_LocalRotation: {x: -0, y: -0.7050907, z: -0, w: 0.70911723}
-  m_LocalPosition: {x: 0, y: 0, z: 277.4}
-  m_LocalScale: {x: 0.58366567, y: 0.4099366, z: 0.98297}
+  m_LocalPosition: {x: 0, y: 0, z: 258.6}
+  m_LocalScale: {x: 0.40034795, y: 0.2983661, z: 0.98297}
   m_Children:
   - {fileID: 860142157}
   m_Father: {fileID: 719602814}
@@ -878,7 +878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1230.4, y: -383}
+  m_AnchoredPosition: {x: -1230.5, y: -383}
   m_SizeDelta: {x: -1364, y: -911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675880720
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
+  m_Color: {r: 0.62144, g: 0.86926675, b: 0.990566, a: 0.78431374}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1812,17 +1812,17 @@ PrefabInstance:
     - target: {fileID: 8995525976181130093, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.139
+      value: -0.637
       objectReference: {fileID: 0}
     - target: {fileID: 8995525976181130093, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.312
+      value: -4.781
       objectReference: {fileID: 0}
     - target: {fileID: 8995525976181130093, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.043
+      value: -1.556
       objectReference: {fileID: 0}
     - target: {fileID: 8995525976181130093, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
