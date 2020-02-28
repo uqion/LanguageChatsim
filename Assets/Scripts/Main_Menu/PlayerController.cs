@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     public GameObject Player;
     public GameObject UserInputCanvas;
     public GameObject AlertCanvas;
+    public GameObject waterBottleLabel;
+    public GameObject bottleOfWaterLabel;
+
     private List<Tuple<string, float>> confidences;
     private bool hasWordBelowThreshold;
     public float confidenceThreshold = 0.99f;
@@ -31,6 +34,10 @@ public class PlayerController : MonoBehaviour
         Physics.gravity = new Vector3(0, -200.0f, 0);
         UserInputCanvas.SetActive(false);
         AlertCanvas.SetActive(false);
+        waterBottleLabel.SetActive(false);
+        bottleOfWaterLabel.SetActive(false);
+
+
     }
 
     void FixedUpdate()
@@ -46,11 +53,15 @@ public class PlayerController : MonoBehaviour
         {
             AlertCanvas.SetActive(false);
             UserInputCanvas.SetActive(true);
+            waterBottleLabel.SetActive(true);
+            bottleOfWaterLabel.SetActive(true);
         }
 
         if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.BKey))
         {
             UserInputCanvas.SetActive(false);
+            waterBottleLabel.SetActive(false);
+            bottleOfWaterLabel.SetActive(false);
         }
 
 
