@@ -54,12 +54,12 @@ public class WatsonStreaming : MonoBehaviour
     private string _recognizeModel;
     #endregion
 
-
     private int _recordingRoutine = 0;
     private string _microphoneID = null;
     private AudioClip _recording = null;
     private int _recordingBufferSize = 1;
     private int _recordingHZ = 22050;
+    public PlayerController playerController;
 
     public Text userInputBoxText;
 
@@ -225,6 +225,12 @@ public class WatsonStreaming : MonoBehaviour
                     //TODO: use alts and confidence to extend behaviour into feedback/criticality
                     ResultsField.text = alt.transcript;
                     userText.text = alt.transcript;
+                    foreach(WordConfidence word in alt.WordConfidence)
+                    {
+                        Debug.Log("WORD:" + word.Word + " " + word.Confidence);
+                        confidenceResults.Add(new Tuple<string, float>(word.Word, (float)word.Confidence));
+                    }
+                    playerController.SetConfidences(confidenceResults);
                     SentButton.GetComponent<DialogFlowApiScript>().SendText(alt.transcript);
                 }
 
@@ -232,7 +238,6 @@ public class WatsonStreaming : MonoBehaviour
                 {
                     foreach (var keyword in res.keywords_result.keyword)
                     {
-                        confidenceResults.Add(new Tuple<string, float>(keyword.keyword, (float)keyword.confidence));
                         Log.Debug("ExampleStreaming.OnRecognize()", "keyword: {0}, confidence: {1}, start time: {2}, end time: {3}", keyword.normalized_text, keyword.confidence, keyword.start_time, keyword.end_time);
                     }
                 }
