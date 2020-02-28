@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Player;
     public GameObject UserInputCanvas;
     public GameObject AlertCanvas;
+    public GameObject tintSphere;
     public GameObject waterBottleLabel;
     public GameObject bottleOfWaterLabel;
 
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour
         {
             AlertCanvas.SetActive(false);
             UserInputCanvas.SetActive(true);
+            tintSphere.SetActive(true);
             waterBottleLabel.SetActive(true);
             bottleOfWaterLabel.SetActive(true);
         }
