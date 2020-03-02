@@ -15,12 +15,30 @@ public class PlayerController : MonoBehaviour
 
     public GameObject CameraRig;
     public GameObject Player;
+    public GameObject UserInputCanvas;
+    public GameObject AlertCanvas;
+    public GameObject tintSphere;
+    public GameObject waterBottleLabel;
+    public GameObject bottleOfWaterLabel;
+
+    private List<Tuple<string, float>> confidences;
+    private bool hasWordBelowThreshold;
+    public float confidenceThreshold = 0.99f;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        hasWordBelowThreshold = false;
         rb = Player.GetComponent<Rigidbody>();
         rb.isKinematic = true;
         Physics.gravity = new Vector3(0, -200.0f, 0);
+        UserInputCanvas.SetActive(false);
+        AlertCanvas.SetActive(false);
+        waterBottleLabel.SetActive(false);
+        bottleOfWaterLabel.SetActive(false);
+
+
     }
 
     void FixedUpdate()
@@ -30,6 +48,25 @@ public class PlayerController : MonoBehaviour
         {
             moveCamera();
         }
+
+        // activating "alternate" playmode, setting the textBox to active when 'A' key is pressed.
+        if (ViveInput.GetPress(HandRole.LeftHand, ControllerButton.Grip) && hasWordBelowThreshold)
+        {
+            AlertCanvas.SetActive(false);
+            UserInputCanvas.SetActive(true);
+            tintSphere.SetActive(true);
+            waterBottleLabel.SetActive(true);
+            bottleOfWaterLabel.SetActive(true);
+        }
+
+        if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.BKey))
+        {
+            UserInputCanvas.SetActive(false);
+            waterBottleLabel.SetActive(false);
+            bottleOfWaterLabel.SetActive(false);
+        }
+
+
     }
 
 
@@ -47,6 +84,30 @@ public class PlayerController : MonoBehaviour
         //rb.MovePosition(Player.transform.position + transform.forward * Time.deltaTime);
         rb.MovePosition(newPos);
 
+    }
+
+    public void SetConfidences(List<Tuple<string, float>> val)
+    {
+        confidences = val;
+        foreach (Tuple<string, float> con in confidences)
+        {
+            if (con.Item2 <= confidenceThreshold)
+            {
+                Debug.Log("[CONFIDENCE] " + con.Item2);
+                hasWordBelowThreshold = true;
+                AlertCanvas.SetActive(true);
+            }
+        }
+    }
+
+    private void SetCanvasActive()
+    {
+        Debug.Log("PLAYER button press");
+        if (confidences != null)
+        {
+            Debug.Log("PLAYER: got confidence");
+        }
+        confidences = null;
     }
 
     private void LateUpdate()
