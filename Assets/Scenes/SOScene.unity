@@ -725,12 +725,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2379777149203186075, guid: 3624a8005d7d35847ba3d57ee89b2972,
-        type: 3}
-      propertyPath: m_SceneBindings.Array.data[6].key
-      value: 
-      objectReference: {fileID: -4999634976857595775, guid: 8515302a74058dc418fdb1ac5b5fd7f0,
-        type: 2}
     - target: {fileID: 716108801857746207, guid: 3624a8005d7d35847ba3d57ee89b2972,
         type: 3}
       propertyPath: dispatcher
