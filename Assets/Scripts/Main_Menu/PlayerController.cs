@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
 
         if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.BKey))
         {
+            tintSphere.SetActive(false);
             UserInputCanvas.SetActive(false);
             waterBottleLabel.SetActive(false);
             bottleOfWaterLabel.SetActive(false);
