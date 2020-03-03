@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public GameObject tintSphere;
     public GameObject waterBottleLabel;
     public GameObject bottleOfWaterLabel;
+    public GameObject instructionCanvas;
 
     private List<Tuple<string, float>> confidences;
     private bool hasWordBelowThreshold;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
         AlertCanvas.SetActive(false);
         waterBottleLabel.SetActive(false);
         bottleOfWaterLabel.SetActive(false);
+        instructionCanvas.SetActive(false);
 
 
     }
@@ -60,6 +62,7 @@ public class PlayerController : MonoBehaviour
             tintSphere.SetActive(true);
             waterBottleLabel.SetActive(true);
             bottleOfWaterLabel.SetActive(true);
+            instructionCanvas.SetActive(true);
         }
 
         if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.BKey))
@@ -68,6 +71,7 @@ public class PlayerController : MonoBehaviour
             UserInputCanvas.SetActive(false);
             waterBottleLabel.SetActive(false);
             bottleOfWaterLabel.SetActive(false);
+            instructionCanvas.SetActive(false);
         }
 
 
