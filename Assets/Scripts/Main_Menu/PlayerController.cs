@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("[CONFIDENCE] " + con.Item2);
                 hasWordBelowThreshold = true;
-                if (!playModeActive)
+                if (playModeActive == false)
                 {
                     AlertCanvas.SetActive(true);
                 }
