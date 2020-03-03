@@ -213,9 +213,15 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209476541}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &408362177 stripped
+--- !u!1 &297055093 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1638054454, guid: 3624a8005d7d35847ba3d57ee89b2972,
+  m_CorrespondingSourceObject: {fileID: 493607224, guid: 3624a8005d7d35847ba3d57ee89b2972,
+    type: 3}
+  m_PrefabInstance: {fileID: 1431230152680902859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &348889572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1831703231, guid: 3624a8005d7d35847ba3d57ee89b2972,
     type: 3}
   m_PrefabInstance: {fileID: 1431230152680902859}
   m_PrefabAsset: {fileID: 0}
@@ -304,12 +310,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1155738179 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 493607224, guid: 3624a8005d7d35847ba3d57ee89b2972,
-    type: 3}
-  m_PrefabInstance: {fileID: 1431230152680902859}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1213727754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 719602813, guid: 3624a8005d7d35847ba3d57ee89b2972,
@@ -322,9 +322,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 242239963701099473}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1263109287 stripped
+--- !u!1 &1290531078 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1831703231, guid: 3624a8005d7d35847ba3d57ee89b2972,
+  m_CorrespondingSourceObject: {fileID: 1638054454, guid: 3624a8005d7d35847ba3d57ee89b2972,
     type: 3}
   m_PrefabInstance: {fileID: 1431230152680902859}
   m_PrefabAsset: {fileID: 0}
@@ -886,17 +886,17 @@ PrefabInstance:
         type: 3}
       propertyPath: AlertCanvas
       value: 
-      objectReference: {fileID: 1263109287}
+      objectReference: {fileID: 348889572}
     - target: {fileID: 8995525976697856020, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: waterBottleLabel
       value: 
-      objectReference: {fileID: 1155738179}
+      objectReference: {fileID: 297055093}
     - target: {fileID: 8995525976697856020, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: bottleOfWaterLabel
       value: 
-      objectReference: {fileID: 408362177}
+      objectReference: {fileID: 1290531078}
     - target: {fileID: 8995525976697856020, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: tintSphere
