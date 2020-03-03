@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     private List<Tuple<string, float>> confidences;
     private bool hasWordBelowThreshold;
-    public float confidenceThreshold = 0.90f;
+    public float confidenceThreshold = 0.99f;
 
 
     // Start is called before the first frame update
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // activating "alternate" playmode, setting the textBox to active when 'A' key is pressed.
-        if (ViveInput.GetPress(HandRole.LeftHand, ControllerButton.Grip) && hasWordBelowThreshold)
+        if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.AKey) && hasWordBelowThreshold)
         {
             AlertCanvas.SetActive(false);
             UserInputCanvas.SetActive(true);
