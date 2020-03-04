@@ -20,16 +20,19 @@ public class PlayerController : MonoBehaviour
     public GameObject tintSphere;
     public GameObject waterBottleLabel;
     public GameObject bottleOfWaterLabel;
+    public GameObject instructionCanvas;
 
     private List<Tuple<string, float>> confidences;
     private bool hasWordBelowThreshold;
-    public float confidenceThreshold = 0.99f;
+    private bool playModeActive;
+    public float confidenceThreshold = 0.70f;
 
 
     // Start is called before the first frame update
     void Start()
     {
         hasWordBelowThreshold = false;
+        playModeActive = false;
         rb = Player.GetComponent<Rigidbody>();
         rb.isKinematic = true;
         Physics.gravity = new Vector3(0, -200.0f, 0);
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
         AlertCanvas.SetActive(false);
         waterBottleLabel.SetActive(false);
         bottleOfWaterLabel.SetActive(false);
+        instructionCanvas.SetActive(false);
 
 
     }
@@ -52,18 +56,22 @@ public class PlayerController : MonoBehaviour
         // activating "alternate" playmode, setting the textBox to active when 'A' key is pressed.
         if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.AKey) && hasWordBelowThreshold)
         {
+            playModeActive = true;
             AlertCanvas.SetActive(false);
             UserInputCanvas.SetActive(true);
             tintSphere.SetActive(true);
             waterBottleLabel.SetActive(true);
             bottleOfWaterLabel.SetActive(true);
+            instructionCanvas.SetActive(true);
         }
 
         if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.BKey))
         {
+            tintSphere.SetActive(false);
             UserInputCanvas.SetActive(false);
             waterBottleLabel.SetActive(false);
             bottleOfWaterLabel.SetActive(false);
+            instructionCanvas.SetActive(false);
         }
 
 
@@ -95,7 +103,10 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("[CONFIDENCE] " + con.Item2);
                 hasWordBelowThreshold = true;
-                AlertCanvas.SetActive(true);
+                if (playModeActive == false)
+                {
+                    AlertCanvas.SetActive(true);
+                }
             }
         }
     }
