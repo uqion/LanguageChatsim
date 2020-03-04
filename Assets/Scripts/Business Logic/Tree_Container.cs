@@ -61,17 +61,24 @@ public class Tree_Container : MonoBehaviour
         intent = query.intent.displayName;
         Debug.Log("THE DF INTENT IS:" + intent);
         NodeList active = MatchIntent(intent);
-        List<Node> nodelist = active.getList();
-        Debug.Log("THE MATCHED INTENT IS:" + nodelist[0].getIntent());
-        //If there is only one node in the list, no need for async, direct call to play animations/responses for one node
-        if (nodelist.Count == 1)
+        if (active == null)
         {
-            nodelist[0].Play(this); //Visitor pattern; double dispatch, this container is passed to Node so that it can gather the resources it requires 
+            ReturnQuery("DefaultFallback");
         }
-        //Else async call to play multiple animations
         else
         {
-            nodelist[0].Play(this, nodelist);
+            List<Node> nodelist = active.getList();
+            Debug.Log("THE MATCHED INTENT IS:" + nodelist[0].getIntent());
+            //If there is only one node in the list, no need for async, direct call to play animations/responses for one node
+            if (nodelist.Count == 1)
+            {
+                nodelist[0].Play(this); //Visitor pattern; double dispatch, this container is passed to Node so that it can gather the resources it requires 
+            }
+            //Else async call to play multiple animations
+            else
+            {
+                nodelist[0].Play(this, nodelist);
+            }
         }
     }
     //Method for playing nodes with children, called by Node and decorated Nodes 
@@ -82,7 +89,12 @@ public class Tree_Container : MonoBehaviour
     //key/value search in NodeDictionary
     public NodeList MatchIntent(string intent)
     {
-        return nodeDictionary[intent];
+        NodeList MatchedIntent = nodeDictionary[intent];
+        if (!(MatchedIntent == null))
+        {
+            return nodeDictionary[intent];
+        }
+        return null; 
     }
     //Play method considering two scenarios: 1. animations only nodes, 2. animations + response nodes that require a call to TTS
     public void Play(Node node)
