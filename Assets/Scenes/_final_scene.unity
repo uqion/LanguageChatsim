@@ -709,18 +709,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 716108801857746207, guid: 3624a8005d7d35847ba3d57ee89b2972,
+    - target: {fileID: 8223373268127617998, guid: 3624a8005d7d35847ba3d57ee89b2972,
         type: 3}
       propertyPath: playerController
       value: 
       objectReference: {fileID: 621054234}
-    - target: {fileID: 716108801857746207, guid: 3624a8005d7d35847ba3d57ee89b2972,
+    - target: {fileID: 8223373268127617998, guid: 3624a8005d7d35847ba3d57ee89b2972,
         type: 3}
       propertyPath: dispatcher
       value: 
       objectReference: {fileID: 1059981456}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8259080639517089218, guid: 3624a8005d7d35847ba3d57ee89b2972, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3624a8005d7d35847ba3d57ee89b2972, type: 3}
+--- !u!1 &1431230152680902860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1973029215780286376, guid: 3624a8005d7d35847ba3d57ee89b2972,
+    type: 3}
+  m_PrefabInstance: {fileID: 1431230152680902859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1431230152680902861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5049020368216291698, guid: 3624a8005d7d35847ba3d57ee89b2972,
+    type: 3}
+  m_PrefabInstance: {fileID: 1431230152680902859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1431230152680902862 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5049020369100806780, guid: 3624a8005d7d35847ba3d57ee89b2972,
+    type: 3}
+  m_PrefabInstance: {fileID: 1431230152680902859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1431230152680902863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3669570106773491222, guid: 3624a8005d7d35847ba3d57ee89b2972,
+    type: 3}
+  m_PrefabInstance: {fileID: 1431230152680902859}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1431230152680902864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3669570105679386836, guid: 3624a8005d7d35847ba3d57ee89b2972,
+    type: 3}
+  m_PrefabInstance: {fileID: 1431230152680902859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2315422564163612441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -897,27 +928,37 @@ PrefabInstance:
         type: 3}
       propertyPath: UserInputCanvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1431230152680902864}
     - target: {fileID: 8995525976697856020, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: AlertCanvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1431230152680902863}
     - target: {fileID: 8995525976697856020, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: waterBottleLabel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1431230152680902862}
     - target: {fileID: 8995525976697856020, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: bottleOfWaterLabel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1431230152680902861}
     - target: {fileID: 8995525976697856020, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: tintSphere
       value: 
       objectReference: {fileID: 209476541}
+    - target: {fileID: 8995525976697856020, guid: 44e96cb1706c6984b9f824c0f615de69,
+        type: 3}
+      propertyPath: instructionCanvas
+      value: 
+      objectReference: {fileID: 1431230152680902860}
+    - target: {fileID: 8995525976180585387, guid: 44e96cb1706c6984b9f824c0f615de69,
+        type: 3}
+      propertyPath: far clip plane
+      value: 1506.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4300229727048191754, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1307,11 +1348,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8995525976180585387, guid: 44e96cb1706c6984b9f824c0f615de69,
-        type: 3}
-      propertyPath: far clip plane
-      value: 1506.6
       objectReference: {fileID: 0}
     - target: {fileID: 8241737141040326172, guid: 44e96cb1706c6984b9f824c0f615de69,
         type: 3}
