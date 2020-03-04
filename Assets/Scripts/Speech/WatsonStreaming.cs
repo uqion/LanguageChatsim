@@ -68,6 +68,7 @@ public class WatsonStreaming : MonoBehaviour
     private bool playMode;
     public Text userText;
     public GameObject userInputBox;
+    private float confidenceThreshold = 0.70f;
 
     public List<Tuple<string, float>> confidenceResults = new List<Tuple<string, float>>();
 
@@ -215,6 +216,7 @@ public class WatsonStreaming : MonoBehaviour
 
     private void OnRecognize(SpeechRecognitionEvent result)
     {
+        string finalOutput = "";
         if (result != null && result.results.Length > 0)
         {
             foreach (var res in result.results)
@@ -229,7 +231,17 @@ public class WatsonStreaming : MonoBehaviour
                     {
                         Debug.Log("WORD:" + word.Word + " " + word.Confidence);
                         confidenceResults.Add(new Tuple<string, float>(word.Word, (float)word.Confidence));
+                        if (word.Confidence < confidenceThreshold)
+                        {
+                            string newWord = "<color='red'>" + word.Word + "</color> ";
+                            finalOutput = finalOutput + " " + newWord;
+                        }
+                        else
+                        {
+                            finalOutput = finalOutput + " " + word.Word + " ";
+                        }
                     }
+                    userText.text = finalOutput;
                     playerController.SetConfidences(confidenceResults);
                     SentButton.GetComponent<DialogFlowApiScript>().SendText(alt.transcript);
                 }
