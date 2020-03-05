@@ -60,8 +60,6 @@ public class PlayerController : MonoBehaviour
             AlertCanvas.SetActive(false);
             UserInputCanvas.SetActive(true);
             tintSphere.SetActive(true);
-            waterBottleLabel.SetActive(true);
-            bottleOfWaterLabel.SetActive(true);
             instructionCanvas.SetActive(true);
         }
 
