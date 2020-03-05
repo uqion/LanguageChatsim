@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private List<Tuple<string, float>> confidences;
     private bool hasWordBelowThreshold;
     private bool playModeActive;
-    public float confidenceThreshold = 0.70f;
+    public float confidenceThreshold = 0.65f; 
 
 
     // Start is called before the first frame update
