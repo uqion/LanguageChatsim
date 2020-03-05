@@ -229,6 +229,12 @@ public class WatsonStreaming : MonoBehaviour
                     userText.text = alt.transcript;
                     foreach(WordConfidence word in alt.WordConfidence)
                     {
+                        if (word.Word == "%HESITATION")
+                        {
+                            Debug.Log(word.Word);
+                            continue;
+                        }
+
                         Debug.Log("WORD:" + word.Word + " " + word.Confidence);
                         confidenceResults.Add(new Tuple<string, float>(word.Word, (float)word.Confidence));
                         if (word.Confidence < confidenceThreshold)
