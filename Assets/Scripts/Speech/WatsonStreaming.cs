@@ -68,7 +68,7 @@ public class WatsonStreaming : MonoBehaviour
     private bool playMode;
     public Text userText;
     public GameObject userInputBox;
-    private float confidenceThreshold = 0.70f;
+    private float confidenceThreshold = 0.65f;
 
     public List<Tuple<string, float>> confidenceResults = new List<Tuple<string, float>>();
 
