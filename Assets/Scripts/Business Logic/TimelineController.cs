@@ -31,37 +31,27 @@ public class TimelineController : MonoBehaviour
     //aggregated play function with audio and animations
     //PARAM is taid passed from SO node, it is the index location of the timeline asset, string response to TTS
     //TODO SALSA integration 
-    public async void Play(int id, string response)
+    public async void Play(Node node)
     {
+        string response = node.getResponse();
+        int taid = node.getTaid();
         AudioClip clip = await speech.SpeakWithSDKPlugin(response);
         if(clip != null )
         {
             audioSource.clip = clip;
             audioSource.Play();
         }
-        PlayFromTimelines(id);
+        PlayFromTimelines(taid);
     }
-
-    public async void Play(string response)
-    {
-        AudioClip clip = await speech.SpeakWithSDKPlugin(response);
-        if(clip != null)
-        {
-            audioSource.clip = clip;
-            audioSource.Play();
-        }
-    }
-
     public void Play(int id)
     {
         PlayFromTimelines(id);
     }
 
-
     //Animations play method
     //PARAM is taid passed from SO node, it is the index location of the timeline asset 
     //sets off a single timeline to play asynchronously
-    private TimelineAsset PlayFromTimelines(int index)
+    public TimelineAsset PlayFromTimelines(int index)
     {
         TimelineAsset selectedAsset;
         if (timelines.Count <= index)
@@ -79,7 +69,7 @@ public class TimelineController : MonoBehaviour
 
     //sets off multiple timelines in sequence to play asynchronously
     //create 
-    public void PlayFromTimelines(List<Node> queue)
+    public void PlayFromTimelines(List<Node> queue, Tree_Container tree)
     {
         if (isPlaying)
         {
@@ -87,10 +77,10 @@ public class TimelineController : MonoBehaviour
             return;
         }
         foreach (Node n in queue)
-        {
+        {    
             queuedTimelines.Enqueue(n);
         }
-        StartCoroutine(playQueue());
+        StartCoroutine(playQueue(tree));
     }
     public void PlayFromTimelines(params int[] queue)
     {
@@ -106,14 +96,15 @@ public class TimelineController : MonoBehaviour
         StartCoroutine(playQueueRoot());
     }
 
-    private IEnumerator playQueue()
+    public IEnumerator playQueue(Tree_Container tree)
     {
         isPlaying = true;
         while (queuedTimelines.Count > 0)
         {
             Node cur = queuedTimelines.Dequeue();
-            Play(cur.getResponse());
+            Play(cur);
             TimelineAsset currentTimeline = PlayFromTimelines(cur.getTaid());
+
             yield return new WaitForSeconds((float)currentTimeline.duration);
         }
         isPlaying = false;
@@ -130,6 +121,7 @@ public class TimelineController : MonoBehaviour
         }
         isPlaying = false;
     }
+   
 
 }
 

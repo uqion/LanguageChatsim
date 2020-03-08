@@ -4,6 +4,8 @@ using UnityEngine;
 
 using JsonData;
 using System.Linq;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 
 //Contains an instantiated NodeDictionary; interface for Timeline Controller 
@@ -20,14 +22,18 @@ public class Tree_Container : MonoBehaviour
     public ShoppingCart shoppingCart;
     [SerializeField]
     RootNode rootNode;
-    private Queue<int> queuedTimelines;
+    private Queue<Node> queuedTimelines;
     private bool isColliding;
-    private string intent; 
+    private string intent;
+    private bool isPlaying = false;
+
+
 
     // Start is called before the first frame update
     void Start()
     {//TODO: ROOTNODE FLAG 
      //TODO: ANIMATIONS DEFAULT POSITION
+
     }
 
     // Update is called once per frame
@@ -48,7 +54,7 @@ public class Tree_Container : MonoBehaviour
         }
         else
         {
-            nodelist[0].Play(this,nodelist);
+            //nodelist[0].Play(this,nodelist);
             //timelineController.PlayFromTimelines(nodelist);
         }
     }
@@ -61,31 +67,42 @@ public class Tree_Container : MonoBehaviour
         intent = query.intent.displayName;
         Debug.Log("THE DF INTENT IS:" + intent);
         NodeList active = MatchIntent(intent);
-        if (active == null)
+        if (active == null)//If intent from DF is not matched with keys in dictionary 
         {
-            ReturnQuery("DefaultFallback");
+            ReturnQuery("DefaultFallback");//TODO: internal string trigger
         }
         else
         {
             List<Node> nodelist = active.getList();
             Debug.Log("THE MATCHED INTENT IS:" + nodelist[0].getIntent());
-            //If there is only one node in the list, no need for async, direct call to play animations/responses for one node
-            if (nodelist.Count == 1)
+            if (isPlaying)
             {
-                nodelist[0].Play(this); //Visitor pattern; double dispatch, this container is passed to Node so that it can gather the resources it requires 
+                Debug.Log("tried to play timelines while there are others playing");
+                return;
             }
-            //Else async call to play multiple animations
-            else
+            foreach (Node n in nodelist)
             {
-                nodelist[0].Play(this, nodelist);
+                queuedTimelines.Enqueue(n);
             }
+            StartCoroutine(playQueue());
+           
         }
     }
-    //Method for playing nodes with children, called by Node and decorated Nodes 
-     public void PlayChildren(List<Node> nodelist)
+    public IEnumerator playQueue()
     {
-        timelineController.PlayFromTimelines(nodelist);
+        isPlaying = true;
+        while (queuedTimelines.Count > 0)
+        {
+            Node cur = queuedTimelines.Dequeue();
+            cur.Play(this);
+            timelineController.Play(cur);
+            TimelineAsset currentTimeline = timelineController.PlayFromTimelines(cur.getTaid());
+
+            yield return new WaitForSeconds((float)currentTimeline.duration);
+        }
+        isPlaying = false;
     }
+    
     //key/value search in NodeDictionary
     public NodeList MatchIntent(string intent)
     {
@@ -96,24 +113,7 @@ public class Tree_Container : MonoBehaviour
         }
         return null; 
     }
-    //Play method considering two scenarios: 1. animations only nodes, 2. animations + response nodes that require a call to TTS
-    public void Play(Node node)
-    {
-        Debug.Log("Reached CONTAINER PLAY");
-        string response = node.getResponse();
-        int taid = node.getTaid();
-        Debug.Log("RESPONSE IS"+response);
-        if (string.IsNullOrEmpty(response))
-        {
-            Debug.Log("Reached ANIMATIONS PLAY");
-            timelineController.Play(taid);
-        }
-        else
-        {
-            Debug.Log("Reached response PLAY");
-            timelineController.Play(taid, response);
-        }
-    }
+ 
     //Root node logic, agent triggered by box collider attached to player 
     void OnTriggerEnter(Collider collider)
     {

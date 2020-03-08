@@ -17,7 +17,7 @@ public class TransactionNode2 : Node
         {
             taid = 20; 
         }
-        tree.Play(this); 
+        tree.timelineController.Play(this); 
     }
 
 

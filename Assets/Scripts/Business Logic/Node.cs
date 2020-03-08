@@ -18,20 +18,15 @@ using System.Collections.Generic;
         [SerializeField]
         protected int taid;
 
-    virtual public void Play(Tree_Container tree) {
+    virtual public void Play(Tree_Container treeContainer) {
         Debug.Log("Reached NODE PLAY");
         //decorated node logic + SINGLE
-        tree.Play(this);//visitor pattern; double dispatch
+       // treeContainer.timelineController.Play(this);//visitor pattern; double dispatch
 
     }
-    //Overloading methods to accommodate nodes with children 
-
-    virtual public void Play(Tree_Container tree, List<Node> nodelist) 
-        {
-            Debug.Log("Reached NODE PLAY");
-        //decorated node logic + CHILDREN
-            tree.PlayChildren(nodelist);//visitor pattern; double dispatch
-    }
+   
+    
+   // virtual public void Play(Tree_Container tree, List<Node> nodelist
     public string getIntent()
         {
             return intent;
