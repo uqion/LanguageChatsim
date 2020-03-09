@@ -7,6 +7,8 @@ using UnityEngine;
 //Transaction Node; call to check if no.items >1, if yes, jump directly to P10_A4, empty cart3
 public class TransactionNode2 : Node
 {
+    public float InstantiateOffset;
+    public GameObject ObjectToInstantiate; //packing loop, array of gameobjects???
     public new void Play(Tree_Container tree)
     {
         if (tree.CartHasItem())
@@ -17,7 +19,7 @@ public class TransactionNode2 : Node
         {
             taid = 20; 
         }
-        tree.timelineController.Play(this); 
+        
     }
 
 

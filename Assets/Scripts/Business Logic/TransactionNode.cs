@@ -22,7 +22,7 @@ public class TransactionNode : Node
             GameObject.Find("Systems").GetComponent<HandInstantiator>().CallInstantiate(ObjectToInstantiate, InstantiateOffset, false);
         }
         Debug.Log("SHOPPING CART CALL");
-        tree.timelineController.Play(this);
+
        
     }
 

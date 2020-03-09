@@ -69,19 +69,19 @@ public class TimelineController : MonoBehaviour
 
     //sets off multiple timelines in sequence to play asynchronously
     //create 
-    public void PlayFromTimelines(List<Node> queue, Tree_Container tree)
-    {
-        if (isPlaying)
-        {
-            Debug.Log("tried to play timelines while there are others playing");
-            return;
-        }
-        foreach (Node n in queue)
-        {    
-            queuedTimelines.Enqueue(n);
-        }
-        StartCoroutine(playQueue(tree));
-    }
+    /**public void PlayFromTimelines(List<Node> queue, Tree_Container tree)
+  {
+       if (isPlaying)
+       {
+           Debug.Log("tried to play timelines while there are others playing");
+           return;
+       }
+       foreach (Node n in queue)
+       {    
+           queuedTimelines.Enqueue(n);
+       }
+       StartCoroutine(playQueue(tree));
+   }**/
     public void PlayFromTimelines(params int[] queue)
     {
         if (isPlaying)
@@ -96,7 +96,7 @@ public class TimelineController : MonoBehaviour
         StartCoroutine(playQueueRoot());
     }
 
-    public IEnumerator playQueue(Tree_Container tree)
+   /** public IEnumerator playQueue(Tree_Container tree)
     {
         isPlaying = true;
         while (queuedTimelines.Count > 0)
@@ -108,7 +108,7 @@ public class TimelineController : MonoBehaviour
             yield return new WaitForSeconds((float)currentTimeline.duration);
         }
         isPlaying = false;
-    }
+    }**/
     private IEnumerator playQueueRoot()
     {
         isPlaying = true;

@@ -7,7 +7,8 @@ using UnityEngine;
 //Transaction Node; calculate shopping cart total for $price
 public class TransactionNode1 : Node
 {
-    
+    public float InstantiateOffset;
+    public GameObject ObjectToInstantiate;
 
     public new void Play(Tree_Container tree)
 

@@ -23,6 +23,7 @@ public class Tree_Container : MonoBehaviour
     [SerializeField]
     RootNode rootNode;
     private Queue<Node> queuedTimelines;
+    private Queue<int> queuedTimelinesRoot;
     private bool isColliding;
     private string intent;
     private bool isPlaying = false;
@@ -33,7 +34,7 @@ public class Tree_Container : MonoBehaviour
     void Start()
     {//TODO: ROOTNODE FLAG 
      //TODO: ANIMATIONS DEFAULT POSITION
-
+        ReturnQuery("Test");
     }
 
     // Update is called once per frame
@@ -41,27 +42,41 @@ public class Tree_Container : MonoBehaviour
     {
 
     }
+    private void Awake()
+    {
+        queuedTimelines = new Queue<Node>();
+        queuedTimelinesRoot = new Queue<int>();
+    }
     //Overloaded ReturnQuery for testing without DialogFlow trigger
     public void ReturnQuery(string query)
     {
-        NodeList active;
-        intent = query; 
-        active = MatchIntent(query);
-        List<Node> nodelist = active.getList();
-        if (nodelist.Count == 1)
+        Debug.Log("REACHED HERE");
+        intent = query;
+        NodeList active = MatchIntent(intent);
+        if (active == null)//If intent from DF is not matched with keys in dictionary 
         {
-            nodelist[0].Play(this);
+            ReturnQuery("DefaultFallback");
         }
         else
         {
-            //nodelist[0].Play(this,nodelist);
-            //timelineController.PlayFromTimelines(nodelist);
+            List<Node> nodelist = active.getList();
+            Debug.Log("THE MATCHED INTENT IS:" + nodelist[0].getIntent());
+            if (isPlaying)
+            {
+                Debug.Log("tried to play timelines while there are others playing");
+                return;
+            }
+            foreach (Node n in nodelist)
+            {
+                queuedTimelines.Enqueue(n);
+            }
+            StartCoroutine(playQueue());
         }
     }
     //Triggered by DialogFlow, param query is the result returned by DialogFlow
     //The query result is then matched to NodeDictionary by intent to retrieve List<Nodes>
     
-       public void ReturnQuery(QueryResult query)
+    public void ReturnQuery(QueryResult query)
     {
         Debug.Log("REACHED HERE");
         intent = query.intent.displayName;
@@ -69,7 +84,7 @@ public class Tree_Container : MonoBehaviour
         NodeList active = MatchIntent(intent);
         if (active == null)//If intent from DF is not matched with keys in dictionary 
         {
-            ReturnQuery("DefaultFallback");//TODO: internal string trigger
+            ReturnQuery("DefaultFallback");
         }
         else
         {
@@ -88,11 +103,12 @@ public class Tree_Container : MonoBehaviour
            
         }
     }
+    
     public IEnumerator playQueue()
-    {
-        isPlaying = true;
-        while (queuedTimelines.Count > 0)
-        {
+             {
+              isPlaying = true;
+              while (queuedTimelines.Count > 0)
+                 {
             Node cur = queuedTimelines.Dequeue();
             cur.Play(this);
             timelineController.Play(cur);
