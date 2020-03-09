@@ -2744,6 +2744,16 @@ PrefabInstance:
       propertyPath: nodeDictionary._keys.Array.data[9]
       value: Coffee
       objectReference: {fileID: 0}
+    - target: {fileID: 3377307966286607929, guid: 44e96cb1706c6984b9f824c0f615de69,
+        type: 3}
+      propertyPath: nodeDictionary._keyValues.Array.data[6]
+      value: Branching - yes
+      objectReference: {fileID: 0}
+    - target: {fileID: 3377307966286607929, guid: 44e96cb1706c6984b9f824c0f615de69,
+        type: 3}
+      propertyPath: nodeDictionary._keys.Array.data[6]
+      value: Branching - yes
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44e96cb1706c6984b9f824c0f615de69, type: 3}
 --- !u!114 &8810381324548777308 stripped
