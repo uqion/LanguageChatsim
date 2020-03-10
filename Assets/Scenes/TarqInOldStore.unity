@@ -297,6 +297,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2743641175882813449, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: m_Name
+      value: TarqAgent
+      objectReference: {fileID: 0}
     - target: {fileID: 2613260790718161591, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
       propertyPath: m_SceneBindings.Array.size
@@ -319,11 +324,6 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[3].value
       value: 
       objectReference: {fileID: 1093385578}
-    - target: {fileID: 2743641175882813449, guid: 04f93bee0b15e7f428d064629b634eb4,
-        type: 3}
-      propertyPath: m_Name
-      value: TarqAgent
-      objectReference: {fileID: 0}
     - target: {fileID: 6799247022206430453, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
       propertyPath: audioSource
