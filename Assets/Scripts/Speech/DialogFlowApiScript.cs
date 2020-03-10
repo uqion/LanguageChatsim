@@ -13,10 +13,6 @@ public class DialogFlowApiScript : MonoBehaviour
 
     //access token must be generated using gcloud auth (search: gcloud IAM)
     public String ACCESS_TOKEN;
-
-    [Tooltip("Once a response is received, the response text will be displayed in this text field")]
-    //Once a response is received, the response text will be displayed in this text field
-    public UnityEngine.UI.Text responseText;
     //Interrupts call to direct business logic to SO_Hi tree
     public Tree_Container tree;
 
@@ -98,7 +94,7 @@ public class DialogFlowApiScript : MonoBehaviour
             byte[] resultbyte = postRequest.downloadHandler.data;
             string result = System.Text.Encoding.UTF8.GetString(resultbyte);
             ResponseBody content = (ResponseBody)JsonUtility.FromJson<ResponseBody>(result);
-            responseText.text = content.queryResult.fulfillmentText;
+            //responseText.text = content.queryResult.fulfillmentText;
             Debug.Log("CALLING TTS: " + Time.realtimeSinceStartup);
             
             tree.ReturnQuery(content.queryResult);
