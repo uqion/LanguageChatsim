@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // activating "alternate" playmode, setting the textBox to active when 'A' key is pressed.
-        if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.AKey) && hasWordBelowThreshold)
+        if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.Grip) && hasWordBelowThreshold)
         {
             playModeActive = true;
             AlertCanvas.SetActive(false);
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
             instructionCanvas.SetActive(true);
         }
 
-        if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.BKey))
+        if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.Trigger))
         {
             tintSphere.SetActive(false);
             UserInputCanvas.SetActive(false);
