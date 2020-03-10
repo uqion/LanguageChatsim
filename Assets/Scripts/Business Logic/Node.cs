@@ -31,6 +31,7 @@ public class Node : ScriptableObject
                 GameObject g = GameObject.Find(auxilliaryAnimations[i]);
                 if(g != null)
                 {
+                    Debug.Log("calling animation");
                     animator.CallAnimation(g.GetComponent<PlayableDirector>(), auxilliaryOffsets[i]);
                 }
             }

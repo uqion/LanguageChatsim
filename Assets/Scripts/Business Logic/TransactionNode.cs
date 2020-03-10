@@ -27,7 +27,7 @@ public class TransactionNode : Node
 
         }
         Debug.Log("SHOPPING CART CALL");
-
+        base.Play(tree);
        
     }
 

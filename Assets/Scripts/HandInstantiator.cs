@@ -20,10 +20,10 @@ public class HandInstantiator : MonoBehaviour
         Debug.Log("CALLED INSTANTIATE");
         if(isLeftHand)
         {
-            InstantiateObject(objectToInstantiate, LeftHandParent, offset);
+            StartCoroutine(InstantiateObject(objectToInstantiate, LeftHandParent, offset));
         } else
         {
-            InstantiateObject(objectToInstantiate, RightHandParent, offset);
+            StartCoroutine(InstantiateObject(objectToInstantiate, RightHandParent, offset));
         }
     }
 
@@ -56,6 +56,7 @@ public class HandInstantiator : MonoBehaviour
         yield return new WaitForSeconds(offset);
         if(currentObject != null)
         {
+            Debug.Log("releasing");
             currentObject.transform.parent = null;
         }
         releasedObjects.Add(currentObject);
