@@ -23,8 +23,7 @@ public class Tree_Container : MonoBehaviour
     [SerializeField]
     RootNode rootNode;
     private Queue<Node> queuedTimelines;
-    private Queue<int> queuedTimelinesRoot;
-    private bool isColliding;
+    
     private string intent;
     private bool isPlaying = false;
 
@@ -34,7 +33,7 @@ public class Tree_Container : MonoBehaviour
     void Start()
     {//TODO: ROOTNODE FLAG 
      //TODO: ANIMATIONS DEFAULT POSITION
-        ReturnQuery("Test");
+       ReturnQuery("DefaultFallback");
     }
 
     // Update is called once per frame
@@ -45,7 +44,7 @@ public class Tree_Container : MonoBehaviour
     private void Awake()
     {
         queuedTimelines = new Queue<Node>();
-        queuedTimelinesRoot = new Queue<int>();
+       
     }
     //Overloaded ReturnQuery for testing without DialogFlow trigger
     public void ReturnQuery(string query)
@@ -84,7 +83,7 @@ public class Tree_Container : MonoBehaviour
         NodeList active = MatchIntent(intent);
         if (active == null)//If intent from DF is not matched with keys in dictionary 
         {
-            ReturnQuery("DefaultFallback");
+            ReturnQuery("DefaultFallback");//async intent matching 
         }
         else
         {

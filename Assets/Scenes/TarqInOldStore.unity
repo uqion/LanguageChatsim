@@ -696,7 +696,12 @@ PrefabInstance:
     - target: {fileID: 1497280673433845350, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
       propertyPath: nodeDictionary._values.Array.data[6].Nodes.Array.size
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497280673433845350, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: nodeDictionary._values.Array.data[5].Nodes.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1497280673433845350, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
@@ -738,6 +743,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: b82082b3843c0bc49b4b379414ceba6c,
         type: 2}
+    - target: {fileID: 1497280673433845350, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: nodeDictionary._keyValues.Array.data[5]
+      value: PackingMulti
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497280673433845350, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: nodeDictionary._keys.Array.data[5]
+      value: PackingMulti
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7216626247452446967, guid: 04f93bee0b15e7f428d064629b634eb4, type: 3}
     - {fileID: 7216626247452446964, guid: 04f93bee0b15e7f428d064629b634eb4, type: 3}

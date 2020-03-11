@@ -42,6 +42,7 @@ public class TimelineController : MonoBehaviour
             audioSource.Play();
         }
         PlayFromTimelines(taid);
+        Debug.Log("Reached timeline controller play");
     }
     public void Play(int id)
     {
