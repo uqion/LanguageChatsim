@@ -79,11 +79,13 @@ public class Tree_Container : MonoBehaviour
     {
         Debug.Log("REACHED HERE");
         intent = query.intent.displayName;
+        string DFResponse = query.fulfillmentText;
+        Debug.Log("Random Response is:" + DFResponse);
         Debug.Log("THE DF INTENT IS:" + intent);
         NodeList active = MatchIntent(intent);
         if (active == null)//If intent from DF is not matched with keys in dictionary 
         {
-            ReturnQuery("DefaultFallback");//async intent matching 
+            //ReturnQuery("DefaultFallback");//async intent matching 
         }
         else
         {
