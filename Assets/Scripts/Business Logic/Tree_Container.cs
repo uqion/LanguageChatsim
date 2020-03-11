@@ -33,7 +33,7 @@ public class Tree_Container : MonoBehaviour
     void Start()
     {//TODO: ROOTNODE FLAG 
      //TODO: ANIMATIONS DEFAULT POSITION
-       ReturnQuery("DefaultFallback");
+    //   ReturnQuery("DefaultFallback");
     }
 
     // Update is called once per frame
@@ -54,7 +54,7 @@ public class Tree_Container : MonoBehaviour
         NodeList active = MatchIntent(intent);
         if (active == null)//If intent from DF is not matched with keys in dictionary 
         {
-            ReturnQuery("DefaultFallback");
+            //ReturnQuery("DefaultFallback");
         }
         else
         {
@@ -92,7 +92,7 @@ public class Tree_Container : MonoBehaviour
             if (isPlaying)
             {
                 Debug.Log("tried to play timelines while there are others playing");
-                return;
+                //return;
             }
             foreach (Node n in nodelist)
             {
@@ -110,6 +110,7 @@ public class Tree_Container : MonoBehaviour
                  {
             Node cur = queuedTimelines.Dequeue();
             cur.Play(this);
+            Debug.Log("response is: " + cur.getResponse());
             timelineController.Play(cur);
             TimelineAsset currentTimeline = timelineController.PlayFromTimelines(cur.getTaid());
 

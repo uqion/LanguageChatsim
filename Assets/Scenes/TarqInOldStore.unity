@@ -483,7 +483,7 @@ PrefabInstance:
     - target: {fileID: 7216626247503448905, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
       propertyPath: ACCESS_TOKEN
-      value: ya29.c.Ko8BwQcTcG4Ko-LkGUi4i8X5fRhdSpLvHMEaILYTCBWlE9VapXaUmGmQECtDt-NaEzDEH4z1tTrd6fpT6lOoJidPhQmwTOfJ0AeQGuoNp4f6LfS4fY_FzjNoWk9aDQew2-W3mbF30C25Xe2owlOfCf4cwPAOa2ik_U9kPOMe_q1z_uTd-GF9WJmE3ezunctIDKQ
+      value: ya29.c.Ko8BwQekpr_Qw2o7SFV47RrRIAQ3d-fsIl0vAuYmb2NMMDkB70pzmnq3opS8mHSbMbpPRxsxuYHO7up0v-TeLzCxMs6e07N53QY1lkvVWH3djV18XEXH3ewQGU-Y4fpMtTgIxGtf8r5yotCFYDaasHuaVUcx4OvL5bIeHqWgPpIiO8SDdksd3aqIHDpn329tNwE
       objectReference: {fileID: 0}
     - target: {fileID: 2613260790718161591, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
@@ -518,6 +518,11 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[4].value
       value: 
       objectReference: {fileID: 1093385578}
+    - target: {fileID: 2613260790718161591, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: m_InitialState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6799247022206430453, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
       propertyPath: timelines.Array.size
@@ -752,6 +757,17 @@ PrefabInstance:
         type: 3}
       propertyPath: nodeDictionary._keys.Array.data[5]
       value: PackingMulti
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497280673433845350, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: nodeDictionary._values.Array.data[6].Nodes.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: ffc08f9c3ee4ad8449e20e41f415f279,
+        type: 2}
+    - target: {fileID: 7827014454129057872, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7216626247452446967, guid: 04f93bee0b15e7f428d064629b634eb4, type: 3}
