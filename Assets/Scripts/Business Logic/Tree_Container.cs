@@ -23,7 +23,8 @@ public class Tree_Container : MonoBehaviour
     [SerializeField]
     RootNode rootNode;
     private Queue<Node> queuedTimelines;
-    
+    public DialogFlowApiScript apiScript;
+
     private string intent;
     private bool isPlaying = false;
 
@@ -91,6 +92,7 @@ public class Tree_Container : MonoBehaviour
         {
             List<Node> nodelist = active.getList();
             Debug.Log("THE MATCHED INTENT IS:" + nodelist[0].getIntent());
+            nodelist[0].setResponse(DFResponse);
             if (isPlaying)
             {
                 Debug.Log("tried to play timelines while there are others playing");

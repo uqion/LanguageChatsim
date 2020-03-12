@@ -483,7 +483,7 @@ PrefabInstance:
     - target: {fileID: 7216626247503448905, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
       propertyPath: ACCESS_TOKEN
-      value: ya29.c.Ko8BwQekpr_Qw2o7SFV47RrRIAQ3d-fsIl0vAuYmb2NMMDkB70pzmnq3opS8mHSbMbpPRxsxuYHO7up0v-TeLzCxMs6e07N53QY1lkvVWH3djV18XEXH3ewQGU-Y4fpMtTgIxGtf8r5yotCFYDaasHuaVUcx4OvL5bIeHqWgPpIiO8SDdksd3aqIHDpn329tNwE
+      value: ya29.c.Ko8BwQdixya6K3mE90s7au5XvTdwyNVscWQIAZuyslu5lQ-Xr9ZErBbIAZBMRi51ElIpMI_zcOnBem8n_mubGjFT3138CLITnEqLBYIwCgptQwVlcv0kBk3FJlZFgdgoRCMlM9KkqC6Uxj9ztSnXmqOQ10DQbz7CHFLENDKWWkAUEn-a_1Yfg0d4YlH3ajJJJCkya29.c.Ko8BwQdixya6K3mE90s7au5XvTdwyNVscWQIAZuyslu5lQ-Xr9ZErBbIAZBMRi51ElIpMI_zcOnBem8n_mubGjFT3138CLITnEqLBYIwCgptQwVlcv0kBk3FJlZFgdgoRCMlM9KkqC6Uxj9ztSnXmqOQ10DQbz7CHFLENDKWWkAUEn-a_1Yfg0d4YlH3ajJJJCk
       objectReference: {fileID: 0}
     - target: {fileID: 2613260790718161591, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
@@ -764,6 +764,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ffc08f9c3ee4ad8449e20e41f415f279,
         type: 2}
+    - target: {fileID: 1497280673433845350, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: apiScript
+      value: 
+      objectReference: {fileID: 1107243695}
     - target: {fileID: 7827014454129057872, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -875,6 +880,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1093385567}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1107243695 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6791261332453507862, guid: 44e96cb1706c6984b9f824c0f615de69,
+    type: 3}
+  m_PrefabInstance: {fileID: 8810381324548777307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3aa731c125abd488a8f30b6315e1e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1214382742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1482225792693138270, guid: eb545e5a6c5323441b4471e37ace513f,
