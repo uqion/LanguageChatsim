@@ -63,7 +63,8 @@ public class WatsonStreaming : MonoBehaviour
 
     private bool playMode;
     public Text userText;
-    private float confidenceThreshold = 0.70f;
+    public GameObject userInputBox;
+    private float confidenceThreshold = 0.65f;
 
     public List<Tuple<string, float>> confidenceResults = new List<Tuple<string, float>>();
 
@@ -223,6 +224,12 @@ public class WatsonStreaming : MonoBehaviour
                     //TODO: use alts and confidence to extend behaviour into feedback/criticality
                     foreach(WordConfidence word in alt.WordConfidence)
                     {
+                        if (word.Word == "%HESITATION")
+                        {
+                            Debug.Log(word.Word);
+                            continue;
+                        }
+
                         Debug.Log("WORD:" + word.Word + " " + word.Confidence);
                         confidenceResults.Add(new Tuple<string, float>(word.Word, (float)word.Confidence));
                         if (word.Confidence < confidenceThreshold)
