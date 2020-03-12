@@ -151,6 +151,7 @@ public class WatsonStreaming : MonoBehaviour
         Active = false;
 
         Log.Debug("ExampleStreaming.OnError()", "Error! {0}", error);
+        Runnable.Run(CreateService());
     }
 
     private IEnumerator RecordingHandler()

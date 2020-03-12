@@ -213,6 +213,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209476541}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!83 &227839321
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Speech
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 16000
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!4 &451164647 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3480653396968003672, guid: 04f93bee0b15e7f428d064629b634eb4,
@@ -361,7 +389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818582272}
   m_LocalRotation: {x: 0.000000059138962, y: 0.00000022945451, z: 0.99764, w: 0.06866207}
-  m_LocalPosition: {x: 0.06519982, y: -0.0000005867332, z: -0.038999546}
+  m_LocalPosition: {x: 0.1041, y: -0.0054, z: -0.0468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1909692476}
@@ -391,7 +419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030817451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11, y: -0, z: 0.053}
+  m_LocalPosition: {x: -0.11, y: 0.0249, z: 0.0342}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 451164647}
@@ -483,18 +511,18 @@ PrefabInstance:
     - target: {fileID: 7216626247503448905, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
       propertyPath: ACCESS_TOKEN
-      value: ya29.c.Ko8BwQekpr_Qw2o7SFV47RrRIAQ3d-fsIl0vAuYmb2NMMDkB70pzmnq3opS8mHSbMbpPRxsxuYHO7up0v-TeLzCxMs6e07N53QY1lkvVWH3djV18XEXH3ewQGU-Y4fpMtTgIxGtf8r5yotCFYDaasHuaVUcx4OvL5bIeHqWgPpIiO8SDdksd3aqIHDpn329tNwE
+      value: ya29.c.Ko8BwQft3qxLH1eQQBzUQUusTVw0gCozcuOpPyrpQcWdBTxyZdwv7BJC1EZadnuwxNlAuCxM57npxXbr_Q1Lpvc6iyQh8x8DPnyRJ-2_f3zc080KTTi7Qjn9KtXo9TtoI8baBHu5bK2YR4EV79P7naSb2DItyt9Kt0ltHoYlmnXxA0RPNKnfql6K2a9AdiywZC8
       objectReference: {fileID: 0}
     - target: {fileID: 2613260790718161591, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
       propertyPath: m_SceneBindings.Array.size
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2613260790718161591, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
       propertyPath: m_PlayableAsset
       value: 
-      objectReference: {fileID: 11400000, guid: f66a87d59db3c604a8d07b23243dbe72,
+      objectReference: {fileID: 11400000, guid: f6283e67829b2e64b991f8bf3d41a2ae,
         type: 2}
     - target: {fileID: 2613260790718161591, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
@@ -523,6 +551,34 @@ PrefabInstance:
       propertyPath: m_InitialState
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2613260790718161591, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[5].key
+      value: 
+      objectReference: {fileID: -3999459987350131962, guid: fc6137aca5692f14e8c83fb2c62fd2e1,
+        type: 2}
+    - target: {fileID: 2613260790718161591, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[6].key
+      value: 
+      objectReference: {fileID: -1889818755464437696, guid: 16dc05bf461e5544a94560439d3bdbf4,
+        type: 2}
+    - target: {fileID: 2613260790718161591, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[6].value
+      value: 
+      objectReference: {fileID: 1093385578}
+    - target: {fileID: 2613260790718161591, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[7].key
+      value: 
+      objectReference: {fileID: 2328492538908145271, guid: e3a331ea832a5f9459f9057692bb0f90,
+        type: 2}
+    - target: {fileID: 2613260790718161591, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[7].value
+      value: 
+      objectReference: {fileID: 1093385578}
     - target: {fileID: 6799247022206430453, guid: 04f93bee0b15e7f428d064629b634eb4,
         type: 3}
       propertyPath: timelines.Array.size
@@ -769,6 +825,16 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7827014454129057872, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 227839321}
+    - target: {fileID: 1826776492880345652, guid: 04f93bee0b15e7f428d064629b634eb4,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 227839321}
     m_RemovedComponents:
     - {fileID: 7216626247452446967, guid: 04f93bee0b15e7f428d064629b634eb4, type: 3}
     - {fileID: 7216626247452446964, guid: 04f93bee0b15e7f428d064629b634eb4, type: 3}

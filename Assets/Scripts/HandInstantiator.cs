@@ -57,7 +57,8 @@ public class HandInstantiator : MonoBehaviour
         if(currentObject != null)
         {
             Debug.Log("releasing");
-            currentObject.transform.parent = null;
+            LeftHandParent.transform.DetachChildren();
+            RightHandParent.transform.DetachChildren();
         }
         releasedObjects.Add(currentObject);
         currentObject = null;
