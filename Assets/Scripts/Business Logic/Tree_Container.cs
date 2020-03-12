@@ -4,6 +4,8 @@ using UnityEngine;
 
 using JsonData;
 using System.Linq;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 
 //Contains an instantiated NodeDictionary; interface for Timeline Controller 
@@ -20,14 +22,19 @@ public class Tree_Container : MonoBehaviour
     public ShoppingCart shoppingCart;
     [SerializeField]
     RootNode rootNode;
-    private Queue<int> queuedTimelines;
-    private bool isColliding;
-    private string intent; 
+    private Queue<Node> queuedTimelines;
+    public DialogFlowApiScript apiScript;
+
+    private string intent;
+    private bool isPlaying = false;
+
+
 
     // Start is called before the first frame update
     void Start()
     {//TODO: ROOTNODE FLAG 
      //TODO: ANIMATIONS DEFAULT POSITION
+    //   ReturnQuery("DefaultFallback");
     }
 
     // Update is called once per frame
@@ -35,57 +42,87 @@ public class Tree_Container : MonoBehaviour
     {
 
     }
+    private void Awake()
+    {
+        queuedTimelines = new Queue<Node>();
+       
+    }
     //Overloaded ReturnQuery for testing without DialogFlow trigger
     public void ReturnQuery(string query)
     {
-        NodeList active;
-        intent = query; 
-        active = MatchIntent(query);
-        List<Node> nodelist = active.getList();
-        if (nodelist.Count == 1)
-        {
-            nodelist[0].Play(this);
-        }
-        else
-        {
-            nodelist[0].Play(this,nodelist);
-            //timelineController.PlayFromTimelines(nodelist);
-        }
-    }
-    //Triggered by DialogFlow, param query is the result returned by DialogFlow
-    //The query result is then matched to NodeDictionary by intent to retrieve List<Nodes>
-    
-       public void ReturnQuery(QueryResult query)
-    {
         Debug.Log("REACHED HERE");
-        intent = query.intent.displayName;
-        Debug.Log("THE DF INTENT IS:" + intent);
+        intent = query;
         NodeList active = MatchIntent(intent);
-        if (active == null)
+        if (active == null)//If intent from DF is not matched with keys in dictionary 
         {
-            ReturnQuery("DefaultFallback");
+            //ReturnQuery("DefaultFallback");
         }
         else
         {
             List<Node> nodelist = active.getList();
             Debug.Log("THE MATCHED INTENT IS:" + nodelist[0].getIntent());
-            //If there is only one node in the list, no need for async, direct call to play animations/responses for one node
-            if (nodelist.Count == 1)
+            if (isPlaying)
             {
-                nodelist[0].Play(this); //Visitor pattern; double dispatch, this container is passed to Node so that it can gather the resources it requires 
+                Debug.Log("tried to play timelines while there are others playing");
+                return;
             }
-            //Else async call to play multiple animations
-            else
+            foreach (Node n in nodelist)
             {
-                nodelist[0].Play(this, nodelist);
+                queuedTimelines.Enqueue(n);
             }
+            StartCoroutine(playQueue());
         }
     }
-    //Method for playing nodes with children, called by Node and decorated Nodes 
-     public void PlayChildren(List<Node> nodelist)
+    //Triggered by DialogFlow, param query is the result returned by DialogFlow
+    //The query result is then matched to NodeDictionary by intent to retrieve List<Nodes>
+    
+    public void ReturnQuery(QueryResult query)
     {
-        timelineController.PlayFromTimelines(nodelist);
+        Debug.Log("REACHED HERE");
+        intent = query.intent.displayName;
+        string DFResponse = query.fulfillmentText;
+        Debug.Log("Random Response is:" + DFResponse);
+        Debug.Log("THE DF INTENT IS:" + intent);
+        NodeList active = MatchIntent(intent);
+        if (active == null)//If intent from DF is not matched with keys in dictionary 
+        {
+            //ReturnQuery("DefaultFallback");//async intent matching 
+        }
+        else
+        {
+            List<Node> nodelist = active.getList();
+            Debug.Log("THE MATCHED INTENT IS:" + nodelist[0].getIntent());
+            nodelist[0].setResponse(DFResponse);
+            if (isPlaying)
+            {
+                Debug.Log("tried to play timelines while there are others playing");
+                //return;
+            }
+            foreach (Node n in nodelist)
+            {
+                queuedTimelines.Enqueue(n);
+            }
+            StartCoroutine(playQueue());
+           
+        }
     }
+    
+    public IEnumerator playQueue()
+             {
+              isPlaying = true;
+              while (queuedTimelines.Count > 0)
+                 {
+            Node cur = queuedTimelines.Dequeue();
+            cur.Play(this);
+            Debug.Log("response is: " + cur.getResponse());
+            timelineController.Play(cur);
+            TimelineAsset currentTimeline = timelineController.PlayFromTimelines(cur.getTaid());
+
+            yield return new WaitForSeconds((float)currentTimeline.duration);
+        }
+        isPlaying = false;
+    }
+    
     //key/value search in NodeDictionary
     public NodeList MatchIntent(string intent)
     {
@@ -96,24 +133,7 @@ public class Tree_Container : MonoBehaviour
         }
         return null; 
     }
-    //Play method considering two scenarios: 1. animations only nodes, 2. animations + response nodes that require a call to TTS
-    public void Play(Node node)
-    {
-        Debug.Log("Reached CONTAINER PLAY");
-        string response = node.getResponse();
-        int taid = node.getTaid();
-        Debug.Log("RESPONSE IS"+response);
-        if (string.IsNullOrEmpty(response))
-        {
-            Debug.Log("Reached ANIMATIONS PLAY");
-            timelineController.Play(taid);
-        }
-        else
-        {
-            Debug.Log("Reached response PLAY");
-            timelineController.Play(taid, response);
-        }
-    }
+ 
     //Root node logic, agent triggered by box collider attached to player 
     void OnTriggerEnter(Collider collider)
     {

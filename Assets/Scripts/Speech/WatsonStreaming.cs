@@ -36,10 +36,8 @@ public class WatsonStreaming : MonoBehaviour
     [Tooltip("The service URL (optional). This defaults to \"https://stream.watsonplatform.net/speech-to-text/api\"")]
     [SerializeField]
     private string _serviceUrl;
-    [Tooltip("Text field to display the results of streaming.")]
-    public InputField ResultsField;
     [Tooltip("GameObject that handle sending text to agent")]
-    public Button SentButton;
+    public DialogFlowApiScript apiScript;
     [Tooltip("Dispatcher for doing stuff on main thread")]
     public Dispatcher dispatcher;
     [Header("IAM Authentication")]
@@ -60,8 +58,6 @@ public class WatsonStreaming : MonoBehaviour
     private int _recordingBufferSize = 1;
     private int _recordingHZ = 22050;
     public PlayerController playerController;
-
-    public Text userInputBoxText;
 
     private SpeechToTextService _service;
 
@@ -156,6 +152,7 @@ public class WatsonStreaming : MonoBehaviour
         Active = false;
 
         Log.Debug("ExampleStreaming.OnError()", "Error! {0}", error);
+        Runnable.Run(CreateService());
     }
 
     private IEnumerator RecordingHandler()
@@ -225,8 +222,6 @@ public class WatsonStreaming : MonoBehaviour
                 {
                     string text = string.Format("{0} ({1}, {2:0.00})\n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence);
                     //TODO: use alts and confidence to extend behaviour into feedback/criticality
-                    ResultsField.text = alt.transcript;
-                    userText.text = alt.transcript;
                     foreach(WordConfidence word in alt.WordConfidence)
                     {
                         if (word.Word == "%HESITATION")
@@ -249,7 +244,7 @@ public class WatsonStreaming : MonoBehaviour
                     }
                     userText.text = finalOutput;
                     playerController.SetConfidences(confidenceResults);
-                    SentButton.GetComponent<DialogFlowApiScript>().SendText(alt.transcript);
+                    apiScript.SendText(alt.transcript);
                 }
 
                 if (res.keywords_result != null && res.keywords_result.keyword != null)
