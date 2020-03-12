@@ -55,5 +55,9 @@ public class Node : ScriptableObject
     {
         return response;
     }
+    public void setResponse(string dynamicResponse)
+    {
+        response = dynamicResponse; 
+    }
 }
 
