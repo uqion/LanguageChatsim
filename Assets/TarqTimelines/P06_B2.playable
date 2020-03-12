@@ -23,7 +23,7 @@ MonoBehaviour:
   m_Clips: []
   m_Markers:
     m_Objects: []
---- !u!114 &-3565189286743775021
+--- !u!114 &-7899229790112475488
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,8 +89,8 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: -3565189286743775021}
-    m_Duration: 22.375
+    m_Asset: {fileID: -7899229790112475488}
+    m_Duration: 19.458333333333332
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2328492538908145271}
     m_EaseInDuration: 0
