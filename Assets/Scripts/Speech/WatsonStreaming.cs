@@ -105,7 +105,7 @@ public class WatsonStreaming : MonoBehaviour
             if (value && !_service.IsListening)
             {
                 _service.RecognizeModel = (string.IsNullOrEmpty(_recognizeModel) ? "en-US_BroadbandModel" : _recognizeModel);
-                _service.DetectSilence = true;
+                _service.DetectSilence = false; //detectSilence 
                 _service.EnableWordConfidence = true;
                 _service.EnableTimestamps = true;
                 _service.SilenceThreshold = 0.01f;
@@ -122,7 +122,7 @@ public class WatsonStreaming : MonoBehaviour
             }
             else if (!value && _service.IsListening)
             {
-                _service.StopListening();
+                _service.StopListening();//watsonstreaming 
             }
         }
     }

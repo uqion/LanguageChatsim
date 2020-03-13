@@ -3,7 +3,67 @@ guid: 0c974992346b9c74b8d232c164975b38
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Default_Material
+    second: {fileID: 2100000, guid: d26130cc7b656d6468b0e1f657fec3d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye_MTL2
+    second: {fileID: 2100000, guid: ea245926eede1444390c29ebd18ad2b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face_geo2_blinn
+    second: {fileID: 2100000, guid: 96ff6c9d0fdb08645827f7c7936b91c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GumsMaterial
+    second: {fileID: 2100000, guid: 507f9d43b6a24704d8c7727820224333, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TeethMaterial
+    second: {fileID: 2100000, guid: d70fc99983bf55444b44d6972868da91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface1
+    second: {fileID: 2100000, guid: 8f1544d98c1735947a440eddc69824f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1
+    second: {fileID: 2100000, guid: f0a69ef16858a7e4ea98019591739907, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lam_Hair_MTL
+    second: {fileID: 2100000, guid: e837237b0d9cc1041a30feb4b468931a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lam_Skin_MTL
+    second: {fileID: 2100000, guid: d9cbe6b77269b734e82ab45750734b47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert10
+    second: {fileID: 2100000, guid: 451ae71ac96744f47beb95d37a297794, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert8
+    second: {fileID: 2100000, guid: 67b446ce735d1f54a9b9161803255844, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert9
+    second: {fileID: 2100000, guid: aafe92a909ed9cd4f875c2db941a267b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

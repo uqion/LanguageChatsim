@@ -32,9 +32,11 @@ public class Tree_Container : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {//TODO: ROOTNODE FLAG 
+    {
+        
+        //TODO: ROOTNODE FLAG 
      //TODO: ANIMATIONS DEFAULT POSITION
-    //   ReturnQuery("DefaultFallback");
+      ReturnQuery("Coffee");
     }
 
     // Update is called once per frame
@@ -51,26 +53,29 @@ public class Tree_Container : MonoBehaviour
     public void ReturnQuery(string query)
     {
         Debug.Log("REACHED HERE");
-        intent = query;
+        intent = query; 
+        Debug.Log("THE DF INTENT IS:" + intent);
         NodeList active = MatchIntent(intent);
         if (active == null)//If intent from DF is not matched with keys in dictionary 
         {
-            //ReturnQuery("DefaultFallback");
+            //ReturnQuery("DefaultFallback");//async intent matching 
         }
         else
         {
             List<Node> nodelist = active.getList();
             Debug.Log("THE MATCHED INTENT IS:" + nodelist[0].getIntent());
+            
             if (isPlaying)
             {
                 Debug.Log("tried to play timelines while there are others playing");
-                return;
+                //return;
             }
             foreach (Node n in nodelist)
             {
                 queuedTimelines.Enqueue(n);
             }
             StartCoroutine(playQueue());
+
         }
     }
     //Triggered by DialogFlow, param query is the result returned by DialogFlow
